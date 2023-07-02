@@ -35,7 +35,7 @@ function AttendanceScreen() {
 function ManageScreen() {
   return (
     <View>
-    <ManageProfiles />
+
 
     </View>
   );
