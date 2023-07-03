@@ -3,13 +3,15 @@ import { View, Text, ScrollView, StyleSheet, TouchableOpacity } from 'react-nati
 import { Ionicons } from '@expo/vector-icons';
 import { useNavigation } from '@react-navigation/native';
 
+import SettingsScreen from '../Setting/Setting';
+
 const HomePage = () => {
   //use for navigating/redirect to other page
   const navigation = useNavigation();
 
   const handleUserIconClick = () => {
     //navigate to setting page
-    navigation.navigate('setting');
+    navigation.navigate('Setting');
   };
 
   return (

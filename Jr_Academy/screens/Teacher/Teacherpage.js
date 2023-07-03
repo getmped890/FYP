@@ -6,6 +6,7 @@ import { Ionicons } from '@expo/vector-icons';
 
 //import from the respective file path
 import HomePageScreen from './Homepage/HomePage';
+import SettingsScreen from './Setting/Setting';
 
 const Teacherpage= ({}) => {
   return (
@@ -59,13 +60,7 @@ function AlertScreen() {
   );
 }
 
-function SettingsScreen() {
-  return (
-    <View>
-      <Text>Hi School Admin</Text>
-    </View>
-  );
-}
+
 
 const Tab = createBottomTabNavigator();
 
