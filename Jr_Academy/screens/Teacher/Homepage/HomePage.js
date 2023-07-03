@@ -59,7 +59,7 @@ const HomePage = () => {
       </View>
 
       <TouchableOpacity style={styles.endClassButton}>
-        <Ionicons name="checkmark" size={24} />
+        <Ionicons name="checkmark" size={35} />
       </TouchableOpacity>
       <Text style={styles.endClassText}>End Class</Text>
     </View>
