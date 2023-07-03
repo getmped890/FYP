@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, Text, SafeAreaView, ScrollView, StyleSheet, TouchableOpacity, StatusBar } from 'react-native';
+import { View, Text, FlatList, SafeAreaView, ScrollView, StyleSheet, TouchableOpacity, StatusBar } from 'react-native';
 import { Ionicons } from '@expo/vector-icons';
 import { useNavigation } from '@react-navigation/native';
 import {Calendar, LocaleConfig} from 'react-native-calendars';
@@ -10,6 +10,7 @@ const TimeTable = () => {
 
   return (
 <View>
+<ScrollView style={styles.container}>
     <Text style={styles.headingText}>Timetable</Text>
     <ScrollView horizontal={true} style={styles.container}>
         <View style={[styles.card, styles.cardElevated]}>
@@ -35,9 +36,9 @@ const TimeTable = () => {
             <Text>3.00pm</Text>
         </View>
     </ScrollView>
-    <SafeAreaView style={styles.container}>
-      <Calendar />
-    </SafeAreaView>
+    </ScrollView>
+    <Calendar/>
+  
 </View>
 
   );
@@ -45,7 +46,7 @@ const TimeTable = () => {
 
 const styles = StyleSheet.create({
     headingText: {
-        fontSize: 24,
+        fontSize: 20,
         fontWeight: 'bold',
         paddingHorizontal: 8
     },
@@ -66,6 +67,9 @@ const styles = StyleSheet.create({
             height: 1
         },
     },
+    calendarWrapper:{
+      height: 10
+   },
     container: {
       padding: 8
     },
