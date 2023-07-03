@@ -2,10 +2,10 @@ import { StatusBar } from 'expo-status-bar';
 import { SafeAreaView, StyleSheet, View, Text, Button} from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
-import { Ionicons } from '@expo/vector-icons';
 
 //import from the respective file path
 import HomePageScreen from './Homepage/HomePage';
+import TimeTableScreen from './TimeTable/TimeTable';
 
 const Teacherpage= ({}) => {
   return (
@@ -15,13 +15,7 @@ const Teacherpage= ({}) => {
         <Tab.Navigator screenOptions={{headerShown:false}}>
           <Tab.Screen name="Attendance" component={AttendanceScreen} />
           <Tab.Screen name="TimeTable" component={TimeTableScreen} />
-
-          <Tab.Screen name="Home" component={HomePageScreen} options={{
-              tabBarIcon: () => (
-                <Ionicons name="home" size={24}/>
-              ),
-            }}/>
-
+          <Tab.Screen name="Home" component={HomePageScreen} />
           <Tab.Screen name="Alerts" component={AlertScreen} />
           <Tab.Screen name="Setting" component={SettingsScreen} />        
         </Tab.Navigator>
@@ -41,7 +35,7 @@ function AttendanceScreen() {
   );
 }
 
-function TimeTableScreen() {
+function ManageScreen() {
   return (
     <View>
 
