@@ -14,7 +14,7 @@ const Teacherpage= ({}) => {
       <NavigationContainer>
         <Tab.Navigator screenOptions={{headerShown:false}}>
           <Tab.Screen name="Attendance" component={AttendanceScreen} />
-          <Tab.Screen name="Manage Profiles" component={ManageScreen} />
+          <Tab.Screen name="TimeTable" component={TimeTableScreen} />
 
           <Tab.Screen name="Home" component={HomePageScreen} options={{
               tabBarIcon: () => (
@@ -41,7 +41,7 @@ function AttendanceScreen() {
   );
 }
 
-function ManageScreen() {
+function TimeTableScreen() {
   return (
     <View>
 
