@@ -19,7 +19,7 @@ const HomePage = () => {
       </View>
 
       <TouchableOpacity style={styles.topRight} onPress={handleUserIconClick}>
-        <Ionicons name="person-outline" size={24} color="black" />
+        <Ionicons name="person-outline" size={35} color="black" />
       </TouchableOpacity>
 
       <View style={styles.scrollContainer}>
