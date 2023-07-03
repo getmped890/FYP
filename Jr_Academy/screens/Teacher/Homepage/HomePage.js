@@ -58,9 +58,10 @@ const HomePage = () => {
         </ScrollView>
       </View>
 
-      <TouchableOpacity style={styles.emergencyButton}>
-        <Ionicons name="alert" size={24} />
+      <TouchableOpacity style={styles.endClassButton}>
+        <Ionicons name="checkmark" size={24} />
       </TouchableOpacity>
+      <Text style={styles.endClassText}>End Class</Text>
     </View>
   );
 };
@@ -72,22 +73,22 @@ const styles = StyleSheet.create({
   },
   topLeft: {
     position: 'relative',
-    top: 70,
+    top: 50,
     left: 5,
   },
   topRight: {
     position: 'absolute',
-    top: 60,
+    top: 40,
     right: 10,
     zIndex: 1,
   },
 
   scrollContainer: {
-    paddingTop: 190,
+    paddingTop: 150,
   },
 
   absentContainer: {
-    paddingTop: 100,
+    paddingTop: 110,
   },
 
   text: {
@@ -124,9 +125,9 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
   },
-  emergencyButton: {
+  endClassButton: {
     position: 'absolute',
-    bottom: 2,
+    bottom: 30,
     right: 20,
     width: 80,
     height: 80,
@@ -135,6 +136,13 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
   },
+
+  endClassText:{
+    position: 'absolute',
+    bottom:8,
+    right:25,
+    fontWeight: 'bold',
+  }
 });
 
 export default HomePage;
