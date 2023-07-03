@@ -19,8 +19,13 @@ const Teacherpage= ({}) => {
         <Tab.Navigator screenOptions={{headerShown:false}}>
           <Tab.Screen name="Attendance" component={AttendanceScreen} />
           <Tab.Screen name="TimeTable" component={TimeTableScreen} />
-          <Tab.Screen name="Home" component={HomePageScreen} />
-          <Tab.Screen name="Alerts" component={AlertScreen} />
+          <Tab.Screen name="Home" component={HomePageScreen} options={{
+                        tabBarIcon: () => (
+                          <Ionicons name="home" size={24}/>
+                        ),
+          }}/>          
+            
+            <Tab.Screen name="Alerts" component={AlertScreen} />
           <Tab.Screen name="Setting" component={SettingsScreen} />        
         </Tab.Navigator>
     </NavigationContainer>   
