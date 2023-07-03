@@ -1,13 +1,83 @@
-import React, { useState, useLayoutEffect } from 'react';
-import { View, TouchableOpacity, TextInput, StyleSheet, Text, Button } from 'react-native';
+import React from 'react';
+import { View, Text, SafeAreaView, ScrollView, StyleSheet, TouchableOpacity, StatusBar } from 'react-native';
+import { Ionicons } from '@expo/vector-icons';
 import { useNavigation } from '@react-navigation/native';
+import {Calendar, LocaleConfig} from 'react-native-calendars';
 
 const TimeTable = () => {
-    return (
-        <View>
-            <Text>Hi timetable screen</Text>
+  //use for navigating/redirect to other page
+  const navigation = useNavigation();
+
+  return (
+<View>
+    <Text style={styles.headingText}>Timetable</Text>
+    <ScrollView horizontal={true} style={styles.container}>
+        <View style={[styles.card, styles.cardElevated]}>
+            <Text>CSIT203</Text>
+            <Text>26th Jun 2023</Text>
+            <Text>3.30pm - 6.30pm</Text>
         </View>
-    );
+        <View style={[styles.card, styles.cardElevated]}>
+            <Text>CSIT115</Text>
+            <Text>27th Jun 2023</Text>
+            <Text>12.00am - 3.00pm</Text>
+        </View>
+    </ScrollView>
+
+    <Text style={styles.headingText}>Class Dismissal Timing</Text>
+    <ScrollView horizontal={true} style={styles.container}>
+        <View style={[styles.card, styles.cardElevated]}>
+            <Text>CSIT203</Text>
+            <Text>6.30pm</Text>
+        </View>
+        <View style={[styles.card, styles.cardElevated]}>
+            <Text>CSIT115</Text>
+            <Text>3.00pm</Text>
+        </View>
+    </ScrollView>
+    <SafeAreaView style={styles.container}>
+      <Calendar />
+    </SafeAreaView>
+</View>
+
+  );
 };
 
+const styles = StyleSheet.create({
+    headingText: {
+        fontSize: 24,
+        fontWeight: 'bold',
+        paddingHorizontal: 8
+    },
+    card:{
+        flex: 1,
+        alignItems: 'center',
+        justifyContent: 'center',
+        width: 200,
+        height: 100,
+        borderRadius: 4,
+        margin: 25
+    },
+    cardElevated:{
+        backgroundColor: 'white',
+        elevation: 4,
+        shadowOffset: {
+            width: 1,
+            height: 1
+        },
+    },
+    container: {
+      padding: 8
+    },
+    scrollView: {
+      backgroundColor: 'white',
+      marginHorizontal: 20,
+    },
+    text: {
+      fontSize: 42,
+    },
+  });
+
 export default TimeTable;
+
+
