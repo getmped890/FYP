@@ -44,22 +44,16 @@ const HomePage = () => {
       </View>
 
       <View style={styles.absentContainer}>
-        <Text style={styles.headertext}>Absent Classes:</Text>
+        <Text style={styles.headertext}>Absentees based on last class:</Text>
         <ScrollView horizontal={true} contentContainerStyle={styles.scrollContent}>
           <View style={styles.classItem}>
-            <Text style={styles.classText}>CSIT203</Text>
-            <Text style={styles.classText}>26th Jun 2023</Text>
-            <Text style={styles.classText}>3:30pm - 6:30pm</Text>
+            <Text style={styles.classText}>1. Wong Kai Yih</Text>
           </View>
           <View style={styles.classItem}>
-            <Text style={styles.classText}>CSIT503</Text>
-            <Text style={styles.classText}>20th Jun 2023</Text>
-            <Text style={styles.classText}>2:30pm - 4:30pm</Text>
+            <Text style={styles.classText}>2. Navindran a/l duraisingam</Text>
           </View>
           <View style={styles.classItem}>
-            <Text style={styles.classText}>CSIT123</Text>
-            <Text style={styles.classText}>29th Jun 2023</Text>
-            <Text style={styles.classText}>3:30pm - 6:30pm</Text>
+            <Text style={styles.classText}>3. Chow Xuhua</Text>
           </View>
         </ScrollView>
       </View>
