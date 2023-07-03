@@ -9,13 +9,13 @@ const Teacherpage= ({}) => {
     <SafeAreaView style={styles.root}>
 
       <NavigationContainer>
-      <Tab.Navigator>
-        <Tab.Screen name="Attendance" component={AttendanceScreen} />
-        <Tab.Screen name="Manage Profiles" component={ManageScreen} />
-        <Tab.Screen name="Home" component={HomeScreen} />
-        <Tab.Screen name="Alerts" component={AlertScreen} />
-        <Tab.Screen name="Setting" component={SettingsScreen} />        
-      </Tab.Navigator>
+        <Tab.Navigator screenOptions={{headerShown:false}}>
+          <Tab.Screen name="Attendance" component={AttendanceScreen} />
+          <Tab.Screen name="Manage Profiles" component={ManageScreen} />
+          <Tab.Screen name="Home" component={HomeScreen} />
+          <Tab.Screen name="Alerts" component={AlertScreen} />
+          <Tab.Screen name="Setting" component={SettingsScreen} />        
+        </Tab.Navigator>
     </NavigationContainer>   
 
     </SafeAreaView>
