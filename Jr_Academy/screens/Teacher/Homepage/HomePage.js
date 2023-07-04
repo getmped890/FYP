@@ -122,6 +122,7 @@ const styles = StyleSheet.create({
     fontSize: 20,
     fontWeight: 'bold',
     marginBottom: 10,
+    paddingHorizontal: 8
   },
   classText: {
     fontSize: 16,
