@@ -26,9 +26,11 @@ const Teacherpage= ({}) => {
 function AttendanceScreen() {
   return (
     <View>
-
       
+
+
     </View>
+    
   );
 }
 
