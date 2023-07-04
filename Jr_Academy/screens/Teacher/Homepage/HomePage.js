@@ -17,7 +17,7 @@ const HomePage = () => {
   return (
     <View style={styles.container}>
       <View style={styles.topLeft}>
-        <Text style={styles.welcometext}>Hi Jason</Text>
+        <Text style={styles.welcometext}>Jason</Text>
       </View>
 
       <TouchableOpacity style={styles.topRight} onPress={handleUserIconClick}>
@@ -27,17 +27,17 @@ const HomePage = () => {
       <View style={styles.scrollContainer}>
         <Text style={styles.headertext}>Upcoming Classes:</Text>
         <ScrollView horizontal={true} contentContainerStyle={styles.scrollContent}>
-          <View style={styles.classItem}>
+        <View style={[styles.card, styles.cardElevated]}>
             <Text style={styles.classText}>CSIT203</Text>
             <Text style={styles.classText}>26th Jun 2023</Text>
             <Text style={styles.classText}>3:30pm - 6:30pm</Text>
           </View>
-          <View style={styles.classItem}>
+          <View style={[styles.card, styles.cardElevated]}>
             <Text style={styles.classText}>CSIT503</Text>
             <Text style={styles.classText}>20th Jun 2023</Text>
             <Text style={styles.classText}>2:30pm - 4:30pm</Text>
           </View>
-          <View style={styles.classItem}>
+          <View style={[styles.card, styles.cardElevated]}>
             <Text style={styles.classText}>CSIT123</Text>
             <Text style={styles.classText}>29th Jun 2023</Text>
             <Text style={styles.classText}>3:30pm - 6:30pm</Text>
@@ -46,15 +46,15 @@ const HomePage = () => {
       </View>
 
       <View style={styles.absentContainer}>
-        <Text style={styles.headertext}>Absentees based on last class:</Text>
+        <Text style={styles.headertext}>Absentees Based On Last Class:</Text>
         <ScrollView horizontal={true} contentContainerStyle={styles.scrollContent}>
-          <View style={styles.classItem}>
+        <View style={[styles.card, styles.cardElevated]}>
             <Text style={styles.classText}>1. Wong Kai Yih</Text>
           </View>
-          <View style={styles.classItem}>
+        <View style={[styles.card, styles.cardElevated]}>
             <Text style={styles.classText}>2. Navindran a/l duraisingam</Text>
           </View>
-          <View style={styles.classItem}>
+        <View style={[styles.card, styles.cardElevated]}>
             <Text style={styles.classText}>3. Chow Xuhua</Text>
           </View>
         </ScrollView>
@@ -85,36 +85,46 @@ const styles = StyleSheet.create({
     zIndex: 1,
   },
 
+  card:{
+    flex: 1,
+    alignItems: 'center',
+    justifyContent: 'center',
+    width: 250,
+    height: 120,
+    borderRadius: 4,
+    margin: 25
+  },
+  cardElevated:{
+    backgroundColor: 'white',
+    elevation: 4,
+    shadowOffset: {
+        width: 1,
+        height: 1
+      },
+  },
   scrollContainer: {
     paddingTop: 150,
   },
 
   absentContainer: {
-    paddingTop: 110,
+    paddingTop: 50,
   },
 
-  text: {
-    fontSize: 20,
-    fontWeight: 'bold',
-    fontFamily: 'Arial', 
-  },
-
+ 
   welcometext: {
     fontSize: 20,
-    fontWeight: 'light',
+    fontWeight: 'bold',
     fontStyle:'italic',
     fontFamily: 'Arial', 
   },
 
   headertext: {
-    fontSize: 18,
+    fontSize: 20,
     fontWeight: 'bold',
     marginBottom: 10,
-    fontFamily: 'Arial', 
   },
   classText: {
     fontSize: 16,
-    fontFamily: 'Arial', 
   },
   scrollContent: {
     alignItems: 'center',
@@ -144,7 +154,10 @@ const styles = StyleSheet.create({
     bottom:8,
     right:25,
     fontWeight: 'bold',
-  }
+  },
+
+
+
 });
 
 export default HomePage;
