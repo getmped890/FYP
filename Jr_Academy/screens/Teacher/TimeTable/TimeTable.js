@@ -37,7 +37,10 @@ const TimeTable = () => {
         </View>
     </ScrollView>
     </ScrollView>
-    <Calendar/>
+
+    <View style={styles.calendar}>
+        <Calendar  style={styles.calendartest}/>
+    </View> 
   
 </View>
 
@@ -67,9 +70,12 @@ const styles = StyleSheet.create({
             height: 1
         },
     },
-    calendarWrapper:{
-      height: 10
-   },
+  
+    calendar:{
+      paddingLeft:20,
+      width:"95%",
+    },
+  
     container: {
       padding: 8
     },
