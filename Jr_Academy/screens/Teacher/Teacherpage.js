@@ -9,6 +9,7 @@ import { Octicons } from '@expo/vector-icons';
 //import from the respective file path
 import HomePageScreen from './Homepage/HomePage';
 import SettingsScreen from './Setting/Setting';
+import AttendanceHomeScreen from './Attendance/AttendanceHomepage';
 
 import TimeTableScreen from './TimeTable/TimeTable';
 
@@ -19,7 +20,7 @@ const Teacherpage= ({}) => {
 
       <NavigationContainer>
         <Tab.Navigator screenOptions={{headerShown:false}}>
-          <Tab.Screen name="Attendance" component={AttendanceScreen} options={{
+          <Tab.Screen name="AttendanceHomepage" component={AttendanceHomeScreen} options={{
             tabBarIcon: () => (
               <Octicons name="checklist" size={24} color="black" />
             ),
@@ -53,14 +54,6 @@ const Teacherpage= ({}) => {
 }
 
 
-function AttendanceScreen() {
-  return (
-    <View>
-
-      
-    </View>
-  );
-}
 
 function ManageScreen() {
   return (
