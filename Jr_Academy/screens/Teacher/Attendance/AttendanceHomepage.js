@@ -2,14 +2,28 @@ import React, { useState, useLayoutEffect } from 'react';
 import { View, TouchableOpacity, TextInput, StyleSheet, Text, Button } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 
+
 const AttendanceHomepage = () => {
+
+    //use for navigating/redirect to other page
+    const navigation = useNavigation();
+
+    const handleMarkAttendanceClick = () => {
+        //navigate to setting page
+        navigation.navigate('AttendanceHomepage', { screen: 'SettingStack', params: { screen: 'MarkAttendance' } });
+
+    };
+
+
+    
+
     return (
+        
         <View style={styles.container}>
         
             <View style={styles.container}>
-                <TouchableOpacity style={styles.button} onPress={() => {
-            // Handle button press
-            }}>
+                <TouchableOpacity style={styles.button} onPress={handleMarkAttendanceClick}>
+
                     <Text style={styles.buttonText}>Mark Attendance</Text>
                 </TouchableOpacity>
             </View>
@@ -43,11 +57,13 @@ const AttendanceHomepage = () => {
         </View>
         
   
+        
 
 
         
     );
 };
+
 
 const styles = StyleSheet.create({
    

@@ -5,12 +5,13 @@ import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { Ionicons } from '@expo/vector-icons';
 import { FontAwesome } from '@expo/vector-icons';
 import { Octicons } from '@expo/vector-icons';
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
 
 //import from the respective file path
 import HomePageScreen from './Homepage/HomePage';
 import SettingsScreen from './Setting/Setting';
 import AttendanceHomeScreen from './Attendance/AttendanceHomepage';
-
+import MarkAttendanceScreen from './Attendance/MarkAttendance';
 import TimeTableScreen from './TimeTable/TimeTable';
 
 
@@ -45,7 +46,8 @@ const Teacherpage= ({}) => {
             tabBarIcon: () => (
               <Ionicons name="settings-outline" size={24} color="black" />
             ),
-          }}/>        
+          }}/>       
+           
         </Tab.Navigator>
     </NavigationContainer>   
 
@@ -76,6 +78,24 @@ function AlertScreen() {
 
 
 const Tab = createBottomTabNavigator();
+
+//create natvie stack navigator for update password page so can navigate to updatepassword page when the 
+//updatepasswd button is click on setting page, 
+//as do not want update password to show as bottm tab
+const Stack = createNativeStackNavigator();
+
+export function SettingStack() {
+  return (
+    <Stack.Navigator
+      screenOptions={{
+        headerShown: false,
+      }}
+    >
+      <Stack.Screen name="AttendanceHomepage" component={AttendanceHomeScreen} />
+      <Stack.Screen name="MarkAttendance" component={MarkAttendanceScreen} />
+    </Stack.Navigator>
+  );
+}
 
 const styles = StyleSheet.create({
   root: {
