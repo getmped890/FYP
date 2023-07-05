@@ -72,8 +72,11 @@ const styles = StyleSheet.create({
     },
   
     calendar:{
-      paddingLeft:20,
-      width:"95%",
+      //paddingLeft:20,
+      //flex: 1,
+      alignItems:'center',
+      //width: "10%",
+      //height:"10%",
     },
   
     container: {
