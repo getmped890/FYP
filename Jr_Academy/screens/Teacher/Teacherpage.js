@@ -4,6 +4,7 @@ import { NavigationContainer } from '@react-navigation/native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { Ionicons } from '@expo/vector-icons';
 import { FontAwesome } from '@expo/vector-icons';
+import { Octicons } from '@expo/vector-icons';
 
 //import from the respective file path
 import HomePageScreen from './Homepage/HomePage';
@@ -20,7 +21,7 @@ const Teacherpage= ({}) => {
         <Tab.Navigator screenOptions={{headerShown:false}}>
           <Tab.Screen name="Attendance" component={AttendanceScreen} options={{
             tabBarIcon: () => (
-              <Ionicons name="checkbox-outline" size={24} color="black" />
+              <Octicons name="checklist" size={24} color="black" />
             ),
           }}/>
           <Tab.Screen name="TimeTable" component={TimeTableScreen} options={{
