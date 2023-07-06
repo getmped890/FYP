@@ -13,6 +13,7 @@ import SettingsScreen from './Setting/Setting';
 import AttendanceHomeScreen from './Attendance/AttendanceHomepage';
 import MarkAttendanceScreen from './Attendance/MarkAttendance';
 import TimeTableScreen from './TimeTable/TimeTable';
+import Alerts from './Alerts/Alert';
 
 
 const Teacherpage= ({}) => {
@@ -37,7 +38,7 @@ const Teacherpage= ({}) => {
                         ),
           }}/>          
             
-            <Tab.Screen name="Alerts" component={AlertScreen} options={{
+            <Tab.Screen name="Alerts" component={Alerts} options={{
             tabBarIcon: () => (
               <FontAwesome name="bell-o" size={24} color="black" />
             ),
