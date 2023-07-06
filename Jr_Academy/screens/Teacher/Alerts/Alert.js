@@ -19,8 +19,10 @@ const Alerts = () => {
       <View style={styles.middle}>
         <Text style={styles.welcometext}>Emergency Alerts:</Text>
       </View>
+      
       <View style={styles.scrollContainer}>
         <Text style={styles.headertext}>Latest Notification</Text>
+        <TouchableOpacity>
         <ScrollView horizontal={true} contentContainerStyle={styles.scrollContent}>
         <View style={[styles.card, styles.cardElevated]}>
             <Text style={styles.classText}>Child Name:</Text>
@@ -29,10 +31,12 @@ const Alerts = () => {
             <Text style={styles.classText}>Click to view location</Text>
           </View>
         </ScrollView>
+        </TouchableOpacity>
       </View>
 
       <View style={styles.absentContainer}>
         <Text style={styles.headertext}>Previous Notification</Text>
+        <TouchableOpacity>
         <ScrollView horizontal={true} contentContainerStyle={styles.scrollContent}>
         <View style={[styles.card, styles.cardElevated]}>
             <Text style={styles.classText}>Child Name:</Text>
@@ -43,6 +47,7 @@ const Alerts = () => {
           </View>
  
         </ScrollView>
+        </TouchableOpacity>
       </View>
 
 
@@ -80,13 +85,8 @@ const styles = StyleSheet.create({
       },
   },
   scrollContainer: {
-    paddingTop: 150,
+    paddingTop: 100,
   },
-
-  absentContainer: {
-    paddingTop: 50,
-  },
-
  
   welcometext: {
     fontSize: 25,
