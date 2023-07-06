@@ -58,23 +58,7 @@ const Teacherpage= ({}) => {
 
 
 
-function ManageScreen() {
-  return (
-    <View>
 
-
-    </View>
-  );
-}
-
-
-function AlertScreen() {
-  return (
-    <View>
-
-    </View>
-  );
-}
 
 
 
