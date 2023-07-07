@@ -27,7 +27,7 @@ const Stack = createStackNavigator();
 function TabNavigator(){
     return(
       <Tab.Navigator screenOptions={{headerShown:false}}>
-          <Tab.Screen name="AttendanceHomepage" component={StackNavigator} options={{
+          <Tab.Screen name="Attendance" component={StackNavigator} options={{
             tabBarIcon: () => (
               <Octicons name="checklist" size={24} color="black" />
             ),
@@ -67,7 +67,7 @@ function StackNavigator(){
         headerShown: false,
       }}
     >
-      <Stack.Screen name="AttendanceHomepage" component={AttendanceHomeScreen} />
+      <Stack.Screen name="Attendance" component={AttendanceHomeScreen} />
       <Stack.Screen name="MarkAttendance" component={MarkAttendanceScreen} />
     </Stack.Navigator>
   )
