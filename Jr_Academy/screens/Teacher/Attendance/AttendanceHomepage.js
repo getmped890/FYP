@@ -9,8 +9,22 @@ const AttendanceHomepage = () => {
     const navigation = useNavigation();
 
     const handleMarkAttendanceClick = () => {
-        //navigate to setting page
         navigation.navigate('MarkAttendance');
+
+    };
+
+    const handleUpdateAttendanceClick = () => {
+        navigation.navigate('UpdateAttendance');
+
+    };
+
+    const handleGenerateAttendanceListClick = () => {
+        navigation.navigate('GenerateAlist');
+
+    };
+
+    const handleViewAttendanceClick = () => {
+        navigation.navigate('ViewAttendance');
 
     };
 
@@ -29,7 +43,7 @@ const AttendanceHomepage = () => {
             </View>
 
             <View style={styles.container}>
-                <TouchableOpacity style={styles.button} onPress={() => {}}>
+                <TouchableOpacity style={styles.button} onPress={handleUpdateAttendanceClick}>
                     <Text style={styles.buttonText}>Update Attendance</Text>
 
                 </TouchableOpacity>
@@ -37,7 +51,7 @@ const AttendanceHomepage = () => {
             </View>
 
             <View style={styles.container}>
-                <TouchableOpacity style={styles.button} onPress={() => {}}>
+                <TouchableOpacity style={styles.button} onPress={handleGenerateAttendanceListClick}>
                     <Text style={styles.buttonText}>Generate Attendance List</Text>
 
                 </TouchableOpacity>
@@ -45,7 +59,7 @@ const AttendanceHomepage = () => {
             </View>
 
             <View style={styles.container}>
-                <TouchableOpacity style={styles.button} onPress={() => {}}>
+                <TouchableOpacity style={styles.button} onPress={handleViewAttendanceClick}>
                     <Text style={styles.buttonText}>View Attendance</Text>
 
                 </TouchableOpacity>
