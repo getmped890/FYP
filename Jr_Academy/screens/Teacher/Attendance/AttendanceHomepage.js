@@ -10,7 +10,7 @@ const AttendanceHomepage = () => {
 
     const handleMarkAttendanceClick = () => {
         //navigate to setting page
-        navigation.navigate('AttendanceHomepage', { screen: 'SettingStack', params: { screen: 'MarkAttendance' } });
+        navigation.navigate('MarkAttendance');
 
     };
 
