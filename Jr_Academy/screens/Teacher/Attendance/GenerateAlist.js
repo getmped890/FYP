@@ -1,33 +1,21 @@
-export default function Layout() {
+import React, { useState, useLayoutEffect } from 'react';
+import { View, TouchableOpacity, Switch, StyleSheet, Text, Button } from 'react-native';
+import { Ionicons } from '@expo/vector-icons';
+import { useNavigation } from '@react-navigation/native';
+
+
+const GenerateAlist = () => {
     return (
-      <Tab.Navigator
-        screenOptions={({ route }) => ({
-          tabBarIcon: ({ color }) => {
-            let iconName;
-  
-            //prevent other unwanted tab from showing
-            if (route.name === 'DismissalTime') {
-              iconName = 'book';
-            } else if (route.name === 'index') {
-              iconName = 'home';
-            } else if (route.name === 'setting') {
-              iconName = 'gear';
-            }
-  
-            return <FontAwesome name={iconName} size={24} color={color} />;
-          },
-          tabBarShowLabel: true,
-          headerShown: false,
-        })}
-        tabBarOptions={{
-          activeTintColor: 'black',
-          inactiveTintColor: 'gray',
-        }}
-      >
-        
-        <Tab.Screen name="DismissalTime" component={DismissalTimeScreen} />
-        <Tab.Screen name="index" component={HomeScreen} options={{ title: 'Home' }} />
-        <Tab.Screen name="setting" component={SettingStack} />
-      </Tab.Navigator>
+        <View>
+            <Text>this is mark generate alist page, wohooooo testing</Text>
+        </View>
     );
-  }
+};
+
+
+const styles = StyleSheet.create({
+
+
+  });
+  
+export default GenerateAlist;
