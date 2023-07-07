@@ -16,9 +16,13 @@ import HomePageScreen from './Homepage/HomePage';
 import SettingsScreen from './Setting/Setting';
 import AttendanceHomeScreen from './Attendance/AttendanceHomepage';
 import MarkAttendanceScreen from './Attendance/MarkAttendance';
+import ViewAttendanceScreen from './Attendance/ViewAttendance';
+import UpdateAttendanceScreen from './Attendance/UpdateAttendance';
+import GenerateAlistScreen from './Attendance/GenerateAlist';
 import TimeTableScreen from './TimeTable/TimeTable';
 import Alerts from './Alerts/Alert';
 import Alertlocation from './Alerts/Alertlocation';
+
 
 
 const Tab = createMaterialBottomTabNavigator();
@@ -69,6 +73,11 @@ function StackNavigator(){
     >
       <Stack.Screen name="Attendance" component={AttendanceHomeScreen} />
       <Stack.Screen name="MarkAttendance" component={MarkAttendanceScreen} />
+      <Stack.Screen name="UpdateAttendance" component={UpdateAttendanceScreen} />
+      <Stack.Screen name="ViewAttendance" component={ViewAttendanceScreen} />
+      <Stack.Screen name="GenerateAlist" component={GenerateAlistScreen} />
+
+
     </Stack.Navigator>
   )
 }
