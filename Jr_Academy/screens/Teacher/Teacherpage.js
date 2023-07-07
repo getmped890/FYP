@@ -14,6 +14,7 @@ import AttendanceHomeScreen from './Attendance/AttendanceHomepage';
 import MarkAttendanceScreen from './Attendance/MarkAttendance';
 import TimeTableScreen from './TimeTable/TimeTable';
 import Alerts from './Alerts/Alert';
+import Alertlocation from './Alerts/Alertlocation';
 
 
 const Teacherpage= ({}) => {
@@ -43,6 +44,8 @@ const Teacherpage= ({}) => {
               <FontAwesome name="bell-o" size={24} color="black" />
             ),
           }}/>
+          
+          
           <Tab.Screen name="Setting" component={SettingsScreen} options={{
             tabBarIcon: () => (
               <Ionicons name="settings-outline" size={24} color="black" />

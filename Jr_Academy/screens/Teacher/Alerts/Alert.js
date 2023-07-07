@@ -2,16 +2,15 @@ import React from 'react';
 import { View, Text, ScrollView, StyleSheet, TouchableOpacity } from 'react-native';
 import { Ionicons } from '@expo/vector-icons';
 import { useNavigation } from '@react-navigation/native';
-
 import SettingsScreen from '../Setting/Setting';
 
 const Alerts = () => {
   //use for navigating/redirect to other page
   const navigation = useNavigation();
 
-  const handleUserIconClick = () => {
-    //navigate to setting page
-    navigation.navigate('Setting');
+  const checkGPS = () => {
+    //navigate to GPS Page
+    navigation.navigate('Alertlocation');
   };
 
   return (
@@ -22,7 +21,7 @@ const Alerts = () => {
       
       <View style={styles.scrollContainer}>
         <Text style={styles.headertext}>Latest Notification</Text>
-        <TouchableOpacity>
+        <TouchableOpacity onPress={checkGPS}>
         <ScrollView horizontal={true} contentContainerStyle={styles.scrollContent}>
         <View style={[styles.card, styles.cardElevated]}>
             <Text style={styles.classText}>Child Name:</Text>
