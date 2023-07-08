@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, Text, ScrollView, StyleSheet, TouchableOpacity } from 'react-native';
+import { View, Text, ScrollView, StyleSheet, TouchableOpacity, Dimensions } from 'react-native';
 import { Ionicons } from '@expo/vector-icons';
 import { useNavigation } from '@react-navigation/native';
 
@@ -70,6 +70,8 @@ const HomePage = () => {
   );
 };
 
+const { width, height } = Dimensions.get('window');
+
 const styles = StyleSheet.create({
   container: {
     flex: 1,
@@ -80,23 +82,23 @@ const styles = StyleSheet.create({
   },
   topLeft: {
     position: 'absolute',
-    top: 50,
-    left: 5,
+    top: height * 0.08,
+    left: width * 0.05,
   },
   topRight: {
     position: 'absolute',
-    top: 40,
-    right: 10,
+    top: height * 0.07,
+    right: width * 0.05,
     zIndex: 1,
   },
   card: {
     flex: 1,
     alignItems: 'center',
     justifyContent: 'center',
-    width: 250,
-    height: 120,
+    width: width * 0.65,
+    height: height * 0.16,
     borderRadius: 4,
-    margin: 25,
+    margin: width * 0.05,
     backgroundColor: '#FFFFFF',
   },
   cardElevated: {
@@ -107,27 +109,26 @@ const styles = StyleSheet.create({
     },
   },
   scrollContainer: {
-    paddingTop: 115,
+    paddingTop: height * 0.2,
   },
   absentContainer: {
-    paddingTop: 30,
+    paddingTop: height * 0.03,
   },
   welcomeText: {
-    fontSize: 25,
-    fontWeight: 900,
+    fontSize: height * 0.03,
+    fontWeight: 'bold',
     fontStyle: 'italic',
     color: '#FFFFFF',
   },
   headerText: {
-    fontSize: 25,
-    fontWeight: 900,
-    marginBottom: 10,
-    paddingHorizontal: 8,
-    color: 'white',
+    fontSize: height * 0.03,
+    fontWeight: 'bold',
+    marginBottom: height * 0.01,
+    paddingHorizontal: width * 0.05,
+    color: '#FFFFFF',
   },
-
   classText: {
-    fontSize: 16,
+    fontSize: height * 0.02,
     color: '#1DC1B1',
   },
   scrollContent: {
@@ -135,22 +136,22 @@ const styles = StyleSheet.create({
   },
   endClassButton: {
     position: 'absolute',
-    bottom: 40,
-    right: 20,
-    width: 80,
-    height: 80,
-    borderRadius: 50,
-    backgroundColor: 'white',
+    bottom: height * 0.05,
+    right: width * 0.03,
+    width: width * 0.2,
+    height: width * 0.14,
+    borderRadius: width * 0.1,
+    backgroundColor: '#FFFFFF',
     justifyContent: 'center',
     alignItems: 'center',
   },
   endClassText: {
     position: 'absolute',
-    bottom: 6,
-    right: 20,
-    fontSize:20,
+    bottom: height * 0.01,
+    right: width * 0.03,
     fontWeight: 'bold',
-    color: 'white',
+    fontSize: height * 0.024,
+    color: '#FFFFFF',
   },
 });
 
