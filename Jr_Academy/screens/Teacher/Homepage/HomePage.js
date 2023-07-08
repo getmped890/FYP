@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, Text, ScrollView, StyleSheet, TouchableOpacity, Dimensions } from 'react-native';
+import { View, Text, ScrollView, StyleSheet, TouchableOpacity, Dimensions, Alert } from 'react-native';
 import { Ionicons } from '@expo/vector-icons';
 import { useNavigation } from '@react-navigation/native';
 
@@ -12,6 +12,10 @@ const HomePage = () => {
   const handleUserIconClick = () => {
     //navigate to setting page
     navigation.navigate('Setting');
+  };
+
+  const handleEndClass = () => {
+    Alert.alert('Class Ended!');
   };
 
   return (
@@ -61,7 +65,7 @@ const HomePage = () => {
           </ScrollView>
         </View>
 
-        <TouchableOpacity style={styles.endClassButton}>
+        <TouchableOpacity style={styles.endClassButton} onPress={handleEndClass}>
           <Ionicons name="checkmark" size={35} color="#1DC1B1" />
         </TouchableOpacity>
         <Text style={styles.endClassText}>End Class</Text>
