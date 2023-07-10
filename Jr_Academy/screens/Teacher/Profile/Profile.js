@@ -20,6 +20,11 @@ const Profile = () => {
     navigation.navigate('UpdatePassword'); // Navigate to the UpdatePassword screen
   };
 
+  const handleUpdateProfileClick = () => {
+    navigation.navigate('UpdateProfile'); // Navigate to the UpdatePassword screen
+  };
+
+  
   return (
     <View style={styles.container}>
       <View style={styles.buttonContainer}>
@@ -42,15 +47,7 @@ const Profile = () => {
         />
       </View>
 
-      <View style={styles.inputContainer}>
-        <Text style={styles.label}>Password:</Text>
-        <TextInput
-          style={styles.textInput}
-          value="********"
-          secureTextEntry
-        />
-      </View>
-
+      
       <View style={styles.inputContainer}>
         <Text style={styles.label}>Address:</Text>
         <TextInput
@@ -67,21 +64,27 @@ const Profile = () => {
         />
       </View>
 
+     
+
       <View style={styles.inputContainer}>
-        <Text style={styles.label}>Student ID:</Text>
+        <Text style={styles.label}>Contact:</Text>
         <TextInput
           style={styles.textInput}
-          value="23231"
+          value="91234567"
         />
       </View>
 
-      <View style={styles.inputContainer}>
-        <Text style={styles.label}>Class Number:</Text>
-        <TextInput
-          style={styles.textInput}
-          value="1A"
-        />
-      </View>
+    <View style={styles.updateProfileButton}>
+
+        <Button
+            title="Update Profile"
+            onPress={handleUpdateProfileClick}
+            color="gray"
+            style={styles.updateButton}
+            />
+
+    </View>
+        
 
       <Button
         title="Update Password"
@@ -130,8 +133,9 @@ const styles = StyleSheet.create({
     borderRadius: 5,
     paddingHorizontal: 10,
   },
-  updateButton: {
-    marginTop: 10,
+  updateProfileButton: {
+    paddingTop: 20,
+    paddingBottom: 20,
   },
 });
 
