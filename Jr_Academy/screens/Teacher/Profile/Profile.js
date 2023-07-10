@@ -44,6 +44,7 @@ const Profile = () => {
         <TextInput
           style={styles.textInput}
           value="James Milner"
+          editable={false}
         />
       </View>
 
@@ -53,6 +54,7 @@ const Profile = () => {
         <TextInput
           style={styles.textInput}
           value="45 yishun kim"
+          editable={false}
         />
       </View>
 
@@ -61,6 +63,7 @@ const Profile = () => {
         <TextInput
           style={styles.textInput}
           value="jdf@gmail.com"
+          editable={false}
         />
       </View>
 
@@ -71,6 +74,7 @@ const Profile = () => {
         <TextInput
           style={styles.textInput}
           value="91234567"
+          editable={false}
         />
       </View>
 
