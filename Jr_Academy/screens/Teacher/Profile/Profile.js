@@ -13,7 +13,7 @@ const Profile = () => {
   };
 
   const handleLogoutButtonClick = () => {
-    // Handle logout button click
+    navigation.navigate('Login');
   };
 
   const handleUpdatePasswordClick = () => {
