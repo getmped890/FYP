@@ -1,13 +1,21 @@
-import React, { useState, useLayoutEffect } from 'react';
-import { View, TouchableOpacity, Switch, StyleSheet, Text, Button } from 'react-native';
+import React, { useState } from 'react';
+import {DatePicker} from 'react-native-date-picker';
+import {Text, Button} from 'react';
 import { Ionicons } from '@expo/vector-icons';
 import { useNavigation } from '@react-navigation/native';
 
 
 const GenerateAlist = () => {
+
+    const [date, setDate] = useState(new Date())
+
     return (
         <View>
-            <Text>this is mark generate alist page, wohooooo testing</Text>
+            <Text>Select Date to view attendance list</Text>
+
+            <DatePicker date={date} onDateChange={setDate} />
+            <Button title="Search" onPress={() => setOpen(true)} />
+            
         </View>
     );
 };
