@@ -49,7 +49,7 @@ const UpdatePassword = () => {
 
       <View style={styles.buttonContainer}>
         <Button
-          title="Submit"
+          title="Update"
           onPress={handleSubmitButtonClick}
           color="black"
           style={styles.submitbutton}

@@ -25,6 +25,7 @@ import Alertlocation from './Alerts/Alertlocation';
 import ProfileScreen from './Profile/Profile';
 import UpdatePasswordScreen from './Profile/UpdatePassword';
 import LoginScreen from '../Login/Login';
+import UpdateProfileScreen from './Profile/UpdateProfile';
 
 
 
@@ -95,6 +96,7 @@ function StackNavigatorHomePage(){
       <Stack.Screen name="Profile" component={ProfileScreen} />
       <Stack.Screen name="UpdatePassword" component={UpdatePasswordScreen} />
       <Stack.Screen name="Login" component={LoginScreen} />
+      <Stack.Screen name="UpdateProfile" component={UpdateProfileScreen} />
     </Stack.Navigator>
   )
 }

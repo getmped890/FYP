@@ -28,7 +28,7 @@ const UpdateProfile = () => {
         <TextInput
           style={styles.textInput}
           value="James Milner"
-          editable={false}
+          editable={true}
         />
       </View>
 
@@ -38,7 +38,7 @@ const UpdateProfile = () => {
         <TextInput
           style={styles.textInput}
           value="45 yishun kim"
-          editable={false}
+          editable={true}
         />
       </View>
 
@@ -47,7 +47,7 @@ const UpdateProfile = () => {
         <TextInput
           style={styles.textInput}
           value="jdf@gmail.com"
-          editable={false}
+          editable={true}
         />
       </View>
 
@@ -58,13 +58,13 @@ const UpdateProfile = () => {
         <TextInput
           style={styles.textInput}
           value="91234567"
-          editable={false}
+          editable={true}
         />
       </View>
 
       <View style={styles.buttonContainer}>
         <Button
-          title="Submit"
+          title="Update"
           onPress={handleSubmitButtonClick}
           color="black"
           style={styles.submitbutton}
@@ -84,7 +84,7 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     paddingHorizontal: 20,
-    paddingTop: 250,
+    paddingTop: 180,
   },
   inputContainer: {
     marginBottom: 20,
@@ -105,9 +105,9 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
     marginBottom: 20,
+    marginRight: 20, 
   },
 
- 
   
 });
 
