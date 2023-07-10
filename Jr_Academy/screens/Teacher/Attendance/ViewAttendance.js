@@ -1,7 +1,8 @@
 import React, { useState, useLayoutEffect } from 'react';
-import { View, TouchableOpacity, Switch, StyleSheet, Text, Button } from 'react-native';
+import { View, TouchableOpacity, Switch, StyleSheet, Text, Button, FlatList } from 'react-native';
 import { Ionicons } from '@expo/vector-icons';
 import { useNavigation } from '@react-navigation/native';
+import { SafeAreaView } from 'react-native-safe-area-context';
 
 const persons = [
     {
@@ -51,7 +52,9 @@ const ViewAttendance = () => {
     
     return (
 
-  <View style={styles.container}>
+        <SafeAreaView style={styles.container}>
+
+        <View>
 
   
     <FlatList
@@ -71,6 +74,7 @@ const ViewAttendance = () => {
 
 
    </View> 
+   </SafeAreaView>
 
 
     );
@@ -88,7 +92,7 @@ const styles = StyleSheet.create({
         padding: 20,
         marginTop: 5,
         fontSize: 15,
-        textAlign: 'center',
+        
       },
 
   });
