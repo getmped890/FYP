@@ -3,7 +3,6 @@ import { View, Text, ScrollView, StyleSheet, TouchableOpacity, Dimensions, Alert
 import { Ionicons } from '@expo/vector-icons';
 import { useNavigation } from '@react-navigation/native';
 
-import SettingsScreen from '../Setting/Setting';
 
 const HomePage = () => {
   //use for navigating/redirect to other page
@@ -11,7 +10,7 @@ const HomePage = () => {
 
   const handleUserIconClick = () => {
     //navigate to setting page
-    navigation.navigate('Setting');
+    navigation.navigate('Profile');
   };
 
   const handleEndClass = () => {

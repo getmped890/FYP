@@ -22,6 +22,7 @@ import GenerateAlistScreen from './Attendance/GenerateAlist';
 import TimeTableScreen from './TimeTable/TimeTable';
 import Alerts from './Alerts/Alert';
 import Alertlocation from './Alerts/Alertlocation';
+import ProfileScreen from './Profile/Profile';
 
 
 
@@ -41,7 +42,7 @@ function TabNavigator(){
               <Ionicons name="calendar-outline" size={24} color="black" />
             ),
           }}/>
-          <Tab.Screen name="Home" component={HomePageScreen} options={{
+          <Tab.Screen name="Home" component={StackNavigatorHomePage} options={{
                         tabBarIcon: () => (
                           <Ionicons name="home" size={24}/>
                         ),
@@ -76,12 +77,23 @@ function StackNavigator(){
       <Stack.Screen name="UpdateAttendance" component={UpdateAttendanceScreen} />
       <Stack.Screen name="ViewAttendance" component={ViewAttendanceScreen} />
       <Stack.Screen name="GenerateAlist" component={GenerateAlistScreen} />
-
-
     </Stack.Navigator>
   )
 }
 
+
+function StackNavigatorHomePage(){
+  return(
+    <Stack.Navigator
+      screenOptions={{
+        headerShown: false,
+      }}
+    >
+      <Stack.Screen name="HomePage" component={HomePageScreen} />
+      <Stack.Screen name="Profile" component={ProfileScreen} />
+    </Stack.Navigator>
+  )
+}
 
 export default function Teacherpage(){
   return(
@@ -91,73 +103,6 @@ export default function Teacherpage(){
   )
 }
 
-// const Teacherpage= ({}) => {
-//   return (
-//     <SafeAreaView style={styles.root}>
-
-//       <NavigationContainer>
-//         <Tab.Navigator screenOptions={{headerShown:false}}>
-//           <Tab.Screen name="AttendanceHomepage" component={AttendanceHomeScreen} options={{
-//             tabBarIcon: () => (
-//               <Octicons name="checklist" size={24} color="black" />
-//             ),
-//           }}/>
-//           <Tab.Screen name="TimeTable" component={TimeTableScreen} options={{
-//             tabBarIcon: () => (
-//               <Ionicons name="calendar-outline" size={24} color="black" />
-//             ),
-//           }}/>
-//           <Tab.Screen name="Home" component={HomePageScreen} options={{
-//                         tabBarIcon: () => (
-//                           <Ionicons name="home" size={24}/>
-//                         ),
-//           }}/>          
-            
-//             <Tab.Screen name="Alerts" component={Alerts} options={{
-//             tabBarIcon: () => (
-//               <FontAwesome name="bell-o" size={24} color="black" />
-//             ),
-//           }}/>
-          
-          
-//           <Tab.Screen name="Setting" component={SettingsScreen} options={{
-//             tabBarIcon: () => (
-//               <Ionicons name="settings-outline" size={24} color="black" />
-//             ),
-//           }}/>       
-           
-//         </Tab.Navigator>
-//     </NavigationContainer>   
-
-//     </SafeAreaView>
-//   );
-// }
-
-
-
-
-
-
-
-// const Tab = createBottomTabNavigator();
-
-// //create natvie stack navigator for update password page so can navigate to updatepassword page when the 
-// //updatepasswd button is click on setting page, 
-// //as do not want update password to show as bottm tab
-// const Stack = createNativeStackNavigator();
-
-// export function SettingStack() {
-//   return (
-//     <Stack.Navigator
-//       screenOptions={{
-//         headerShown: false,
-//       }}
-//     >
-//       <Stack.Screen name="AttendanceHomepage" component={AttendanceHomeScreen} />
-//       <Stack.Screen name="MarkAttendance" component={MarkAttendanceScreen} />
-//     </Stack.Navigator>
-//   );
-// }
 
 const styles = StyleSheet.create({
   root: {
@@ -168,5 +113,4 @@ const styles = StyleSheet.create({
   },
 });
 
-// export default Teacherpage;
 
