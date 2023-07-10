@@ -20,6 +20,10 @@ import ViewAttendanceScreen from './Attendance/ViewAttendance';
 import UpdateAttendanceScreen from './Attendance/UpdateAttendance';
 import GenerateAlistScreen from './Attendance/GenerateAlist';
 import TimeTableScreen from './TimeTable/TimeTable';
+import ProfileScreen from './Profile/Profile';
+import UpdatePasswordScreen from './Profile/UpdatePassword';
+import UpdateProfileScreen from './Profile/UpdateProfile';
+import LoginScreen from '../Login/Login';
 import Alerts from './Alerts/Alerts';
 import Location from './Alerts/Location';
 
@@ -42,7 +46,7 @@ function TabNavigator(){
               <Ionicons name="calendar-outline" size={24} color="black" />
             ),
           }}/>
-          <Tab.Screen name="Home" component={HomePageScreen} options={{
+          <Tab.Screen name="Home" component={StackNavigatorHomePage} options={{
                         tabBarIcon: () => (
                           <Ionicons name="home" size={24}/>
                         ),
@@ -95,6 +99,22 @@ function Stack2Navigator(){
 
 
     </Stack2.Navigator>
+  )
+}
+
+function StackNavigatorHomePage(){
+  return(
+    <Stack.Navigator
+      screenOptions={{
+        headerShown: false,
+      }}
+    >
+      <Stack.Screen name="HomePage" component={HomePageScreen} />
+      <Stack.Screen name="Profile" component={ProfileScreen} />
+      <Stack.Screen name="UpdatePassword" component={UpdatePasswordScreen} />
+      <Stack.Screen name="Login" component={LoginScreen} />
+      <Stack.Screen name="UpdateProfile" component={UpdateProfileScreen} />
+    </Stack.Navigator>
   )
 }
 

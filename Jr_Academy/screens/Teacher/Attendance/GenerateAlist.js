@@ -3,6 +3,7 @@ import {DatePicker} from 'react-native-date-picker';
 import {Text, Button} from 'react';
 import { Ionicons } from '@expo/vector-icons';
 import { useNavigation } from '@react-navigation/native';
+import { StyleSheet } from 'react-native';
 
 
 const GenerateAlist = () => {
