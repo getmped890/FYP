@@ -17,7 +17,7 @@ const Profile = () => {
   };
 
   const handleUpdatePasswordClick = () => {
-    navigation.navigate('updatePassword'); // Navigate to the UpdatePassword screen
+    navigation.navigate('UpdatePassword'); // Navigate to the UpdatePassword screen
   };
 
   return (
