@@ -3,10 +3,16 @@ import { View, Text, ScrollView, StyleSheet, TouchableOpacity } from 'react-nati
 import { Ionicons } from '@expo/vector-icons';
 import { useNavigation } from '@react-navigation/native';
 
-const Alertlocation = () => {
-
+const Location = () => {
+ return (
+    <View>
+        <Text>
+        Testing
+        </Text>
+    </View>
+ );
 
 
 };
 
-export default Alertlocation;
+export default Location;

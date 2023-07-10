@@ -20,13 +20,14 @@ import ViewAttendanceScreen from './Attendance/ViewAttendance';
 import UpdateAttendanceScreen from './Attendance/UpdateAttendance';
 import GenerateAlistScreen from './Attendance/GenerateAlist';
 import TimeTableScreen from './TimeTable/TimeTable';
-import Alerts from './Alerts/Alert';
-import Alertlocation from './Alerts/Alertlocation';
+import Alerts from './Alerts/Alerts';
+import Location from './Alerts/Location';
 
 
 
 const Tab = createMaterialBottomTabNavigator();
 const Stack = createStackNavigator();
+const Stack2 = createStackNavigator();
 
 function TabNavigator(){
     return(
@@ -47,7 +48,7 @@ function TabNavigator(){
                         ),
           }}/>          
             
-            <Tab.Screen name="Alerts" component={Alerts} options={{
+            <Tab.Screen name="Alerts" component={AlertPages} options={{
             tabBarIcon: () => (
               <FontAwesome name="bell-o" size={24} color="black" />
             ),
@@ -79,6 +80,21 @@ function StackNavigator(){
 
 
     </Stack.Navigator>
+  )
+}
+
+function AlertPages(){
+  return(
+    <Stack2.Navigator
+      screenOptions={{
+        headerShown: false,
+      }}
+    >
+      <Stack2.Screen name="Alerts" component={Alerts} />
+      <Stack2.Screen name="Location" component={Location} />
+
+
+    </Stack2.Navigator>
   )
 }
 

@@ -10,7 +10,7 @@ const Alerts = () => {
 
   const checkGPS = () => {
     //navigate to GPS Page
-    navigation.navigate('Alertlocation');
+    navigation.navigate('Location');
   };
 
   return (
