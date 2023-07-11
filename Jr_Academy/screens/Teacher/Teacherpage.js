@@ -31,7 +31,7 @@ import Location from './Alerts/Location';
 
 const Tab = createMaterialBottomTabNavigator();
 const Stack = createStackNavigator();
-const Stack2 = createStackNavigator();
+
 
 function TabNavigator(){
     return(
@@ -52,7 +52,7 @@ function TabNavigator(){
                         ),
           }}/>          
             
-            <Tab.Screen name="Alerts" component={Stack2Navigator} options={{
+            <Tab.Screen name="Alerts" component={StackLocationNavigator} options={{
             tabBarIcon: () => (
               <FontAwesome name="bell-o" size={24} color="black" />
             ),
@@ -87,18 +87,18 @@ function StackNavigator(){
   )
 }
 
-function Stack2Navigator(){
+function StackLocationNavigator(){
   return(
-    <Stack2.Navigator
+    <Stack.Navigator
       screenOptions={{
         headerShown: false,
       }}
     >
-      <Stack2.Screen name="Alerts" component={Alerts} />
-      <Stack2.Screen name="Location" component={Location} />
+      <Stack.Screen name="Alerts" component={Alerts} />
+      <Stack.Screen name="Location" component={Location} />
 
 
-    </Stack2.Navigator>
+    </Stack.Navigator>
   )
 }
 
