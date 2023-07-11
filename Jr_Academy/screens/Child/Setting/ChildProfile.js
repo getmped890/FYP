@@ -17,7 +17,7 @@ const ChildProfile = () => {
   };
 
   const handleUpdatePasswordClick = () => {
-    navigation.navigate('UpdatePassword'); // Navigate to the UpdatePassword screen
+    navigation.navigate('ChildUpdatePW'); // Navigate to the UpdatePassword screen
   };
 
  

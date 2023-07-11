@@ -33,7 +33,7 @@ function TabNavigator(){
               <Ionicons name="home" size={24} />
             ),
           }}/>
-          <Tab.Screen name="Setting" component={StackNavigator} options={{
+          <Tab.Screen name="Setting" component={StackChildNavigator} options={{
                         tabBarIcon: () => (
                           <Ionicons name="settings-outline" size={24} color="black"/>
                         ),
@@ -44,7 +44,7 @@ function TabNavigator(){
     )
 };
 
-function StackNavigator(){
+function StackChildNavigator(){
   return(
     <Stack.Navigator
       screenOptions={{

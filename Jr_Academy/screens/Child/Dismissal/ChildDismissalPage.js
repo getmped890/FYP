@@ -11,29 +11,11 @@ const ChildDismissalPage = () => {
   return (
 <View>
 <ScrollView style={styles.container}>
-    <Text style={styles.headingText}>Timetable</Text>
-    <ScrollView horizontal={true} style={styles.container}>
-        <View style={[styles.card, styles.cardElevated]}>
-            <Text>CSIT203</Text>
-            <Text>26th Jun 2023</Text>
-            <Text>3.30pm - 6.30pm</Text>
-        </View>
-        <View style={[styles.card, styles.cardElevated]}>
-            <Text>CSIT115</Text>
-            <Text>27th Jun 2023</Text>
-            <Text>12.00am - 3.00pm</Text>
-        </View>
-    </ScrollView>
-
     <Text style={styles.headingText}>Class Dismissal Timing</Text>
     <ScrollView horizontal={true} style={styles.container}>
         <View style={[styles.card, styles.cardElevated]}>
-            <Text>CSIT203</Text>
-            <Text>6.30pm</Text>
-        </View>
-        <View style={[styles.card, styles.cardElevated]}>
-            <Text>CSIT115</Text>
-            <Text>3.00pm</Text>
+            <Text style={styles.sizeText}>CSIT203</Text>
+            <Text style={styles.sizeText}>6.30pm</Text>
         </View>
     </ScrollView>
     </ScrollView>
@@ -49,18 +31,27 @@ const ChildDismissalPage = () => {
 
 const styles = StyleSheet.create({
     headingText: {
+        position: 'relative',
+        textAlign: 'center',
+        top: 20,
+        left: 20,
         fontSize: 20,
         fontWeight: 'bold',
-        paddingHorizontal: 8
+
+
+    },
+    sizeText:{
+      fontSize:20,
     },
     card:{
         flex: 1,
         alignItems: 'center',
         justifyContent: 'center',
-        width: 200,
+        width: 300,
         height: 100,
         borderRadius: 4,
-        margin: 25
+        margin: 20,
+
     },
     cardElevated:{
         backgroundColor: 'white',
@@ -86,9 +77,7 @@ const styles = StyleSheet.create({
       backgroundColor: 'white',
       marginHorizontal: 20,
     },
-    text: {
-      fontSize: 42,
-    },
+
   });
 
 export default ChildDismissalPage;
