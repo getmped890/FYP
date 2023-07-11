@@ -76,7 +76,7 @@ function StackNavigator(){
         headerShown: false,
       }}
     >
-      <Stack.Screen name="Attendance" component={AttendanceHomeScreen} />
+      <Stack.Screen name="AttendHP" component={AttendanceHomeScreen} />
       <Stack.Screen name="MarkAttendance" component={MarkAttendanceScreen} />
       <Stack.Screen name="UpdateAttendance" component={UpdateAttendanceScreen} />
       <Stack.Screen name="ViewAttendance" component={ViewAttendanceScreen} />
@@ -94,7 +94,7 @@ function StackLocationNavigator(){
         headerShown: false,
       }}
     >
-      <Stack.Screen name="Alerts" component={Alerts} />
+      <Stack.Screen name="TeacherNotification" component={Alerts} />
       <Stack.Screen name="Location" component={Location} />
 
 
