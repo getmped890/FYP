@@ -8,10 +8,10 @@ const ChildHomePage = () => {
   const navigation = useNavigation();
   const handleUserIconClick = () => {
     //navigate to setting page
-    navigation.navigate('Profile');
+    navigation.navigate('ChildProfile');
   };
   const EmergencyButton = () => {
-    Alert.alert('Class Ended!');
+    Alert.alert('Notification sent? Do we include a timer for 5 second to count?');
   };
   return (
     <View style={styles.container}>
@@ -57,7 +57,7 @@ const ChildHomePage = () => {
         <TouchableOpacity style={styles.endClassButton} onPress={EmergencyButton}>
           <Ionicons name="alert" size={35} color="white" />
         </TouchableOpacity>
-        <Text style={styles.endClassText}>Emergency Button</Text>
+        <Text style={styles.endClassText}>Emergency</Text>
       </View>
     </View>
   );
@@ -132,7 +132,6 @@ const styles = StyleSheet.create({
     width: 0,
     height: 0,
     backgroundColor: "transparent",
-    borderStyle: "solid",
     borderLeftWidth: 50,
     borderRightWidth: 50,
     borderBottomWidth: 100,
