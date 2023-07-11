@@ -49,16 +49,18 @@ const ChildUpdatePassword = () => {
 
       <View style={styles.buttonContainer}>
         <Button
+          style={styles.submitbutton}
           title="Update"
           onPress={handleSubmitButtonClick}
           color="black"
-          style={styles.submitbutton}
+
         />
         <Button
+          style={styles.cancelbutton}
           title="Cancel"
           onPress={handleCancelButtonClick}
           color="black"
-          style={styles.cancelbutton}
+
         />
       </View>
     </View>
@@ -86,13 +88,21 @@ const styles = StyleSheet.create({
     paddingHorizontal: 10,
   },
   buttonContainer: {
+    flex:1,
     flexDirection: 'row',
     justifyContent: 'center',
     alignItems: 'center',
     marginBottom: 20,
   },
 
- 
+  submitbutton:{
+    marginRight: 20,
+  },
+
+  cancelbutton:{
+    paddingBottom: 20,
+
+  },
   
 });
 

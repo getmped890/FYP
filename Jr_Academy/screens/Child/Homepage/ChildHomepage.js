@@ -23,7 +23,7 @@ const ChildHomePage = () => {
           <Ionicons name="person-outline" size={35} color="#FFFFFF" />
         </TouchableOpacity>
         <View style={styles.scrollContainer}>
-          <Text style={styles.headerText}>Upcoming Classes:</Text>
+          <Text style={styles.headerText}>Upcoming Classes Today:</Text>
           <ScrollView horizontal={true} contentContainerStyle={styles.scrollContent}>
             <View style={[styles.card, styles.cardElevated]}>
               <Text style={styles.classText}>CSIT203</Text>
@@ -55,9 +55,9 @@ const ChildHomePage = () => {
           </ScrollView>
         </View>
         <TouchableOpacity style={styles.endClassButton} onPress={EmergencyButton}>
-          <Ionicons name="alert" size={35} color="white" />
+          <Ionicons name="alert-circle" size={80} color="red" />
         </TouchableOpacity>
-        <Text style={styles.endClassText}>Emergency</Text>
+        <Text style={styles.EmergencyText}>Emergency</Text>
       </View>
     </View>
   );
@@ -129,19 +129,12 @@ const styles = StyleSheet.create({
   },
   endClassButton: {
     position: 'absolute',
-    width: 0,
-    height: 0,
-    backgroundColor: "transparent",
-    borderLeftWidth: 50,
-    borderRightWidth: 50,
-    borderBottomWidth: 100,
-    borderLeftColor: "transparent",
-    borderRightColor: "transparent",
-    borderBottomColor: "red",
+
+
     bottom: height * 0.05,
     right: width * 0.03,
   },
-  endClassText: {
+  EmergencyText: {
     position: 'absolute',
     bottom: height * 0.01,
     right: width * 0.03,
