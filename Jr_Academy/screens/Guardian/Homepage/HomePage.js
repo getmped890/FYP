@@ -9,9 +9,7 @@ const HomePage = () => {
     //navigate to setting page
     navigation.navigate('Profile');
   };
-  const handleEndClass = () => {
-    Alert.alert('Class Ended!');
-  };
+ 
   return (
     <View style={styles.container}>
       <View style={styles.background}>
