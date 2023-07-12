@@ -7,9 +7,16 @@ const UpdateAttendance = () => {
   const [selectedAttendance, setSelectedAttendance] = useState({});
 
 
+  const updateStatus = (studentId, status) => {
+    setSelectedAttendance((prevAttendance) => ({
+      ...prevAttendance,
+      [studentId]: status,
+    }));
+  };
+ 
   const AttendanceSaved = () => {
     //navigate to setting page
-    Alert.alert('Attendance Saved!');
+    Alert.alert('Attendance Updated!');
   };
   const studentList = [
     { id: '1', name: 'Navindran' },
@@ -35,10 +42,12 @@ const UpdateAttendance = () => {
 
               <Text style={styles.studentName}>{item.name}</Text>
 
-              {/* attendance status picker */}
 
               <Picker
                 style={styles.attendancePicker}
+                selectedValue={selectedAttendance[item.id]}
+                //status means value selected in the dropdown box
+                onValueChange={(status) => updateStatus(item.id, status)}
               >
                 <Picker.Item label="Present" value="Present" />
                 <Picker.Item label="Absent" value="Absent" />
