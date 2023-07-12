@@ -19,6 +19,8 @@ import UpdateProfileScreen from './Profile/UpdateProfile';
 import LoginScreen from '../Login/Login';
 import DismissalScreen from './Dismissal/DismissalPage';
 import SettingScreen from './Setting/Setting';
+import TimeTable from './Timetable/TimeTable';
+import Notification from './Notification/Notification';
 
 const Tab = createMaterialBottomTabNavigator();
 const Stack = createStackNavigator();
@@ -28,7 +30,7 @@ function TabNavigator(){
     return(
       <Tab.Navigator screenOptions={{headerShown:false}}>
           
-          <Tab.Screen name="TimeTable" component={HomePageScreen} options={{
+          <Tab.Screen name="TimeTable" component={TimeTable} options={{
             tabBarIcon: () => (
               <Ionicons name="calendar-outline" size={24} color="black" />
             ),
@@ -45,7 +47,7 @@ function TabNavigator(){
                         ),
           }}/>          
             
-            <Tab.Screen name="Notification" component={HomePageScreen} options={{
+            <Tab.Screen name="Notification" component={Notification} options={{
             tabBarIcon: () => (
               <FontAwesome name="bell-o" size={24} color="black" />
             ),
@@ -76,6 +78,8 @@ function StackNavigatorHomePage(){
       <Stack.Screen name="UpdatePassword" component={UpdatePasswordScreen} />
       <Stack.Screen name="Login" component={LoginScreen} />
       <Stack.Screen name="UpdateProfile" component={UpdateProfileScreen} />
+      <Stack.Screen name="Timetable" component={TimeTable} />
+      <Stack.Screen name="Notification" component={Notification} />
     </Stack.Navigator>
   )
 }
