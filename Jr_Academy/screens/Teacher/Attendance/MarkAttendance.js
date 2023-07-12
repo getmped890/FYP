@@ -1,159 +1,80 @@
-import React, { useState, useLayoutEffect, Component, useCallback } from 'react';
-import { useNavigation } from '@react-navigation/native';
-import { SafeAreaView , Button, TouchableOpacity, FlatList, StyleSheet, Text, View } from "react-native";
-import {useForm, Controller} from 'react-hook-form';
-import DropDownPicker from "react-native-dropdown-picker";
+import React, { useState } from 'react';
+import { View, Text, Button, FlatList, StyleSheet } from 'react-native';
+import { Picker } from '@react-native-picker/picker';
+import { Alert } from 'react-native';
+
+const MarkAttendance = () => {
+  const [selectedAttendance, setSelectedAttendance] = useState({});
 
 
-//remove this persons const once the database is connected
-//this is for testing
-const persons = [
-    {
-        id: "1",
-        name: "Earnest Green",
-    },
-
-
-    {
-        id: "2",
-        name: "Winston Orn",
-    },
-
-    {
-        id: "3",
-        name: "Carlton Collins",
-    },
-
-    {
-        id: "4",
-        name: "Malcolm Labadie",
-    }
-];
-
-
-
-
-const MarkAttendanceScreen = () => {
-
-  const { handleSubmit, control } = useForm();
-  const [statusOpen, setStatusOpen] = useState(false);
-  const [statusValue, setStatusValue] = useState(null);
-  const [status, setStatus] = useState([
-    { label: "Present", value: "present" },
-    { label: "Absent", value: "absent" },
-    { label: "Late", value: "late" },
-  ]);
-
-  const onStatusOpen = () => {
-    //setStatusOpen(true);
+  const AttendanceSaved = () => {
+    //navigate to setting page
+    Alert.alert('Attendance Saved!');
   };
+  const studentList = [
+    { id: '1', name: 'Navindran' },
+    { id: '2', name: 'Chow Xuhua' },
+    { id: '3', name: 'Qixian' },
+    { id: '4', name: 'Guardiola' },
+    { id: '5', name: 'Hazard' },
+    { id: '6', name: 'Rashford' },
+    { id: '7', name: 'Mbappe' },
+  ];
 
-  const myItemSeparator = () => {
-    return <View style={{ height: 1, backgroundColor: "grey",marginHorizontal:10}} />;
-    };
   
-  const myListEmpty = () => {
-    return (
-      <View style={{ alignItems: "center" }}>
-      <Text style={styles.item}>No data found</Text>
+
+  return (
+    <View style={styles.container}>
+      <View style={styles.studentlistTable}>
+        <FlatList
+          data={studentList}
+          keyExtractor={(item) => item.id}
+          renderItem={({ item }) => (
+
+            <View style={styles.itemContainer}>
+
+              <Text style={styles.studentName}>{item.name}</Text>
+
+              {/* attendance status picker */}
+
+              <Picker
+                style={styles.attendancePicker}
+              >
+                <Picker.Item label="Present" value="Present" />
+                <Picker.Item label="Absent" value="Absent" />
+                <Picker.Item label="Late" value="Late" />
+
+              </Picker>
+            </View>
+          )}
+        />
       </View>
-    );
-  };
-
-  
-
-
-  const [selected, setSelected] = React.useState("");
-  
-
-  const renderNames = ({item}) => {
-  return(
-    <>
-        <Text style={styles.item}>{item.name}</Text>
-    
-                  <View style={styles.dropdownprofile}>
-                      <DropDownPicker
-                      style={styles.dropdown}
-                      open={statusOpen}
-                      value={statusValue}
-                      items={status}
-                      setOpen={setStatusOpen}
-                      setValue={setStatusValue}
-                      setItems={setStatus}
-                      placeholder="Status"
-                      placeholderStyle={styles.placeholderStyles}
-                      onOpen={onStatusOpen}
-                      // onChangeValue={onChange}
-                      zIndex={3000}
-                      zIndexInverse={1000}
-                      />
-                  </View>
-          
-    </>
-    );
-  }
-  
-return (
-  <SafeAreaView style={styles.container}>
-
-  <View>
-
-  
-    <FlatList
-      data={persons}
-      renderItem={renderNames}
-      keyExtractor={(item) => item.id}
-      ItemSeparatorComponent={myItemSeparator}
-      ListEmptyComponent={myListEmpty}
-      ListHeaderComponent={() => (
-        <Text style={{ fontSize: 20, textAlign: "center",marginTop:20,fontWeight:'bold' }}>
-          Mark Attendance
-        </Text>
-
-        
- 
-      )}
-      />
-
-  
-
-            <Button 
-              title={'Submit'}
-            />
-
-
-    
-
-    
-
-   </View> 
-
-  </SafeAreaView>
-
-  
+      <Button color="black" title="Save Attendance" onPress={AttendanceSaved}/>
+    </View>
   );
- }
- 
+};
+
 const styles = StyleSheet.create({
   container: {
+    paddingTop: 50,
     flex: 1,
-    marginTop: 5,
-    fontSize: 30,
+    padding: 16,
   },
-  item: {
-    padding: 20,
-    marginTop: 5,
-    fontSize: 15,
+  studentlistTable: {
+    paddingTop: 30,
   },
-  dropdownprofile: {
-    marginHorizontal: 10,
-    width: "50%",
-    marginBottom: 15,
+  itemContainer: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    marginBottom: 8,
   },
-  dropdown: {
-    borderColor: "#B7B7B7",
-    height: 50,
+  studentName: {
+    flex: 1,
+    marginRight: 8,
+  },
+  attendancePicker: {
+    width: 150,
   },
 });
 
-export default MarkAttendanceScreen;
+export default MarkAttendance;
