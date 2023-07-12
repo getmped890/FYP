@@ -3,18 +3,10 @@ import { View, Text, Button, FlatList, StyleSheet } from 'react-native';
 import { Picker } from '@react-native-picker/picker';
 import { Alert } from 'react-native';
 
-const UpdateAttendance = () => {
+const AttendanceRecord = () => {
   const [selectedAttendance, setSelectedAttendance] = useState({});
 
-
-  const updateStatus = (studentId, status) => {
-    setSelectedAttendance((prevAttendance) => ({
-      ...prevAttendance,
-      [studentId]: status,
-    }));
-  };
- 
-  const AttendanceSaved = () => {
+  const UpdateAttendance = () => {
     //navigate to setting page
     Alert.alert('Attendance Updated!');
   };
@@ -42,23 +34,11 @@ const UpdateAttendance = () => {
 
               <Text style={styles.studentName}>{item.name}</Text>
 
-
-              <Picker
-                style={styles.attendancePicker}
-                selectedValue={selectedAttendance[item.id]}
-                //status means value selected in the dropdown box
-                onValueChange={(status) => updateStatus(item.id, status)}
-              >
-                <Picker.Item label="Present" value="Present" />
-                <Picker.Item label="Absent" value="Absent" />
-                <Picker.Item label="Late" value="Late" />
-
-              </Picker>
             </View>
           )}
         />
       </View>
-      <Button color="black" title="Save Attendance" onPress={AttendanceSaved}/>
+      <Button color="black" title="Update Attendance" onPress={UpdateAttendance}/>
     </View>
   );
 };
@@ -86,4 +66,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default UpdateAttendance;
+export default AttendanceRecord;
