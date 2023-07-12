@@ -26,6 +26,7 @@ import UpdateProfileScreen from './Profile/UpdateProfile';
 import LoginScreen from '../Login/Login';
 import Alerts from './Alerts/Alerts';
 import Location from './Alerts/Location';
+import AttendanceRecordScreen from './Attendance/AttendanceRecord';
 
 
 
@@ -81,7 +82,9 @@ function StackNavigator(){
       <Stack.Screen name="UpdateAttendance" component={UpdateAttendanceScreen} />
       <Stack.Screen name="ViewAttendance" component={ViewAttendanceScreen} />
       <Stack.Screen name="GenerateAlist" component={GenerateAlistScreen} />
+      <Stack.Screen name="AttendanceRecord" component={AttendanceRecordScreen} />
 
+      
 
     </Stack.Navigator>
   )

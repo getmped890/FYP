@@ -7,7 +7,7 @@ const UpdatePassword = () => {
   const navigation = useNavigation();
 
   const handleCancelButtonClick = () => {
-    navigation.navigate('Profile');
+    navigation.navigate('ChildProfile');
   };
 
   const handleSubmitButtonClick = () => {

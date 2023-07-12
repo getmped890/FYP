@@ -2,7 +2,7 @@ import React, { useState, useLayoutEffect } from 'react';
 import { View, TouchableOpacity, TextInput, StyleSheet, Text, Button } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 
-const UpdatePassword = () => {
+const UpdateProfile = () => {
   
   const navigation = useNavigation();
 
@@ -23,27 +23,42 @@ const UpdatePassword = () => {
 
   return (
     <View style={styles.container}>
-      <View style={styles.inputContainer}>
-        <Text style={styles.label}>Current Password:</Text>
+       <View style={styles.inputContainer}>
+        <Text style={styles.label}>Name:</Text>
         <TextInput
           style={styles.textInput}
-          secureTextEntry
+          value="James Milner"
+          editable={true}
+        />
+      </View>
+
+      
+      <View style={styles.inputContainer}>
+        <Text style={styles.label}>Address:</Text>
+        <TextInput
+          style={styles.textInput}
+          value="45 yishun kim"
+          editable={true}
         />
       </View>
 
       <View style={styles.inputContainer}>
-        <Text style={styles.label}>New Password:</Text>
+        <Text style={styles.label}>Email:</Text>
         <TextInput
           style={styles.textInput}
-          secureTextEntry
+          value="jdf@gmail.com"
+          editable={true}
         />
       </View>
 
+     
+
       <View style={styles.inputContainer}>
-        <Text style={styles.label}>Confirm New Password:</Text>
+        <Text style={styles.label}>Contact:</Text>
         <TextInput
           style={styles.textInput}
-          secureTextEntry
+          value="91234567"
+          editable={true}
         />
       </View>
 
@@ -69,7 +84,7 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     paddingHorizontal: 20,
-    paddingTop: 250,
+    paddingTop: 180,
   },
   inputContainer: {
     marginBottom: 20,
@@ -90,10 +105,10 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
     marginBottom: 20,
+    marginRight: 20, 
   },
 
- 
   
 });
 
-export default UpdatePassword;
+export default UpdateProfile;

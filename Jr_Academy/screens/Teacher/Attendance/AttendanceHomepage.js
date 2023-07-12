@@ -14,7 +14,7 @@ const AttendanceHomepage = () => {
     };
 
     const handleUpdateAttendanceClick = () => {
-        navigation.navigate('UpdateAttendance');
+        navigation.navigate('AttendanceRecord');
 
     };
 

@@ -3,14 +3,13 @@ import { View, TouchableOpacity, TextInput, StyleSheet, Text, Button } from 'rea
 import { Ionicons } from '@expo/vector-icons';
 import { useNavigation } from '@react-navigation/native';
 
-
-const ChildProfile = () => {
+const Profile = () => {
 
 
   const navigation = useNavigation();
 
   const handlePreviousButtonClick = () => {
-    navigation.navigate('ChildHomepage');
+    navigation.navigate('HomePage');
   };
 
   const handleLogoutButtonClick = () => {
@@ -18,10 +17,13 @@ const ChildProfile = () => {
   };
 
   const handleUpdatePasswordClick = () => {
-    navigation.navigate('ChildUpdatePW'); // Navigate to the UpdatePassword screen
+    navigation.navigate('UpdatePassword'); // Navigate to the UpdatePassword screen
   };
 
- 
+  const handleUpdateProfileClick = () => {
+    navigation.navigate('UpdateProfile'); // Navigate to the UpdatePassword screen
+  };
+
   
   return (
     <View style={styles.container}>
@@ -76,6 +78,16 @@ const ChildProfile = () => {
         />
       </View>
 
+    <View style={styles.updateProfileButton}>
+
+        <Button
+            title="Update Profile"
+            onPress={handleUpdateProfileClick}
+            color="gray"
+            style={styles.updateButton}
+            />
+
+    </View>
         
 
       <Button
@@ -125,7 +137,10 @@ const styles = StyleSheet.create({
     borderRadius: 5,
     paddingHorizontal: 10,
   },
-
+  updateProfileButton: {
+    paddingTop: 20,
+    paddingBottom: 20,
+  },
 });
 
-export default ChildProfile;
+export default Profile;
