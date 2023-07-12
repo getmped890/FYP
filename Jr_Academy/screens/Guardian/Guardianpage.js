@@ -36,7 +36,7 @@ function TabNavigator(){
 
         <Tab.Screen name="Dismissal" component={DismissalScreen} options={{
                     tabBarIcon: () => (
-                    <Ionicons name="calendar-outline" size={24} color="black" />
+                    <Ionicons name="ios-time" size={24} color="black" />
                     ),
           }}/>
           <Tab.Screen name="Home" component={StackNavigatorHomePage} options={{
