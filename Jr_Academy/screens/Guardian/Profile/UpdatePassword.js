@@ -11,7 +11,7 @@ const UpdatePassword = () => {
   };
 
   const handleSubmitButtonClick = () => {
-    navigation.navigate('ChildProfile');
+    navigation.navigate('Profile');
   };
 
   // Use useLayoutEffect to set the options for hiding the header
