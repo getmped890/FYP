@@ -3,13 +3,14 @@ import { View, TouchableOpacity, TextInput, StyleSheet, Text, Button } from 'rea
 import { Ionicons } from '@expo/vector-icons';
 import { useNavigation } from '@react-navigation/native';
 
+
 const ChildProfile = () => {
 
 
   const navigation = useNavigation();
 
   const handlePreviousButtonClick = () => {
-    navigation.navigate('HomePage');
+    navigation.navigate('ChildHomepage');
   };
 
   const handleLogoutButtonClick = () => {

@@ -17,7 +17,7 @@ const Location = () => {
     <View>
        <Text style={styles.backText}>Back</Text>       
         <TouchableOpacity style={styles.backButton}>
-        <Ionicons name="arrow-undo-sharp" size={35} onPress={BackAlert}/>
+        <Ionicons name="chevron-back-outline" size={30} onPress={BackAlert}/>
       </TouchableOpacity>
     </View>
  );};

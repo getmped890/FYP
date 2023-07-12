@@ -55,7 +55,6 @@ function StackChildNavigator(){
       <Stack.Screen name="ChildProfile" component={ChildProfile} />
       <Stack.Screen name="ChildUpdatePW" component={ChildUpdatePassword} />
 
-
     </Stack.Navigator>
   )
 }
