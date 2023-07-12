@@ -2,10 +2,13 @@ import React, { useState } from 'react';
 import { View, Text, Button, FlatList, StyleSheet } from 'react-native';
 import { Picker } from '@react-native-picker/picker';
 import { Alert } from 'react-native';
+import { useNavigation } from '@react-navigation/native';
+
 
 const MarkAttendance = () => {
   const [selectedAttendance, setSelectedAttendance] = useState({});
 
+  const navigation = useNavigation();
 
   const updateStatus = (studentId, status) => {
     setSelectedAttendance((prevAttendance) => ({
