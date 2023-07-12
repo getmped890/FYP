@@ -60,31 +60,7 @@ const MarkAttendanceScreen = () => {
     );
   };
 
-  const myListDropdown = () => {
-        return <Controller
-        name="status"
-        defaultValue=""
-        control={control}
-        render={({ field: { onChange, value } }) => (
-        <View style={styles.dropdownprofile}>
-            <DropDownPicker
-            style={styles.dropdown}
-            open={statusOpen}
-            value={statusValue}
-            items={status}
-            setOpen={setStatusOpen}
-            setValue={setStatusValue}
-            setItems={setStatus}
-            placeholder="Status"
-            placeholderStyle={styles.placeholderStyles}
-            onOpen={onStatusOpen}
-            onChangeValue={onChange}
-            zIndex={3000}
-            zIndexInverse={1000}
-            />
-        </View>
-        )}/>
-  };
+ 
 
 
   const [selected, setSelected] = React.useState("");
