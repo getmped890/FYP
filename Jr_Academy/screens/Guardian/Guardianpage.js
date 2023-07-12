@@ -18,6 +18,7 @@ import UpdatePasswordScreen from './Profile/UpdatePassword';
 import UpdateProfileScreen from './Profile/UpdateProfile';
 import LoginScreen from '../Login/Login';
 import DismissalScreen from './Dismissal/DismissalPage';
+import SettingScreen from './Setting/Setting';
 
 const Tab = createMaterialBottomTabNavigator();
 const Stack = createStackNavigator();
@@ -51,7 +52,7 @@ function TabNavigator(){
           }}/>
           
           
-          <Tab.Screen name="Settings" component={HomePageScreen} options={{
+          <Tab.Screen name="Settings" component={StackNavigatorSettingPage} options={{
             tabBarIcon: () => (
               <Ionicons name="settings-outline" size={24} color="black" />
             ),
@@ -79,6 +80,19 @@ function StackNavigatorHomePage(){
   )
 }
 
+
+function StackNavigatorSettingPage(){
+    return(
+      <Stack.Navigator
+        screenOptions={{
+          headerShown: false,
+        }}
+      >
+        <Stack.Screen name="Setting" component={SettingScreen} />
+        <Stack.Screen name="Login" component={LoginScreen} />
+      </Stack.Navigator>
+    )
+  }
 
 export default function Guardianpage(){
   return(
