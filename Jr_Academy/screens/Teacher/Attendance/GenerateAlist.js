@@ -16,6 +16,11 @@ const GenerateAlist = () => {
       { name: 'Hazard', status: 'Present' },
       { name: 'Rashford', status: 'Late' },
       { name: 'Mbappe', status: 'Absent' },
+      
+      { name: 'zii jia', status: 'Late' },
+      { name: 'lim ck', status: 'Present' },
+      { name: 'bacon', status: 'Late' },
+      { name: 'niece', status: 'Absent' },
     ];
     setAttendanceList(exampleAttendanceData);
   };
@@ -87,9 +92,12 @@ const styles = StyleSheet.create({
   studentName: {
     flex: 1,
     marginRight: 8,
+    fontSize:20,
   },
   studentStatus: {
     fontWeight: 'bold',
+    fontSize:20,
+
   },
 });
 
