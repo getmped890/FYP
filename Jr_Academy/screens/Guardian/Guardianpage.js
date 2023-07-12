@@ -17,6 +17,7 @@ import ProfileScreen from './Profile/Profile';
 import UpdatePasswordScreen from './Profile/UpdatePassword';
 import UpdateProfileScreen from './Profile/UpdateProfile';
 import LoginScreen from '../Login/Login';
+import DismissalScreen from './Dismissal/DismissalPage';
 
 const Tab = createMaterialBottomTabNavigator();
 const Stack = createStackNavigator();
@@ -32,7 +33,7 @@ function TabNavigator(){
             ),
           }}/>
 
-        <Tab.Screen name="Dismissal" component={HomePageScreen} options={{
+        <Tab.Screen name="Dismissal" component={DismissalScreen} options={{
                     tabBarIcon: () => (
                     <Ionicons name="calendar-outline" size={24} color="black" />
                     ),
