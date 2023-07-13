@@ -1,7 +1,9 @@
 import React, { useState } from 'react';
-import { View, Text, Button, FlatList, StyleSheet } from 'react-native';
+import { View, Text, Button, FlatList, StyleSheet, TouchableOpacity } from 'react-native';
 import { Picker } from '@react-native-picker/picker';
 import { Alert } from 'react-native';
+import { Ionicons } from '@expo/vector-icons';
+
 import { useNavigation } from '@react-navigation/native';
 
 
@@ -20,10 +22,11 @@ const MarkAttendance = () => {
   const AttendanceSaved = () => {
     Alert.alert('Attendance Saved!');
   };
-
-  const CancelButton = () => {
+ 
+  const handlePreviousButtonClick = () => {
     navigation.navigate('AttendHP');
   };
+
   const studentList = [
     { id: '1', name: 'student1' },
     { id: '2', name: 'student2' },
@@ -63,10 +66,13 @@ const MarkAttendance = () => {
 
   ];
 
-  
+
 
   return (
     <View style={styles.container}>
+      <TouchableOpacity style={styles.button} onPress={handlePreviousButtonClick}>
+          <Ionicons name="chevron-back-outline" size={30} style={styles.icon} />
+        </TouchableOpacity>
       <View style={styles.studentlistTable}>
         <FlatList
           data={studentList}
@@ -98,9 +104,7 @@ const MarkAttendance = () => {
 
         </View>
 
-        <View style={styles.cancelButton}>
-          <Button  color="grey" title="Cancel" onPress={CancelButton}/>
-        </View>
+       
     </View>
   );
 };
@@ -112,10 +116,13 @@ const styles = StyleSheet.create({
     padding: 16,
   },
   studentlistTable: {
-    paddingTop: 30,
-    maxHeight:'85%',
+    paddingTop: '2%',
+    paddingLeft: '3%',
+    maxHeight:'88%',
 
   },
+
+
   itemContainer: {
     flexDirection: 'row',
     alignItems: 'center',
@@ -129,14 +136,11 @@ const styles = StyleSheet.create({
     width: 150,
   },
   saveButton:{
-    paddingBottom:20,
-    maxWidth:'98%',
+    paddingLeft: '3%',
+    paddingTop: '1%',
+    maxWidth:'95%',
   },
-  cancelButton:{
-    paddingBottom:20,
-    maxWidth:'98%',
 
-  }
 });
 
 export default MarkAttendance;
