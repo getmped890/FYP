@@ -123,7 +123,7 @@ const styles = StyleSheet.create({
   },
   scrollContainer: {
     marginTop:'32%',
-    height:'22%',
+    height:'21%',
   },
 
   dismissalTimeContainer: {
