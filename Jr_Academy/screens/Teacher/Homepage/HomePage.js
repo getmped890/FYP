@@ -21,6 +21,7 @@ const HomePage = () => {
         <TouchableOpacity style={styles.topRight} onPress={handleUserIconClick}>
           <Ionicons name="person-outline" size={35} color="#FFFFFF" />
         </TouchableOpacity>
+
         <View style={styles.scrollContainer}>
           <Text style={styles.headerText}>Upcoming Classes:</Text>
           <ScrollView horizontal={true} contentContainerStyle={styles.scrollContent}>
@@ -41,6 +42,22 @@ const HomePage = () => {
             </View>
           </ScrollView>
         </View>
+
+        <View style={styles.dismissalTimeContainer}>
+            <Text style={styles.headerText}>Class Dismissal Timing</Text>
+            <ScrollView horizontal={true} contentContainerStyle={styles.scrollContent}>
+                <View style={[styles.card, styles.cardElevated]}>
+                    <Text style={styles.classText}>CSIT203</Text>
+                    <Text style={styles.classText}>6.30pm</Text>
+                </View>
+                <View style={[styles.card, styles.cardElevated]}>
+                    <Text style={styles.classText}>CSIT115</Text>
+                    <Text style={styles.classText}>3.00pm</Text>
+                </View>
+            </ScrollView>
+        </View>
+
+
         <View style={styles.absentContainer}>
           <Text style={styles.headerText}>Absentees Based On Last Class:</Text>
           <ScrollView horizontal={true} contentContainerStyle={styles.scrollContent}>
@@ -55,8 +72,10 @@ const HomePage = () => {
             </View>
           </ScrollView>
         </View>
+
+
         <TouchableOpacity style={styles.endClassButton} onPress={handleEndClass}>
-          <Ionicons name="checkmark" size={35} color="#1DC1B1" />
+          <Ionicons name="checkmark" size={32} color="#1DC1B1" />
         </TouchableOpacity>
         <Text style={styles.endClassText}>End Class</Text>
       </View>
@@ -103,11 +122,23 @@ const styles = StyleSheet.create({
     },
   },
   scrollContainer: {
-    paddingTop: height * 0.2,
+    marginTop:'32%',
+    height:'22%',
   },
+
+  dismissalTimeContainer: {
+    marginTop:'8%',
+
+    height:'20%',
+
+  },
+
   absentContainer: {
-    paddingTop: height * 0.03,
+    marginTop:'8%',
+
+    height:'17%',
   },
+
   welcomeText: {
     fontSize: height * 0.03,
     fontWeight: 'bold',
@@ -130,10 +161,10 @@ const styles = StyleSheet.create({
   },
   endClassButton: {
     position: 'absolute',
-    bottom: height * 0.05,
+    bottom: "4.5%",
     right: width * 0.03,
-    width: width * 0.2,
-    height: width * 0.14,
+    width: width * 0.17,
+    height: width * 0.11,
     borderRadius: width * 0.1,
     backgroundColor: '#FFFFFF',
     justifyContent: 'center',
@@ -141,8 +172,8 @@ const styles = StyleSheet.create({
   },
   endClassText: {
     position: 'absolute',
-    bottom: height * 0.01,
-    right: width * 0.03,
+    bottom: height * 0.005,
+    right: width * 0.01,
     fontWeight: 'bold',
     fontSize: height * 0.024,
     color: '#FFFFFF',
