@@ -162,9 +162,9 @@ const styles = StyleSheet.create({
   endClassButton: {
     position: 'absolute',
     bottom: "4.5%",
-    right: width * 0.03,
+    right: width * 0.026,
     width: width * 0.17,
-    height: width * 0.11,
+    height: width * 0.105,
     borderRadius: width * 0.1,
     backgroundColor: '#FFFFFF',
     justifyContent: 'center',
@@ -172,10 +172,10 @@ const styles = StyleSheet.create({
   },
   endClassText: {
     position: 'absolute',
-    bottom: height * 0.005,
+    bottom: height * 0.007,
     right: width * 0.01,
     fontWeight: 'bold',
-    fontSize: height * 0.024,
+    fontSize: height * 0.023,
     color: '#FFFFFF',
   },
 });
