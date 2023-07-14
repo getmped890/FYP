@@ -90,23 +90,29 @@ const styles = StyleSheet.create({
       },
   },
   scrollContainer: {
-    paddingTop: 100,
+    paddingTop: 110,
+    paddingBottom:50,
   },
  
   welcometext: {
-    fontSize: 25,
+    fontSize: 30,
     fontWeight: 'bold',
     fontStyle:'italic',
+    color: 'white',
+
   },
 
   headertext: {
-    fontSize: 20,
+    fontSize: 25,
     fontWeight: 'bold',
     marginBottom: 10,
-    paddingHorizontal: 8
+    paddingLeft: 19,
+    color: 'white',
   },
   classText: {
     fontSize: 16,
+    color: '#1DC1B1',
+
   },
   scrollContent: {
     alignItems: 'center',
