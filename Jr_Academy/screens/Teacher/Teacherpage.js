@@ -116,6 +116,10 @@ function StackSettingNavigator(){
     >
       <Stack.Screen name="Setting" component={SettingsScreen} />
       <Stack.Screen name="Profile" component={ProfileScreen} />
+      <Stack.Screen name="UpdatePassword" component={UpdatePasswordScreen} />
+      <Stack.Screen name="Login" component={LoginScreen} />
+      <Stack.Screen name="UpdateProfile" component={UpdateProfileScreen} />
+      <Stack.Screen name="HomePage" component={HomePageScreen} />
 
 
     </Stack.Navigator>
