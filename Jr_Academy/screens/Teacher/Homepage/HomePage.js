@@ -146,7 +146,7 @@ const styles = StyleSheet.create({
     color: '#FFFFFF',
   },
   headerText: {
-    fontSize: height * 0.03,
+    fontSize: height * 0.026,
     fontWeight: 'bold',
     marginBottom: height * 0.01,
     paddingHorizontal: width * 0.05,
