@@ -4,6 +4,7 @@ import DropDownPicker from "react-native-dropdown-picker";
 import {useForm, Controller} from 'react-hook-form';
 import { Link } from "expo-router";
 import BackgroundColor from '../BackgroundColor';
+import { useNavigation } from '@react-navigation/native';
 
 
 
@@ -17,6 +18,13 @@ const Login = () => {
         { label: "Child", value: "child" },
         { label: "School Admin", value: "schooladmin" },
     ]);
+    const navigation = useNavigation();
+
+    const handleLoginClick = () => {
+      //navigate to setting page
+      navigation.navigate('Tab',{screen:"Home"});
+    };
+
     const onProfileOpen = useCallback(() => {
         setprofileOpen(true)
     }, []);
@@ -59,6 +67,7 @@ const Login = () => {
            <Link style={styles.navigate} href="./screens/ForgotUsernamePassword">Forgot Username/Password</Link>
           <Button
             title={'Login'}
+            onPress={handleLoginClick}
           />
         </View>
         </BackgroundColor>

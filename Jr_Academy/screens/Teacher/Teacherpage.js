@@ -36,7 +36,6 @@ const Stack = createStackNavigator();
 
 
 function TabNavigator(){
- 
 
     return(
       <Tab.Navigator screenOptions={{headerShown:false}}>
@@ -120,7 +119,6 @@ function StackSettingNavigator(){
       <Stack.Screen name="Setting" component={SettingsScreen} />
       <Stack.Screen name="Profile" component={ProfileScreen} />
       <Stack.Screen name="UpdatePassword" component={UpdatePasswordScreen} />
-      <Stack.Screen name="Login" component={LoginScreen}/>      
   
       <Stack.Screen name="UpdateProfile" component={UpdateProfileScreen} />
       <Stack.Screen name="HomePage" component={HomePageScreen} />
@@ -140,18 +138,24 @@ function StackNavigatorHomePage(){
       <Stack.Screen name="HomePage" component={HomePageScreen} />
       <Stack.Screen name="Profile" component={ProfileScreen} />
       <Stack.Screen name="UpdatePassword" component={UpdatePasswordScreen} />
-      <Stack.Screen name="Login" component={LoginScreen} options={tabBarStyle= { display: 'none' }}/>
       <Stack.Screen name="UpdateProfile" component={UpdateProfileScreen} />
     </Stack.Navigator>
   )
 }
 
 
+
+
 export default function Teacherpage(){
   
   return(
     <NavigationContainer>
-        <TabNavigator />
+
+      <Stack.Navigator>
+        <Stack.Screen name="Login" component={LoginScreen} options={tabBarStyle= {  headerShown: false}}/>
+
+        <Stack.Screen name="Tab" component={TabNavigator} options={{ headerShown: false }} />
+      </Stack.Navigator>
     </NavigationContainer>
   )
 }
