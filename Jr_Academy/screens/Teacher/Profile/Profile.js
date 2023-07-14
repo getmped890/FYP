@@ -9,7 +9,7 @@ const Profile = () => {
   const navigation = useNavigation();
 
   const handlePreviousButtonClick = () => {
-    navigation.navigate('HomePage');
+    navigation.goBack();
   };
 
   const handleLogoutButtonClick = () => {

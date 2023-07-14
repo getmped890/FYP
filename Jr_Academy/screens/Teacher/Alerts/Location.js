@@ -11,7 +11,8 @@ const Location = () => {
 
   const BackAlert = () => {
     //navigate to GPS Page
-    navigation.navigate('TeacherNotification');
+    navigation.goBack();
+
   };
 
  return (

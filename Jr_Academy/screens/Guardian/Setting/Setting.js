@@ -15,11 +15,10 @@ const Setting = () => {
     const toggleSwitch = () => setIsEnabled(previousState => !previousState);
 
     return (
-        <View>
+        <View style={styles.background}> 
             <TouchableOpacity style={styles.endClassButton} onPress={handleLogoutButtonClick}>
                 <Ionicons name="log-out-outline" size={35} />
             </TouchableOpacity>
-            <Text style={styles.LogoutText}>Logout</Text>
             <Text style={styles.headertext}>Allow Notification for</Text>
             
             <View style={styles.switchContainer}>
@@ -80,14 +79,16 @@ const styles = StyleSheet.create({
         left: 280,
         fontSize: 20,
         fontWeight: 'bold',
+        color:'white',
     },
     headertext: {
         position: 'relative',
-        fontSize: 20,
+        fontSize: 25,
         top: 150,
         fontWeight: 'bold',
         marginBottom: 10,
-        paddingHorizontal: 8
+        paddingHorizontal: 8,
+        color:'white',
     },
     rowContainer: {
         flexDirection: 'row',
@@ -100,11 +101,16 @@ const styles = StyleSheet.create({
     },
     notificationtext: {
         marginRight: 8,
+        fontSize:15,
     },
     switchContainer:{
         paddingTop:190,
         paddingLeft:20,
-    }
+    },
+    background: {
+        flex: 1,
+        backgroundColor: '#B3EAE5',
+      },
 });
 
 export default Setting;

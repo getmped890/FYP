@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
-import { View, Text, Button, FlatList, StyleSheet } from 'react-native';
+import { View, Text, Button, FlatList, StyleSheet,TouchableOpacity } from 'react-native';
+import { Ionicons } from '@expo/vector-icons';
 import { useNavigation } from '@react-navigation/native';
 
 const AttendanceRecord = () => {
@@ -14,6 +15,9 @@ const AttendanceRecord = () => {
 
   };
 
+  const handlePreviousButtonClick = () => {
+    navigation.navigate('AttendHP');
+  };
 
   const studentList = [
     { id: '1', name: 'MathClass-22july' },
@@ -23,13 +27,30 @@ const AttendanceRecord = () => {
     { id: '5', name: 'AtomicClass-26july' },
     { id: '6', name: 'GeographyClass-27july' },
     { id: '7', name: 'MusicClass-28july' },
+    { id: '8', name: 'Class-29july' },
+    { id: '9', name: 'Class-30july' },
+    { id: '10', name: 'Class-31july' },
+    { id: '11', name: 'Class-1august' },
+    { id: '12', name: 'Class-2august' },
+    { id: '13', name: 'Class-3august' },
+    { id: '14', name: 'Class-4august' },
+    { id: '15', name: 'Class-5august' },
+    { id: '16', name: 'Class-6august' },
+    { id: '17', name: 'Class-7august' },
+    { id: '18', name: 'Class-8august' },
+    { id: '19', name: 'Class-9august' },
+    { id: '20', name: 'Class-10august' },
   ];
 
   
 
   return (
     <View style={styles.container}>
-        <Text style={{ fontSize: 22, textAlign: "center",marginTop:20,fontWeight:'bold' }}>
+      <TouchableOpacity style={styles.button} onPress={handlePreviousButtonClick}>
+          <Ionicons name="chevron-back-outline" size={30} style={styles.icon} />
+        </TouchableOpacity>
+
+        <Text style={{ fontSize: 22, textAlign: "center",paddingBottom:'10%',fontWeight:'bold' }}>
           Attendance records:
       </Text>
       <View style={styles.studentlistTable}>
@@ -58,7 +79,9 @@ const styles = StyleSheet.create({
     padding: 16,
   },
   studentlistTable: {
-    paddingTop: 30,
+    paddingTop: '2%',
+    paddingLeft: '3%',
+    maxHeight:'88%',
   },
   itemContainer: {
     flexDirection: 'row',

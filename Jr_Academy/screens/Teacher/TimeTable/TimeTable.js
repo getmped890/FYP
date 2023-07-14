@@ -25,17 +25,7 @@ const TimeTable = () => {
         </View>
     </ScrollView>
 
-    <Text style={styles.headingText}>Class Dismissal Timing</Text>
-    <ScrollView horizontal={true} style={styles.container}>
-        <View style={[styles.card, styles.cardElevated]}>
-            <Text>CSIT203</Text>
-            <Text>6.30pm</Text>
-        </View>
-        <View style={[styles.card, styles.cardElevated]}>
-            <Text>CSIT115</Text>
-            <Text>3.00pm</Text>
-        </View>
-    </ScrollView>
+   
     </ScrollView>
 
     <View style={styles.calendar}>
@@ -51,7 +41,8 @@ const styles = StyleSheet.create({
     headingText: {
         fontSize: 20,
         fontWeight: 'bold',
-        paddingHorizontal: 8
+        paddingHorizontal: 8,
+        paddingTop:'20%',
     },
     card:{
         flex: 1,

@@ -1,7 +1,9 @@
 import React, { useState } from 'react';
-import { View, Text, Button, FlatList, StyleSheet } from 'react-native';
+import { View, Text, Button, FlatList, StyleSheet, TouchableOpacity } from 'react-native';
 import { Picker } from '@react-native-picker/picker';
 import { Alert } from 'react-native';
+import { Ionicons } from '@expo/vector-icons';
+
 import { useNavigation } from '@react-navigation/native';
 
 
@@ -18,23 +20,59 @@ const MarkAttendance = () => {
   };
  
   const AttendanceSaved = () => {
-    //navigate to setting page
     Alert.alert('Attendance Saved!');
   };
+ 
+  const handlePreviousButtonClick = () => {
+    navigation.navigate('AttendHP');
+  };
+
   const studentList = [
-    { id: '1', name: 'Navindran' },
-    { id: '2', name: 'Chow Xuhua' },
-    { id: '3', name: 'Qixian' },
-    { id: '4', name: 'Guardiola' },
-    { id: '5', name: 'Hazard' },
-    { id: '6', name: 'Rashford' },
-    { id: '7', name: 'Mbappe' },
+    { id: '1', name: 'student1' },
+    { id: '2', name: 'student2' },
+    { id: '3', name: 'student3' },
+    { id: '4', name: 'student4' },
+    { id: '5', name: 'student5' },
+    { id: '6', name: 'student6' },
+    { id: '7', name: 'student7' },
+    { id: '8', name: 'student8' },
+    { id: '9', name: 'student9' },
+    { id: '10', name: 'student10' },
+    { id: '11', name: 'student11' },
+    { id: '12', name: 'student12' },
+    { id: '13', name: 'student13' },
+    { id: '14', name: 'student14' },
+    { id: '15', name: 'student15' },
+    { id: '16', name: 'student16' },
+    { id: '17', name: 'student17' },
+    { id: '18', name: 'student18' },
+    { id: '19', name: 'student19' },
+    { id: '20', name: 'student20' },
+    { id: '21', name: 'student21' },
+    { id: '22', name: 'student22' },
+    { id: '23', name: 'student23' },
+    { id: '24', name: 'student24' },
+    { id: '25', name: 'student25' },
+    { id: '26', name: 'student26' },
+    { id: '27', name: 'student27' },
+    { id: '28', name: 'student28' },
+    { id: '29', name: 'student29' },
+    { id: '30', name: 'student30' },
+    { id: '31', name: 'student31' },
+    { id: '32', name: 'student32' },
+    { id: '33', name: 'student33' },
+    { id: '34', name: 'student34' },
+    { id: '35', name: 'student35' },
+
   ];
 
-  
+
 
   return (
     <View style={styles.container}>
+      <TouchableOpacity style={styles.button} onPress={handlePreviousButtonClick}>
+          <Ionicons name="chevron-back-outline" size={30} style={styles.icon} />
+        </TouchableOpacity>
       <View style={styles.studentlistTable}>
         <FlatList
           data={studentList}
@@ -61,7 +99,12 @@ const MarkAttendance = () => {
           )}
         />
       </View>
-      <Button color="black" title="Save Attendance" onPress={AttendanceSaved}/>
+        <View style={styles.saveButton}>
+          <Button   color="black" title="Save Attendance" onPress={AttendanceSaved}/>
+
+        </View>
+
+       
     </View>
   );
 };
@@ -73,8 +116,13 @@ const styles = StyleSheet.create({
     padding: 16,
   },
   studentlistTable: {
-    paddingTop: 30,
+    paddingTop: '2%',
+    paddingLeft: '3%',
+    maxHeight:'88%',
+
   },
+
+
   itemContainer: {
     flexDirection: 'row',
     alignItems: 'center',
@@ -87,6 +135,12 @@ const styles = StyleSheet.create({
   attendancePicker: {
     width: 150,
   },
+  saveButton:{
+    paddingLeft: '3%',
+    paddingTop: '1%',
+    maxWidth:'95%',
+  },
+
 });
 
 export default MarkAttendance;

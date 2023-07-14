@@ -7,6 +7,12 @@ import { useNavigation } from '@react-navigation/native';
 const Setting = () => {
     const [isEnabled, setIsEnabled] = useState(false);
     const toggleSwitch = () => setIsEnabled(previousState => !previousState);
+    const navigation = useNavigation();
+
+    const handleManageProfileClick = () => {
+      navigation.navigate('Profile'); 
+    };
+    
     return (
         <View>
 
@@ -25,7 +31,14 @@ const Setting = () => {
         onValueChange={toggleSwitch}
         value={isEnabled}
       />
+
+        <View style={styles.saveButton}>
+          <Button   color="black" title="Manage Profile" onPress={handleManageProfileClick}/>
+
         </View>
+  </View>
+
+        
     );
 };
 
@@ -57,7 +70,8 @@ const styles = StyleSheet.create({
         top: 150,
         fontWeight: 'bold',
         marginBottom: 10,
-        paddingHorizontal: 8
+        paddingHorizontal: 8,
+        paddingBottom: '5%',
       },
 
       notificationswitch: {
@@ -73,6 +87,14 @@ const styles = StyleSheet.create({
         top: 190,
         left:30,
 
+      },
+
+     
+
+      saveButton:{
+        marginTop: -90,
+        paddingLeft: '13%',
+        maxWidth:'85%',
       },
   
   });
