@@ -59,7 +59,7 @@ const HomePage = () => {
 
 
         <View style={styles.absentContainer}>
-          <Text style={styles.headerText}>Absentees Based On Last Class:</Text>
+          <Text style={styles.headerText}>Absentees Yesterday:</Text>
           <ScrollView horizontal={true} contentContainerStyle={styles.scrollContent}>
             <View style={[styles.card, styles.cardElevated]}>
               <Text style={styles.classText}>1. Wong Kai Yih</Text>
