@@ -18,14 +18,14 @@ const TimeTable = () => {
     <Text style={styles.headingText}>Timetable</Text>
     <ScrollView horizontal={true} style={styles.container}>
         <View style={[styles.card, styles.cardElevated]}>
-            <Text>CSIT203</Text>
-            <Text>26th Jun 2023</Text>
-            <Text>3.30pm - 6.30pm</Text>
+            <Text style={styles.classText}>CSIT203</Text>
+            <Text style={styles.classText}>26th Jun 2023</Text>
+            <Text style={styles.classText}>3.30pm - 6.30pm</Text>
         </View>
         <View style={[styles.card, styles.cardElevated]}>
-            <Text>CSIT115</Text>
-            <Text>27th Jun 2023</Text>
-            <Text>12.00am - 3.00pm</Text>
+            <Text style={styles.classText}>CSIT115</Text>
+            <Text style={styles.classText}>27th Jun 2023</Text>
+            <Text style={styles.classText}>12.00am - 3.00pm</Text>
         </View>
     </ScrollView>
 
@@ -46,10 +46,11 @@ const TimeTable = () => {
 
 const styles = StyleSheet.create({
     headingText: {
-        fontSize: 20,
+        fontSize: 25,
         fontWeight: 'bold',
         paddingHorizontal: 8,
         paddingTop:'20%',
+        color:'white',
     },
     card:{
         flex: 1,
@@ -76,7 +77,9 @@ const styles = StyleSheet.create({
       //width: "10%",
       //height:"10%",
     },
-  
+    classText: {
+      color: '#1DC1B1',
+    },
     container: {
       padding: 8
     },
