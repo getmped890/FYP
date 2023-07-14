@@ -90,13 +90,15 @@ const styles = StyleSheet.create({
     },
     buttonText:{
         color: '#1DC1B1',
+        fontSize:15,
 
     },
 
     container: {
 
-        justifyContent: 'center',
-        paddingTop: 60,
+        paddingTop: 70,
+        paddingLeft:20,
+        width:'95%',
     },
 
 
