@@ -88,6 +88,11 @@ const styles = StyleSheet.create({
       padding: 20,
         
     },
+    buttonText:{
+        color: '#1DC1B1',
+
+    },
+
     container: {
 
         justifyContent: 'center',
