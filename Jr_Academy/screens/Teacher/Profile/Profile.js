@@ -87,7 +87,7 @@ const Profile = () => {
         <Button
             title="Update Profile"
             onPress={handleUpdateProfileClick}
-            color="gray"
+            color="black"
             style={styles.updateButton}
             />
 
@@ -97,7 +97,7 @@ const Profile = () => {
       <Button
         title="Update Password"
         onPress={handleUpdatePasswordClick}
-        color="gray"
+        color="black"
         style={styles.updateButton}
       />
     </View>
@@ -138,6 +138,8 @@ const styles = StyleSheet.create({
   },
   textInput: {
     height: 40,
+    color:'black',
+    fontWeight:'bold',
     borderColor: 'black',
     borderWidth: 1,
     borderRadius: 5,
