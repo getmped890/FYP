@@ -10,7 +10,8 @@ const Location = () => {
 
   const BackAlert = () => {
     //navigate to GPS Page
-    navigation.navigate('Alerts');
+    navigation.goBack();
+
   };
 
  return (
