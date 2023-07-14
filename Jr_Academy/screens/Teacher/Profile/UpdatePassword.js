@@ -1,6 +1,8 @@
 import React, { useState, useLayoutEffect } from 'react';
 import { View, TouchableOpacity, TextInput, StyleSheet, Text, Button } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
+import BackgroundColor from '../../BackgroundColor';
+
 
 const UpdatePassword = () => {
   
@@ -22,6 +24,8 @@ const UpdatePassword = () => {
   }, [navigation]);
 
   return (
+    <BackgroundColor>
+
     <View style={styles.container}>
       <View style={styles.inputContainer}>
         <Text style={styles.label}>Current Password:</Text>
@@ -62,6 +66,8 @@ const UpdatePassword = () => {
         />
       </View>
     </View>
+    </BackgroundColor>
+
   );
 };
 

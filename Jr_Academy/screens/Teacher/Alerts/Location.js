@@ -2,6 +2,8 @@ import React from 'react';
 import { View, Text, ScrollView, StyleSheet, TouchableOpacity } from 'react-native';
 import { Ionicons } from '@expo/vector-icons';
 import { useNavigation } from '@react-navigation/native';
+import BackgroundColor from '../../BackgroundColor';
+
 
 const Location = () => {
 
@@ -15,12 +17,16 @@ const Location = () => {
   };
 
  return (
+  <BackgroundColor>
+
     <View>
        <Text style={styles.backText}>Back</Text>       
         <TouchableOpacity style={styles.backButton}>
         <Ionicons name="chevron-back-outline" size={30} onPress={BackAlert}/>
       </TouchableOpacity>
     </View>
+    </BackgroundColor>
+
  );};
 
 

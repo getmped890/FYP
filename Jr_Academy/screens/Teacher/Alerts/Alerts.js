@@ -3,6 +3,8 @@ import { View, Text, ScrollView, StyleSheet, TouchableOpacity } from 'react-nati
 import { Ionicons } from '@expo/vector-icons';
 import { useNavigation } from '@react-navigation/native';
 import SettingsScreen from '../Setting/Setting';
+import BackgroundColor from '../../BackgroundColor';
+
 
 const Alerts = () => {
   //use for navigating/redirect to other page
@@ -14,6 +16,8 @@ const Alerts = () => {
   };
 
   return (
+    <BackgroundColor>
+
     <View style={styles.container}>
       <View style={styles.middle}>
         <Text style={styles.welcometext}>Emergency Alerts:</Text>
@@ -51,6 +55,8 @@ const Alerts = () => {
 
 
     </View>
+    </BackgroundColor>
+
   );
 };
 

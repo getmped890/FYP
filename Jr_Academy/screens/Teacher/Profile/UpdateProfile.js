@@ -1,6 +1,8 @@
 import React, { useState, useLayoutEffect } from 'react';
 import { View, TouchableOpacity, TextInput, StyleSheet, Text, Button } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
+import BackgroundColor from '../../BackgroundColor';
+
 
 const UpdateProfile = () => {
   
@@ -22,6 +24,7 @@ const UpdateProfile = () => {
   }, [navigation]);
 
   return (
+    <BackgroundColor>
     <View style={styles.container}>
        <View style={styles.inputContainer}>
         <Text style={styles.label}>Name:</Text>
@@ -77,6 +80,7 @@ const UpdateProfile = () => {
         />
       </View>
     </View>
+    </BackgroundColor>
   );
 };
 

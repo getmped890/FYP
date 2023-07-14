@@ -2,6 +2,8 @@ import React, { useState } from 'react';
 import { View, Text, Button, FlatList, TextInput, StyleSheet , TouchableOpacity} from 'react-native';
 import { Ionicons } from '@expo/vector-icons';
 import { useNavigation } from '@react-navigation/native';
+import BackgroundColor from '../../BackgroundColor';
+
 
 const ViewAttendance = () => {
 
@@ -54,6 +56,8 @@ const ViewAttendance = () => {
  
 
   return (
+    <BackgroundColor>
+
     <View style={styles.container}>
       <TouchableOpacity style={styles.button} onPress={handlePreviousButtonClick}>
           <Ionicons name="chevron-back-outline" size={30} style={styles.icon} />
@@ -75,6 +79,8 @@ const ViewAttendance = () => {
              />
         </View>
     </View>
+    </BackgroundColor>
+
   );
 };
 

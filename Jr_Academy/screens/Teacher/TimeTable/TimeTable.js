@@ -3,12 +3,16 @@ import { View, Text, FlatList, SafeAreaView, ScrollView, StyleSheet, TouchableOp
 import { Ionicons } from '@expo/vector-icons';
 import { useNavigation } from '@react-navigation/native';
 import {Calendar, LocaleConfig} from 'react-native-calendars';
+import BackgroundColor from '../../BackgroundColor';
+
 
 const TimeTable = () => {
   //use for navigating/redirect to other page
   const navigation = useNavigation();
 
   return (
+<BackgroundColor>
+
 <View>
 <ScrollView style={styles.container}>
     <Text style={styles.headingText}>Timetable</Text>
@@ -33,6 +37,9 @@ const TimeTable = () => {
     </View> 
   
 </View>
+
+</BackgroundColor>
+
 
   );
 };

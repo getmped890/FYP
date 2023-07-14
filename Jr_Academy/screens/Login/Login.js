@@ -3,6 +3,8 @@ import { Alert, Button, TextInput, View, StyleSheet ,Text} from 'react-native';
 import DropDownPicker from "react-native-dropdown-picker";
 import {useForm, Controller} from 'react-hook-form';
 import { Link } from "expo-router";
+import BackgroundColor from '../BackgroundColor';
+
 
 
 const Login = () => {
@@ -19,6 +21,7 @@ const Login = () => {
         setprofileOpen(true)
     }, []);
       return (
+        <BackgroundColor>
 
         <View style={styles.container}>
           <TextInput
@@ -58,6 +61,8 @@ const Login = () => {
             title={'Login'}
           />
         </View>
+        </BackgroundColor>
+
       );
     }
   
@@ -66,7 +71,6 @@ const Login = () => {
       flex: 1,
       alignItems: 'center',
       justifyContent: 'center',
-      backgroundColor: '#ecf0f1',
     },
     navigate:{
       alignItems: 'center',

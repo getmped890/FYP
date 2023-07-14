@@ -2,6 +2,8 @@ import React, { useState, useLayoutEffect } from 'react';
 import { View, TouchableOpacity, Switch, StyleSheet, Text, Button } from 'react-native';
 import { Ionicons } from '@expo/vector-icons';
 import { useNavigation } from '@react-navigation/native';
+import BackgroundColor from '../../BackgroundColor';
+
 
 
 const Setting = () => {
@@ -12,11 +14,19 @@ const Setting = () => {
     const handleManageProfileClick = () => {
       navigation.navigate('Profile'); 
     };
+
+    const handleLogoutButtonClick = () => {
+      
+      navigation.navigate('Login');
+    };
     
     return (
+      <BackgroundColor>
+
+
         <View>
 
-            <TouchableOpacity style={styles.endClassButton}>
+      <TouchableOpacity style={styles.endClassButton} onPress={handleLogoutButtonClick}>
         <Ionicons name="log-out-outline" size={35} />
       </TouchableOpacity>
       <Text style={styles.LogoutText}>Logout</Text>
@@ -38,7 +48,8 @@ const Setting = () => {
         </View>
   </View>
 
-        
+  </BackgroundColor>
+
     );
 };
 
