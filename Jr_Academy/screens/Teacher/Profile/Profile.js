@@ -2,6 +2,8 @@ import React, { useState } from 'react';
 import { View, TouchableOpacity, TextInput, StyleSheet, Text, Button } from 'react-native';
 import { Ionicons } from '@expo/vector-icons';
 import { useNavigation } from '@react-navigation/native';
+import BackgroundColor from '../../BackgroundColor';
+
 
 const Profile = () => {
 
@@ -26,6 +28,8 @@ const Profile = () => {
 
   
   return (
+    <BackgroundColor>
+
     <View style={styles.container}>
       <View style={styles.buttonContainer}>
         <TouchableOpacity style={styles.button} onPress={handlePreviousButtonClick}>
@@ -83,7 +87,7 @@ const Profile = () => {
         <Button
             title="Update Profile"
             onPress={handleUpdateProfileClick}
-            color="gray"
+            color="black"
             style={styles.updateButton}
             />
 
@@ -93,10 +97,12 @@ const Profile = () => {
       <Button
         title="Update Password"
         onPress={handleUpdatePasswordClick}
-        color="gray"
+        color="black"
         style={styles.updateButton}
       />
     </View>
+    </BackgroundColor>
+
   );
 };
 
@@ -132,6 +138,8 @@ const styles = StyleSheet.create({
   },
   textInput: {
     height: 40,
+    color:'black',
+    fontWeight:'bold',
     borderColor: 'black',
     borderWidth: 1,
     borderRadius: 5,

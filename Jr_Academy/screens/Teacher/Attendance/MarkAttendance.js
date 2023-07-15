@@ -5,6 +5,7 @@ import { Alert } from 'react-native';
 import { Ionicons } from '@expo/vector-icons';
 
 import { useNavigation } from '@react-navigation/native';
+import BackgroundColor from '../../BackgroundColor';
 
 
 const MarkAttendance = () => {
@@ -69,6 +70,7 @@ const MarkAttendance = () => {
 
 
   return (
+    <BackgroundColor>
     <View style={styles.container}>
       <TouchableOpacity style={styles.button} onPress={handlePreviousButtonClick}>
           <Ionicons name="chevron-back-outline" size={30} style={styles.icon} />
@@ -106,6 +108,7 @@ const MarkAttendance = () => {
 
        
     </View>
+    </BackgroundColor>
   );
 };
 

@@ -2,6 +2,8 @@ import React, { useState, useLayoutEffect } from 'react';
 import { View, TouchableOpacity, Switch, StyleSheet, Text, Button } from 'react-native';
 import { Ionicons } from '@expo/vector-icons';
 import { useNavigation } from '@react-navigation/native';
+import BackgroundColor from '../../BackgroundColor';
+
 
 
 const Setting = () => {
@@ -12,14 +14,22 @@ const Setting = () => {
     const handleManageProfileClick = () => {
       navigation.navigate('Profile'); 
     };
+
+    const handleLogoutButtonClick = () => {
+      
+      navigation.navigate('Login');
+    };
     
     return (
+      <BackgroundColor>
+
+
         <View>
 
-            <TouchableOpacity style={styles.endClassButton}>
+      <TouchableOpacity style={styles.endClassButton} onPress={handleLogoutButtonClick}>
         <Ionicons name="log-out-outline" size={35} />
       </TouchableOpacity>
-      <Text style={styles.LogoutText}>Logout</Text>
+      {/* <Text style={styles.LogoutText}>Logout</Text> */}
       <Text style={styles.headertext}>Allow Notification for</Text>  
       <Text style={styles.notificationtext}>Emergency</Text>  
 
@@ -38,7 +48,8 @@ const Setting = () => {
         </View>
   </View>
 
-        
+  </BackgroundColor>
+
     );
 };
 
@@ -66,12 +77,13 @@ const styles = StyleSheet.create({
   
     headertext: {
         position: 'relative',
-        fontSize: 20,
+        fontSize: 25,
         top: 150,
         fontWeight: 'bold',
         marginBottom: 10,
         paddingHorizontal: 8,
         paddingBottom: '5%',
+        color: 'white',
       },
 
       notificationswitch: {
@@ -81,11 +93,15 @@ const styles = StyleSheet.create({
         justifyContent: 'center',
         paddingTop: 370,
         right:20,
+
       },
 
       notificationtext: {
-        top: 190,
+        top: 197,
         left:30,
+        color: 'white',
+        fontWeight:'bold',
+        fontSize:22,
 
       },
 

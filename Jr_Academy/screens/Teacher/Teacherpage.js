@@ -4,6 +4,7 @@ import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { Ionicons } from '@expo/vector-icons';
 import { FontAwesome } from '@expo/vector-icons';
 import { Octicons } from '@expo/vector-icons';
+import { useRoute } from '@react-navigation/native';
 
 // Creating navigation path for bottom navigator 
 import { NavigationContainer } from '@react-navigation/native';
@@ -35,6 +36,7 @@ const Stack = createStackNavigator();
 
 //Bottom navigator icons and words
 function TabNavigator(){
+
     return(
       <Tab.Navigator screenOptions={{headerShown:false}}>
           <Tab.Screen name="Attendance" component={StackNavigator} options={{
@@ -60,7 +62,7 @@ function TabNavigator(){
           }}/>
           
           
-          <Tab.Screen name="Setting" component={StackSettingNavigator} options={{
+          <Tab.Screen name="Settings" component={StackSettingNavigator} options={{
             tabBarIcon: () => (
               <Ionicons name="settings-outline" size={24} color="black" />
             ),
@@ -119,7 +121,7 @@ function StackSettingNavigator(){
       <Stack.Screen name="Setting" component={SettingsScreen} />
       <Stack.Screen name="Profile" component={ProfileScreen} />
       <Stack.Screen name="UpdatePassword" component={UpdatePasswordScreen} />
-      <Stack.Screen name="Login" component={LoginScreen} />
+  
       <Stack.Screen name="UpdateProfile" component={UpdateProfileScreen} />
       <Stack.Screen name="HomePage" component={HomePageScreen} />
 
@@ -139,17 +141,24 @@ function StackNavigatorHomePage(){
       <Stack.Screen name="HomePage" component={HomePageScreen} />
       <Stack.Screen name="Profile" component={ProfileScreen} />
       <Stack.Screen name="UpdatePassword" component={UpdatePasswordScreen} />
-      <Stack.Screen name="Login" component={LoginScreen} />
       <Stack.Screen name="UpdateProfile" component={UpdateProfileScreen} />
     </Stack.Navigator>
   )
 }
 
 
+
+
 export default function Teacherpage(){
+  
   return(
     <NavigationContainer>
-        <TabNavigator />
+
+      <Stack.Navigator>
+        <Stack.Screen name="Login" component={LoginScreen} options={tabBarStyle= {  headerShown: false}}/>
+
+        <Stack.Screen name="Tab" component={TabNavigator} options={{ headerShown: false }} />
+      </Stack.Navigator>
     </NavigationContainer>
   )
 }

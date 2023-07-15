@@ -4,6 +4,7 @@ import { Picker } from '@react-native-picker/picker';
 import { Alert } from 'react-native';
 import { Ionicons } from '@expo/vector-icons';
 import { useNavigation } from '@react-navigation/native';
+import BackgroundColor from '../../BackgroundColor';
 
 
 const UpdateAttendance = () => {
@@ -68,6 +69,8 @@ const UpdateAttendance = () => {
   
 
   return (
+    <BackgroundColor>
+
     <View style={styles.container}>
       <TouchableOpacity style={styles.button} onPress={handlePreviousButtonClick}>
           <Ionicons name="chevron-back-outline" size={30} style={styles.icon} />
@@ -104,6 +107,8 @@ const UpdateAttendance = () => {
 
         </View>
     </View>
+    </BackgroundColor>
+
   );
 };
 

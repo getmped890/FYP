@@ -1,6 +1,7 @@
 import React, { useState, useLayoutEffect } from 'react';
 import { View, TouchableOpacity, TextInput, StyleSheet, Text, Button } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
+import BackgroundColor from '../../BackgroundColor';
 
 
 const AttendanceHomepage = () => {
@@ -32,7 +33,7 @@ const AttendanceHomepage = () => {
     
 
     return (
-        
+        <BackgroundColor>
         <View style={styles.container}>
         
             <View style={styles.container}>
@@ -71,7 +72,7 @@ const AttendanceHomepage = () => {
         </View>
         
   
-        
+    </BackgroundColor>
 
 
         
@@ -87,10 +88,17 @@ const styles = StyleSheet.create({
       padding: 20,
         
     },
+    buttonText:{
+        color: '#1DC1B1',
+        fontSize:15,
+
+    },
+
     container: {
 
-        justifyContent: 'center',
-        paddingTop: 60,
+        paddingTop: 70,
+        paddingLeft:20,
+        width:'95%',
     },
 
 

@@ -3,6 +3,8 @@ import { View, Text, ScrollView, StyleSheet, TouchableOpacity } from 'react-nati
 import { Ionicons } from '@expo/vector-icons';
 import { useNavigation } from '@react-navigation/native';
 import SettingsScreen from '../Setting/Setting';
+import BackgroundColor from '../../BackgroundColor';
+
 
 
 const Alerts = () => {
@@ -15,6 +17,8 @@ const Alerts = () => {
   };
 
   return (
+    <BackgroundColor>
+
     <View style={styles.container}>
       <View style={styles.middle}>
         <Text style={styles.welcometext}>Emergency Alerts:</Text>
@@ -52,6 +56,8 @@ const Alerts = () => {
 
 
     </View>
+    </BackgroundColor>
+
   );
 };
 
@@ -85,23 +91,29 @@ const styles = StyleSheet.create({
       },
   },
   scrollContainer: {
-    paddingTop: 100,
+    paddingTop: 110,
+    paddingBottom:50,
   },
  
   welcometext: {
-    fontSize: 25,
+    fontSize: 30,
     fontWeight: 'bold',
     fontStyle:'italic',
+    color: 'white',
+
   },
 
   headertext: {
-    fontSize: 20,
+    fontSize: 25,
     fontWeight: 'bold',
     marginBottom: 10,
-    paddingHorizontal: 8
+    paddingLeft: 19,
+    color: 'white',
   },
   classText: {
     fontSize: 16,
+    color: '#1DC1B1',
+
   },
   scrollContent: {
     alignItems: 'center',
