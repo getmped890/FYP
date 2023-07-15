@@ -4,6 +4,7 @@ import { Ionicons } from '@expo/vector-icons';
 import { useNavigation } from '@react-navigation/native';
 import SettingsScreen from '../Setting/Setting';
 
+
 const Alerts = () => {
   //use for navigating/redirect to other page
   const navigation = useNavigation();

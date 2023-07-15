@@ -2,6 +2,8 @@ import React from 'react';
 import { View, Text, ScrollView, StyleSheet, TouchableOpacity, Dimensions, Alert } from 'react-native';
 import { Ionicons } from '@expo/vector-icons';
 import { useNavigation } from '@react-navigation/native';
+
+
 const HomePage = () => {
   //use for navigating/redirect to other page
   const navigation = useNavigation();
@@ -9,6 +11,7 @@ const HomePage = () => {
     //navigate to setting page
     navigation.navigate('Profile');
   };
+  //End Class message 
   const handleEndClass = () => {
     Alert.alert('Class Ended!');
   };
@@ -45,16 +48,12 @@ const HomePage = () => {
 
         <View style={styles.dismissalTimeContainer}>
             <Text style={styles.headerText}>Class Dismissal Timing</Text>
-            <ScrollView horizontal={true} contentContainerStyle={styles.scrollContent}>
+
                 <View style={[styles.card, styles.cardElevated]}>
                     <Text style={styles.classText}>CSIT203</Text>
                     <Text style={styles.classText}>6.30pm</Text>
                 </View>
-                <View style={[styles.card, styles.cardElevated]}>
-                    <Text style={styles.classText}>CSIT115</Text>
-                    <Text style={styles.classText}>3.00pm</Text>
-                </View>
-            </ScrollView>
+
         </View>
 
 

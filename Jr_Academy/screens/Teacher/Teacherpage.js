@@ -5,7 +5,7 @@ import { Ionicons } from '@expo/vector-icons';
 import { FontAwesome } from '@expo/vector-icons';
 import { Octicons } from '@expo/vector-icons';
 
-
+// Creating navigation path for bottom navigator 
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 import {createMaterialBottomTabNavigator} from '@react-navigation/material-bottom-tabs';
@@ -29,11 +29,11 @@ import Location from './Alerts/Location';
 import AttendanceRecordScreen from './Attendance/AttendanceRecord';
 
 
-
+//Creating the bottom navigation tab, and stack pages for navigator
 const Tab = createMaterialBottomTabNavigator();
 const Stack = createStackNavigator();
 
-
+//Bottom navigator icons and words
 function TabNavigator(){
     return(
       <Tab.Navigator screenOptions={{headerShown:false}}>
@@ -70,6 +70,7 @@ function TabNavigator(){
     )
 }
 
+//Re-direct the stack navigator in attendance page to the spilt paths.
 function StackNavigator(){
   return(
     <Stack.Navigator
@@ -90,6 +91,7 @@ function StackNavigator(){
   )
 }
 
+//Re-directing the Alert pages navigation
 function StackLocationNavigator(){
   return(
     <Stack.Navigator
@@ -106,7 +108,7 @@ function StackLocationNavigator(){
 }
 
 
-
+//Re-directing the Setting pages navigation
 function StackSettingNavigator(){
   return(
     <Stack.Navigator
@@ -126,6 +128,7 @@ function StackSettingNavigator(){
   )
 }
 
+//Home Page navigation, goes to setting manageprofile.
 function StackNavigatorHomePage(){
   return(
     <Stack.Navigator
