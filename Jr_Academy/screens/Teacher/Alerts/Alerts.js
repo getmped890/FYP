@@ -3,7 +3,7 @@ import { View, Text, ScrollView, StyleSheet, TouchableOpacity } from 'react-nati
 import { Ionicons } from '@expo/vector-icons';
 import { useNavigation } from '@react-navigation/native';
 import SettingsScreen from '../Setting/Setting';
-import BackgroundColor from '../../BackgroundColor';
+import BackgroundColor from '../../Genericscreens/BackgroundSetting/BackgroundColor';
 
 
 

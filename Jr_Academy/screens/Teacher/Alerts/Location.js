@@ -3,7 +3,7 @@ import { View, Text, ScrollView, StyleSheet, TouchableOpacity } from 'react-nati
 import { Ionicons } from '@expo/vector-icons';
 import { useNavigation } from '@react-navigation/native';
 import Alerts from './Alerts';
-import BackgroundColor from '../../BackgroundColor';
+import BackgroundColor from '../../Genericscreens/BackgroundSetting/BackgroundColor';
 
 
 const Location = () => {

@@ -16,7 +16,7 @@ import HomePageScreen from './Homepage/HomePage';
 import ProfileScreen from './Profile/Profile';
 import UpdatePasswordScreen from './Profile/UpdatePassword';
 import UpdateProfileScreen from './Profile/UpdateProfile';
-import LoginScreen from '../Login/Login';
+import LoginScreen from '../Genericscreens/Login/Login';
 import DismissalScreen from './Dismissal/DismissalPage';
 import SettingScreen from './Setting/Setting';
 import TimeTable from './Timetable/TimeTable';

@@ -24,7 +24,7 @@ import TimeTableScreen from './TimeTable/TimeTable';
 import ProfileScreen from './Profile/Profile';
 import UpdatePasswordScreen from './Profile/UpdatePassword';
 import UpdateProfileScreen from './Profile/UpdateProfile';
-import LoginScreen from '../Login/Login';
+import LoginScreen from '../Genericscreens/Login/Login';
 import Alerts from './Alerts/Alerts';
 import Location from './Alerts/Location';
 import AttendanceRecordScreen from './Attendance/AttendanceRecord';

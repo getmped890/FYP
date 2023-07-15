@@ -3,7 +3,7 @@ import { Alert, Button, TextInput, View, StyleSheet ,Text} from 'react-native';
 import DropDownPicker from "react-native-dropdown-picker";
 import {useForm, Controller} from 'react-hook-form';
 import { Link } from "expo-router";
-import BackgroundColor from '../BackgroundColor';
+import BackgroundColor from '../BackgroundSetting/BackgroundColor';
 import { useNavigation } from '@react-navigation/native';
 
 

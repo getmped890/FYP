@@ -2,7 +2,7 @@ import React from 'react';
 import { View, Text, ScrollView, StyleSheet, TouchableOpacity, Dimensions, Alert } from 'react-native';
 import { Ionicons } from '@expo/vector-icons';
 import { useNavigation } from '@react-navigation/native';
-
+import BackgroundColor from '../../Genericscreens/BackgroundSetting/BackgroundColor';
 
 const HomePage = () => {
   //use for navigating/redirect to other page

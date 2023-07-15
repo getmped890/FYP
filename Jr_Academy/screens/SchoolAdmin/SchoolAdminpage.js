@@ -19,7 +19,7 @@ import SAProfile from './SAProfile/SAProfile';
 import SAUpdatePassword from './SAProfile/SAUpdatePW';
 import SAUpdateProfile from './SAProfile/SAUpdateProfile';
 import SASetting from './Setting/SASetting';
-import LoginScreen from '../Login/Login';
+import LoginScreen from '../Genericscreens/Login/Login';
 
 const Tab = createMaterialBottomTabNavigator();
 const Stack = createStackNavigator();

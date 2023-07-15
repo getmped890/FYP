@@ -3,7 +3,7 @@ import { View, Text, FlatList, SafeAreaView, ScrollView, StyleSheet, TouchableOp
 import { Ionicons } from '@expo/vector-icons';
 import { useNavigation } from '@react-navigation/native';
 import {Calendar, LocaleConfig} from 'react-native-calendars';
-import BackgroundColor from '../../BackgroundColor';
+import BackgroundColor from '../../Genericscreens/BackgroundSetting/BackgroundColor';
 
 
 const TimeTable = () => {

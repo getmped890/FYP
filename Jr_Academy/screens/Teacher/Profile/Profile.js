@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { View, TouchableOpacity, TextInput, StyleSheet, Text, Button } from 'react-native';
 import { Ionicons } from '@expo/vector-icons';
 import { useNavigation } from '@react-navigation/native';
-import BackgroundColor from '../../BackgroundColor';
+import BackgroundColor from '../../Genericscreens/BackgroundSetting/BackgroundColor';
 
 
 const Profile = () => {
