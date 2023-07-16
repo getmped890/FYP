@@ -1,19 +1,17 @@
 import React from 'react';
 import { View, Text, ScrollView, StyleSheet, TouchableOpacity } from 'react-native';
-import { Ionicons } from '@expo/vector-icons';
 import { useNavigation } from '@react-navigation/native';
-import SettingsScreen from '../Setting/Setting';
 import BackgroundColor from '../../Genericscreens/BackgroundSetting/BackgroundColor';
 
 
 
-const Alerts = () => {
+const TeachAlerts = () => {
   //use for navigating/redirect to other page
   const navigation = useNavigation();
 
   const checkGPS = () => {
     //navigate to GPS Page
-    navigation.navigate('Location');
+    navigation.navigate('TeachLocation');
   };
 
   return (
@@ -40,7 +38,7 @@ const Alerts = () => {
 
       <View style={styles.absentContainer}>
         <Text style={styles.headertext}>Previous Notification</Text>
-        <TouchableOpacity>
+        <TouchableOpacity onPress={checkGPS}>
         <ScrollView horizontal={true} contentContainerStyle={styles.scrollContent}>
         <View style={[styles.card, styles.cardElevated]}>
             <Text style={styles.classText}>Child Name:</Text>
@@ -123,4 +121,4 @@ const styles = StyleSheet.create({
 
 });
 
-export default Alerts;
+export default TeachAlerts;

@@ -5,7 +5,7 @@ import { useNavigation } from '@react-navigation/native';
 import BackgroundColor from '../../Genericscreens/BackgroundSetting/BackgroundColor';
 
 
-const Profile = () => {
+const TeachProfile = () => {
 
 
   const navigation = useNavigation();
@@ -19,11 +19,11 @@ const Profile = () => {
   };
 
   const handleUpdatePasswordClick = () => {
-    navigation.navigate('UpdatePassword'); // Navigate to the UpdatePassword screen
+    navigation.navigate('TeachUpdatePassword'); // Navigate to the UpdatePassword screen
   };
 
   const handleUpdateProfileClick = () => {
-    navigation.navigate('UpdateProfile'); // Navigate to the UpdatePassword screen
+    navigation.navigate('TeachUpdateProfile'); // Navigate to the UpdatePassword screen
   };
 
   
@@ -151,4 +151,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default Profile;
+export default TeachProfile;

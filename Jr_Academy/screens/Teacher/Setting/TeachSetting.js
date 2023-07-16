@@ -6,13 +6,13 @@ import BackgroundColor from '../../Genericscreens/BackgroundSetting/BackgroundCo
 
 
 
-const Setting = () => {
+const TeachSetting = () => {
     const [isEnabled, setIsEnabled] = useState(false);
     const toggleSwitch = () => setIsEnabled(previousState => !previousState);
     const navigation = useNavigation();
 
     const handleManageProfileClick = () => {
-      navigation.navigate('Profile'); 
+      navigation.navigate('TeachProfile'); 
     };
 
     const handleLogoutButtonClick = () => {
@@ -115,4 +115,4 @@ const styles = StyleSheet.create({
   
   });
   
-export default Setting;
+export default TeachSetting;
