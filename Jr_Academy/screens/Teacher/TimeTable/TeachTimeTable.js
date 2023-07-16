@@ -6,7 +6,7 @@ import {Calendar, LocaleConfig} from 'react-native-calendars';
 import BackgroundColor from '../../Genericscreens/BackgroundSetting/BackgroundColor';
 
 
-const TimeTable = () => {
+const TeachTimeTable = () => {
   //use for navigating/redirect to other page
   const navigation = useNavigation();
 
@@ -92,6 +92,6 @@ const styles = StyleSheet.create({
     },
   });
 
-export default TimeTable;
+export default TeachTimeTable;
 
 

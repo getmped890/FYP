@@ -4,22 +4,23 @@ import { Ionicons } from '@expo/vector-icons';
 import { useNavigation } from '@react-navigation/native';
 import BackgroundColor from '../../Genericscreens/BackgroundSetting/BackgroundColor';
 
-const HomePage = () => {
+const TeachHomePage = () => {
   //use for navigating/redirect to other page
   const navigation = useNavigation();
   const handleUserIconClick = () => {
     //navigate to setting page
-    navigation.navigate('Profile');
+    navigation.navigate('TeachProfile');
   };
   //End Class message 
   const handleEndClass = () => {
     Alert.alert('End Class', 'Are you sure to end class now?', [
-      {
-        text: 'Cancel',
-      },
+
       {
         text: 'Yes',
         onPress: () => Alert.alert('Class Ended!'),
+      },      
+      {
+        text: 'Cancel',
       },
     ]);
 
@@ -189,4 +190,4 @@ const styles = StyleSheet.create({
     color: '#FFFFFF',
   },
 });
-export default HomePage;
+export default TeachHomePage;

@@ -2,8 +2,7 @@ import { StatusBar } from 'expo-status-bar';
 import { SafeAreaView, StyleSheet, View, Text, Button} from 'react-native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { Ionicons } from '@expo/vector-icons';
-import { FontAwesome } from '@expo/vector-icons';
-import { Octicons } from '@expo/vector-icons';
+
 
 
 import { NavigationContainer } from '@react-navigation/native';
@@ -106,7 +105,6 @@ function StackNavigatorHomePage(){
       <Stack.Screen name="HomePage" component={SAHomePage} />
       <Stack.Screen name="Profile" component={SAProfile} />
       <Stack.Screen name="UpdatePassword" component={SAUpdatePassword} />
-      <Stack.Screen name="Login" component={LoginScreen} />
       <Stack.Screen name="UpdateProfile" component={SAUpdateProfile} />
 
     </Stack.Navigator>

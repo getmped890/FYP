@@ -4,16 +4,16 @@ import { useNavigation } from '@react-navigation/native';
 import BackgroundColor from '../../Genericscreens/BackgroundSetting/BackgroundColor';
 
 
-const UpdatePassword = () => {
+const TeachUpdatePassword = () => {
   
   const navigation = useNavigation();
 
   const handleCancelButtonClick = () => {
-    navigation.navigate('Profile');
+    navigation.navigate('TeachProfile');
   };
 
   const handleSubmitButtonClick = () => {
-    navigation.navigate('Profile');
+    navigation.navigate('TeachProfile');
   };
 
   // Use useLayoutEffect to set the options for hiding the header
@@ -102,4 +102,4 @@ const styles = StyleSheet.create({
   
 });
 
-export default UpdatePassword;
+export default TeachUpdatePassword;

@@ -13,20 +13,20 @@ import {createMaterialBottomTabNavigator} from '@react-navigation/material-botto
 
 
 //import from the respective file path
-import HomePageScreen from './Homepage/HomePage';
-import SettingsScreen from './Setting/Setting';
+import TeachHomePageScreen from './Homepage/TeachHomePage';
+import TeachSettingsScreen from './Setting/TeachSetting';
 import AttendanceHomeScreen from './Attendance/AttendanceHomepage';
 import MarkAttendanceScreen from './Attendance/MarkAttendance';
 import ViewAttendanceScreen from './Attendance/ViewAttendance';
 import UpdateAttendanceScreen from './Attendance/UpdateAttendance';
 import GenerateAlistScreen from './Attendance/GenerateAlist';
-import TimeTableScreen from './TimeTable/TimeTable';
-import ProfileScreen from './Profile/Profile';
-import UpdatePasswordScreen from './Profile/UpdatePassword';
-import UpdateProfileScreen from './Profile/UpdateProfile';
+import TeachTimeTableScreen from './TimeTable/TeachTimeTable';
+import TeachProfileScreen from './Profile/TeachProfile';
+import TeachUpdatePasswordScreen from './Profile/TeachUpdatePassword';
+import TeachUpdateProfileScreen from './Profile/TeachUpdateProfile';
 import LoginScreen from '../Genericscreens/Login/Login';
-import Alerts from './Alerts/Alerts';
-import Location from './Alerts/Location';
+import TeachAlertsScreen from './Alerts/TeachAlerts';
+import TeachLocationScreen from './Alerts/TeachLocation';
 import AttendanceRecordScreen from './Attendance/AttendanceRecord';
 
 
@@ -44,7 +44,7 @@ function TabNavigator(){
               <Octicons name="checklist" size={24} color="black" />
             ),
           }}/>
-          <Tab.Screen name="TimeTable" component={TimeTableScreen} options={{
+          <Tab.Screen name="TimeTable" component={TeachTimeTableScreen} options={{
             tabBarIcon: () => (
               <Ionicons name="calendar-outline" size={24} color="black" />
             ),
@@ -101,8 +101,8 @@ function StackLocationNavigator(){
         headerShown: false,
       }}
     >
-      <Stack.Screen name="TeacherNotification" component={Alerts} />
-      <Stack.Screen name="Location" component={Location} />
+      <Stack.Screen name="TeacherNotification" component={TeachAlertsScreen} />
+      <Stack.Screen name="TeachLocation" component={TeachLocationScreen} />
 
 
     </Stack.Navigator>
@@ -118,12 +118,12 @@ function StackSettingNavigator(){
         headerShown: false,
       }}
     >
-      <Stack.Screen name="Setting" component={SettingsScreen} />
-      <Stack.Screen name="Profile" component={ProfileScreen} />
-      <Stack.Screen name="UpdatePassword" component={UpdatePasswordScreen} />
+      <Stack.Screen name="TeachSetting" component={TeachSettingsScreen} />
+      <Stack.Screen name="TeachProfile" component={TeachProfileScreen} />
+      <Stack.Screen name="TeachUpdatePassword" component={TeachUpdatePasswordScreen} />
   
-      <Stack.Screen name="UpdateProfile" component={UpdateProfileScreen} />
-      <Stack.Screen name="HomePage" component={HomePageScreen} />
+      <Stack.Screen name="TeachUpdateProfile" component={TeachUpdateProfileScreen} />
+      <Stack.Screen name="TeachHomePage" component={TeachHomePageScreen} />
 
 
     </Stack.Navigator>
@@ -138,10 +138,10 @@ function StackNavigatorHomePage(){
         headerShown: false,
       }}
     >
-      <Stack.Screen name="HomePage" component={HomePageScreen} />
-      <Stack.Screen name="Profile" component={ProfileScreen} />
-      <Stack.Screen name="UpdatePassword" component={UpdatePasswordScreen} />
-      <Stack.Screen name="UpdateProfile" component={UpdateProfileScreen} />
+      <Stack.Screen name="TeachHomePage" component={TeachHomePageScreen} />
+      <Stack.Screen name="TeachProfile" component={TeachProfileScreen} />
+      <Stack.Screen name="TeachUpdatePassword" component={TeachUpdatePasswordScreen} />
+      <Stack.Screen name="TeachUpdateProfile" component={TeachUpdateProfileScreen} />
     </Stack.Navigator>
   )
 }

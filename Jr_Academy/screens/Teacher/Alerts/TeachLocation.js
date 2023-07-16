@@ -2,11 +2,11 @@ import React from 'react';
 import { View, Text, ScrollView, StyleSheet, TouchableOpacity } from 'react-native';
 import { Ionicons } from '@expo/vector-icons';
 import { useNavigation } from '@react-navigation/native';
-import Alerts from './Alerts';
+import TeachAlerts from './TeachAlerts';
 import BackgroundColor from '../../Genericscreens/BackgroundSetting/BackgroundColor';
 
 
-const Location = () => {
+const TeachLocation = () => {
 
      //use for navigating/redirect to other page
   const navigation = useNavigation();
@@ -54,4 +54,4 @@ const Location = () => {
   
 });
   
-export default Location;
+export default TeachLocation;
