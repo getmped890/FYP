@@ -14,12 +14,13 @@ const TeachHomePage = () => {
   //End Class message 
   const handleEndClass = () => {
     Alert.alert('End Class', 'Are you sure to end class now?', [
-      {
-        text: 'Cancel',
-      },
+
       {
         text: 'Yes',
         onPress: () => Alert.alert('Class Ended!'),
+      },      
+      {
+        text: 'Cancel',
       },
     ]);
 
