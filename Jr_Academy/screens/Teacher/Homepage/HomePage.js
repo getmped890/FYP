@@ -13,7 +13,18 @@ const HomePage = () => {
   };
   //End Class message 
   const handleEndClass = () => {
-    Alert.alert('Class Ended!');
+    Alert.alert('End Class', 'Are you sure to end class now?', [
+      {
+        text: 'Cancel',
+      },
+      {
+        text: 'Yes',
+        onPress: () => Alert.alert('Class Ended!'),
+      },
+    ]);
+
+    
+    
   };
   return (
     <View style={styles.container}>
