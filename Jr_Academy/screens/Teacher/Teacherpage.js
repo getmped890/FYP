@@ -20,7 +20,7 @@ import MarkAttendanceScreen from './Attendance/MarkAttendance';
 import ViewAttendanceScreen from './Attendance/ViewAttendance';
 import UpdateAttendanceScreen from './Attendance/UpdateAttendance';
 import GenerateAlistScreen from './Attendance/GenerateAlist';
-import TimeTableScreen from './TimeTable/TimeTable';
+import TeachTimeTableScreen from './TimeTable/TeachTimeTable';
 import ProfileScreen from './Profile/Profile';
 import UpdatePasswordScreen from './Profile/UpdatePassword';
 import UpdateProfileScreen from './Profile/UpdateProfile';
@@ -44,7 +44,7 @@ function TabNavigator(){
               <Octicons name="checklist" size={24} color="black" />
             ),
           }}/>
-          <Tab.Screen name="TimeTable" component={TimeTableScreen} options={{
+          <Tab.Screen name="TimeTable" component={TeachTimeTableScreen} options={{
             tabBarIcon: () => (
               <Ionicons name="calendar-outline" size={24} color="black" />
             ),
