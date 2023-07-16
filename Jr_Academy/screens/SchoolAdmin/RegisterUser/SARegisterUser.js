@@ -1,124 +1,96 @@
 import React from 'react';
-import { View, Text , ScrollView, Dimensions, StyleSheet} from 'react-native';
+import {Alert, View, Text , TextInput, Button, StyleSheet} from 'react-native';
+import { useNavigation } from '@react-navigation/native';
+import BackgroundColor from '../../Genericscreens/BackgroundSetting/BackgroundColor';
+
 
 const SARegisterProfile = () => {
+
+  const navigation = useNavigation();
+  const SARegisterSubmitButtonClick = () => {
+    Alert.alert('New User Created!');
+  };
+
+  const SACancelButton = () => {
+    navigation.navigate('Home');
+  };
+ 
   return (
+    <BackgroundColor>
     <View style={styles.container}>
       <View style={styles.background}>
-        <View style={styles.scrollContainer}>
-          <Text style={styles.headerText}>Dismissal Time:</Text>
-          <ScrollView horizontal={false} contentContainerStyle={styles.scrollContent}>
-            <View style={[styles.card, styles.cardElevated]}>
-              <Text style={styles.classText}>CSIT203</Text>
-              <Text style={styles.classText}>6:30pm</Text>
-            </View>
-            <View style={[styles.card, styles.cardElevated]}>
-              <Text style={styles.classText}>CSIT503</Text>
-              <Text style={styles.classText}>3:30pm</Text>
-            </View>
-            <View style={[styles.card, styles.cardElevated]}>
-              <Text style={styles.classText}>CSIT123</Text>
-              <Text style={styles.classText}>2:30pm</Text>
-            </View>
-            <View style={[styles.card, styles.cardElevated]}>
-              <Text style={styles.classText}>CSIT323</Text>
-              <Text style={styles.classText}>4:30pm</Text>
-            </View>
-            <View style={[styles.card, styles.cardElevated]}>
-              <Text style={styles.classText}>CSIT999</Text>
-              <Text style={styles.classText}>10:30pm</Text>
-            </View>
-          </ScrollView>
-        </View>
+
+        <Text style={styles.label}>Name:</Text>
+        <TextInput
+          style={styles.textInput}
+          secureTextEntry
+        />
+
+        <Text style={styles.label}>Address:</Text>
+        <TextInput
+          style={styles.textInput}
+          secureTextEntry
+        />
         
+        <Text style={styles.label}>Email:</Text>
+        <TextInput
+          style={styles.textInput}
+          secureTextEntry
+        />
+        <Text style={styles.label}>Contact:</Text>
+        <TextInput
+          style={styles.textInput}
+          secureTextEntry
+        />
+      <View style={styles.buttonContainer}>
+        <Button
+          title="Submit"
+          onPress={SARegisterSubmitButtonClick}
+          color="black"
+          style={styles.submitbutton}
+        />
+      </View>     
+      <View style={styles.buttonContainer}>
+        <Button
+          title="Cancel"
+          onPress={SACancelButton}
+          color="black"
+          style={styles.submitbutton}
+        />
+      </View>          
+
       </View>
     </View>
+    </BackgroundColor>
   );
 };
 
-const { width, height } = Dimensions.get('window');
+
 const styles = StyleSheet.create({
   container: {
     flex: 1,
+    paddingHorizontal: 20,
+    paddingTop: 150,
   },
-  background: {
-    flex: 1,
-    backgroundColor: '#B3EAE5',
+  inputContainer: {
+    marginBottom: 20,
   },
-  topLeft: {
-    position: 'absolute',
-    top: height * 0.08,
-    left: width * 0.05,
-  },
-  topRight: {
-    position: 'absolute',
-    top: height * 0.07,
-    right: width * 0.05,
-    zIndex: 1,
-  },
-  card: {
-    flex: 1,
-    alignItems: 'center',
-    justifyContent: 'center',
-    width: width * 0.65,
-    height: height * 0.16,
-    width: width * 0.60,
-    height: height * 0.15,
-    borderRadius: 4,
-    margin: width * 0.05,
-    backgroundColor: '#FFFFFF',
-  },
-  cardElevated: {
-    elevation: 4,
-    shadowOffset: {
-      width: 1,
-      height: 1,
-    },
-  },
-  scrollContainer: {
-    paddingTop: height * 0.2,
-  },
-  absentContainer: {
-    paddingTop: height * 0.07,
-  },
-  welcomeText: {
-    fontSize: height * 0.03,
+  label: {
     fontWeight: 'bold',
-    fontStyle: 'italic',
-    color: '#FFFFFF',
+    marginBottom: 5,
   },
-  headerText: {
-    fontSize: height * 0.03,
-    fontWeight: 'bold',
-    marginBottom: height * 0.01,
-    paddingHorizontal: width * 0.05,
-    color: '#FFFFFF',
+  textInput: {
+    height: 40,
+    borderColor: 'black',
+    borderWidth: 1,
+    borderRadius: 5,
+    paddingHorizontal: 10,
   },
-  classText: {
-    fontSize: height * 0.018,
-    color: '#1DC1B1',
-  },
-  scrollContent: {
-    alignItems: 'center',
-  },
-  endClassButton: {
-    position: 'absolute',
-    bottom: height * 0.05,
-    right: width * 0.03,
-    width: width * 0.2,
-    height: width * 0.14,
-    borderRadius: width * 0.1,
-    backgroundColor: '#FFFFFF',
+  buttonContainer: {
+    flexDirection: 'row',
     justifyContent: 'center',
     alignItems: 'center',
-  },
-  endClassText: {
-    position: 'absolute',
-    bottom: height * 0.01,
-    right: width * 0.03,
-    fontWeight: 'bold',
-    fontSize: height * 0.024,
-    color: '#FFFFFF',
+    marginBottom: 20,
   },
 });
 

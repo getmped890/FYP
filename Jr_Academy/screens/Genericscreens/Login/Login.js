@@ -5,7 +5,7 @@ import {useForm, Controller} from 'react-hook-form';
 import { Link } from "expo-router";
 import BackgroundColor from '../BackgroundSetting/BackgroundColor';
 import { useNavigation } from '@react-navigation/native';
-
+import SchoolAdminpage from '../../SchoolAdmin/SchoolAdminpage';
 
 
 const Login = () => {
