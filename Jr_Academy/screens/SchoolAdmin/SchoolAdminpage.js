@@ -84,9 +84,15 @@ function StackNavigatorHomePage(){
 
 
 export default function SchoolAdminpage(){
+  
   return(
     <NavigationContainer>
-        <TabNavigator />
+
+      <Stack.Navigator>
+        <Stack.Screen name="Login" component={LoginScreen} options={tabBarStyle= {  headerShown: false}}/>
+
+        <Stack.Screen name="Tab" component={TabNavigator} options={{ headerShown: false }} />
+      </Stack.Navigator>
     </NavigationContainer>
   )
 }

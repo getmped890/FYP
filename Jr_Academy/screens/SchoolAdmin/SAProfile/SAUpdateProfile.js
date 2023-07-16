@@ -23,13 +23,15 @@ const SAUpdateProfile = () => {
 
   return (
     <BackgroundColor>
+ 
     <View style={styles.container}>
+      
        <View style={styles.inputContainer}>
         <Text style={styles.label}>Name:</Text>
         <TextInput
           style={styles.textInput}
           value="James Milner"
-          editable={true}
+          editable={false}
         />
       </View>
 
@@ -39,7 +41,7 @@ const SAUpdateProfile = () => {
         <TextInput
           style={styles.textInput}
           value="45 yishun kim"
-          editable={true}
+          editable={false}
         />
       </View>
 
@@ -83,6 +85,10 @@ const SAUpdateProfile = () => {
 };
 
 const styles = StyleSheet.create({
+
+  newUsertext:{
+    fontSize:20,
+  },
   container: {
     flex: 1,
     paddingHorizontal: 20,
