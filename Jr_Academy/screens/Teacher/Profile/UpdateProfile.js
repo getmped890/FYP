@@ -31,7 +31,7 @@ const UpdateProfile = () => {
         <TextInput
           style={styles.textInput}
           value="James Milner"
-          editable={true}
+          editable={false}
         />
       </View>
 
@@ -41,7 +41,7 @@ const UpdateProfile = () => {
         <TextInput
           style={styles.textInput}
           value="45 yishun kim"
-          editable={true}
+          editable={false}
         />
       </View>
 

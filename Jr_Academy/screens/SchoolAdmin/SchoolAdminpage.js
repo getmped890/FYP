@@ -18,7 +18,6 @@ import SAHomePage from './HomePage/SAHomePage';
 import SAProfile from './SAProfile/SAProfile';
 import SAUpdatePassword from './SAProfile/SAUpdatePW';
 import SAUpdateProfile from './SAProfile/SAUpdateProfile';
-import SASetting from './Setting/SASetting';
 import LoginScreen from '../Genericscreens/Login/Login';
 
 const Tab = createMaterialBottomTabNavigator();
@@ -53,7 +52,7 @@ function TabNavigator(){
           }}/>
           
           
-          <Tab.Screen name="Settings" component={StackNavigatorSettingPage} options={{
+          <Tab.Screen name="Settings" component={SAProfile} options={{
             tabBarIcon: () => (
               <Ionicons name="settings-outline" size={24} color="black" />
             ),
@@ -83,18 +82,6 @@ function StackNavigatorHomePage(){
 }
 
 
-function StackNavigatorSettingPage(){
-    return(
-      <Stack.Navigator
-        screenOptions={{
-          headerShown: false,
-        }}
-      >
-        <Stack.Screen name="Setting" component={SASetting} />
-        <Stack.Screen name="Login" component={LoginScreen} />
-      </Stack.Navigator>
-    )
-  }
 
 export default function SchoolAdminpage(){
   return(
