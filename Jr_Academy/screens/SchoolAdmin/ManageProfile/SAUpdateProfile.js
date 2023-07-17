@@ -8,6 +8,7 @@ const SAUpdateProfile = () => {
   const navigation = useNavigation();
 
   const handleCancelButtonClick = () => {
+    
     navigation.navigate('SAManageProfile');
   };
 
