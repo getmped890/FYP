@@ -1,8 +1,7 @@
-import { StatusBar } from 'expo-status-bar';
+
 import { SafeAreaView, StyleSheet, View, Text, Button} from 'react-native';
 
 import { Ionicons } from '@expo/vector-icons';
-import { FontAwesome } from '@expo/vector-icons';
 import { Octicons } from '@expo/vector-icons';
 
 
