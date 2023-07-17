@@ -15,7 +15,7 @@ const SAManageProfile = () => {
   };
 
   const handleActivate = () => {
-    Alert.alert("Profile activated!");
+    Alert.alert("Profile suspended!");
   };
 
   const profileList = [
@@ -59,7 +59,7 @@ const SAManageProfile = () => {
             style={{ backgroundColor: 'green' }}
             onPress={() => handleActivate(row.id)}
           >
-            <Text style={{ color: 'white' }}>Activate</Text>
+            <Text style={{ color: 'white' }}>Suspend</Text>
           </TouchableOpacity>
         </View>
       ),
