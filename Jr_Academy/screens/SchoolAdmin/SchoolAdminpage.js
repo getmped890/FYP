@@ -18,6 +18,10 @@ import SAProfile from './SAProfile/SAProfile';
 import SAUpdatePassword from './SAProfile/SAUpdatePW';
 import SAUpdateProfile from './SAProfile/SAUpdateProfile';
 import LoginScreen from '../Genericscreens/Login/Login';
+import SAUpdateClassScreen from './ManageClass/SAUpdateClass';
+import SAUpdateProfileScreen from './ManageProfile/SAUpdateProfile';
+
+
 
 const Tab = createMaterialBottomTabNavigator();
 const Stack = createStackNavigator();
@@ -33,7 +37,7 @@ function TabNavigator(){
             ),
           }}/>
 
-        <Tab.Screen name="Manage Profiles" component={SAManageProfile} options={{
+        <Tab.Screen name="Manage Profiles" component={StackNavigatorManageProfilePage} options={{
                     tabBarIcon: () => (
                     <Ionicons name="people-outline" size={24} color="black" />
                     ),
@@ -44,7 +48,7 @@ function TabNavigator(){
                         ),
           }}/>          
             
-            <Tab.Screen name="Manage Class" component={SAManageClass} options={{
+            <Tab.Screen name="Manage Class" component={StackNavigatorManageClassPage} options={{
             tabBarIcon: () => (
               <Ionicons name="newspaper-outline" size={24} color="black" />
             ),
@@ -60,7 +64,35 @@ function TabNavigator(){
       </Tab.Navigator>
     )
 }
+function StackNavigatorManageClassPage(){
+  return(
+    <Stack.Navigator
+      screenOptions={{
+        headerShown: false,
+      }}
+    >
+      <Stack.Screen name="SAManageClass" component={SAManageClass} />
+      <Stack.Screen name="SAUpdateClass" component={SAUpdateClassScreen} />
 
+
+    </Stack.Navigator>
+  )
+}
+
+function StackNavigatorManageProfilePage(){
+  return(
+    <Stack.Navigator
+      screenOptions={{
+        headerShown: false,
+      }}
+    >
+      <Stack.Screen name="SAManageProfile" component={SAManageProfile} />
+      <Stack.Screen name="SAUpdateProfile" component={SAUpdateProfileScreen} />
+
+
+    </Stack.Navigator>
+  )
+}
 
 
 function StackNavigatorHomePage(){
