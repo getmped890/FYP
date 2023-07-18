@@ -23,7 +23,7 @@ const SARegisterProfile = () => {
         <Text style={styles.label}>Name:</Text>
         <TextInput
           style={styles.textInput}
-          
+          secureTextEntry
         />
 
         <Text style={styles.label}>Address:</Text>
@@ -35,12 +35,12 @@ const SARegisterProfile = () => {
         <Text style={styles.label}>Email:</Text>
         <TextInput
           style={styles.textInput}
-          
+          secureTextEntry
         />
         <Text style={styles.label}>Contact:</Text>
         <TextInput
           style={styles.textInput}
-          
+          secureTextEntry
         />
       <View style={styles.buttonContainer}>
         <Button
