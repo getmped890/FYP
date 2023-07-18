@@ -34,7 +34,9 @@ const AttendanceHomepage = () => {
     return (
         <BackgroundColor>
         <View style={styles.container}>
-        
+            <Text style={styles.fclass}>
+                Form Class: 1-A
+            </Text>
             <View style={styles.container}>
                 <TouchableOpacity style={styles.button} onPress={handleMarkAttendanceClick}>
 
@@ -80,6 +82,11 @@ const AttendanceHomepage = () => {
 
 
 const styles = StyleSheet.create({
+
+    fclass:{
+        fontSize: 35,
+        fontWeight: 'bold',
+    },
    
     button:{
       alignItems:'center',

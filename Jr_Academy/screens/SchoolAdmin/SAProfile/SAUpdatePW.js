@@ -1,17 +1,18 @@
 import React, { useState, useLayoutEffect } from 'react';
 import { View, TouchableOpacity, TextInput, StyleSheet, Text, Button } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
+import SAProfile from './SAProfile';
 
 const SAUpdatePassword = () => {
   
   const navigation = useNavigation();
 
   const handleCancelButtonClick = () => {
-    navigation.navigate('ChildProfile');
+    navigation.navigate('Settings');
   };
 
   const handleSubmitButtonClick = () => {
-    navigation.navigate('Profile');
+    navigation.navigate('Settings');
   };
 
   // Use useLayoutEffect to set the options for hiding the header
