@@ -8,6 +8,7 @@ const SAUpdateProfile = () => {
   const navigation = useNavigation();
 
   const handleCancelButtonClick = () => {
+    
     navigation.navigate('SAManageProfile');
   };
 
@@ -106,7 +107,7 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     paddingHorizontal: 20,
-    paddingTop: 180,
+    paddingTop: 140,
   },
   inputContainer: {
     marginBottom: 20,

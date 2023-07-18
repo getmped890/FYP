@@ -74,42 +74,45 @@ const SAManageProfile = () => {
 
   return (
     <BackgroundColor>
-
-    <View style={styles.container}>
-      <TextInput
-        style={{ borderColor: 'gray', borderWidth: 1, marginBottom: 10, paddingHorizontal: 10 }}
-        placeholder="Enter Input"
-        value={searchValue}
-        onChangeText={(text) => setsearchValue(text)}
-      />
-      <ScrollView style={styles.scrollView}>
-        <ScrollView horizontal>
-          <DataTable>
-            <DataTable.Header>
-              {columns.map((column) => (
-                <DataTable.Title key={column.selector}>{column.name}</DataTable.Title>
-              ))}
-            </DataTable.Header>
-
-            {searchedData.map((item) => (
-              <DataTable.Row key={item.id}>
+      <View style={styles.container}>
+        <TextInput
+          style={{ borderColor: 'gray', borderWidth: 1, marginBottom: 10, paddingHorizontal: 10 }}
+          placeholder="Enter Input"
+          value={searchValue}
+          onChangeText={(text) => setsearchValue(text)}
+        />
+        <ScrollView style={styles.scrollView}>
+          <ScrollView horizontal>
+            <DataTable>
+              <DataTable.Header>
                 {columns.map((column) => (
-                  <DataTable.Cell
+                  <DataTable.Title
                     key={column.selector}
-                    style={styles.dataTableCell}
-                    flex={column.flex}
+                    style={styles.headerCell}
                   >
-                    {column.cell ? <Text>{column.cell(item)}</Text> : item[column.selector]}
-                  </DataTable.Cell>
+                    {column.name}
+                  </DataTable.Title>
                 ))}
-              </DataTable.Row>
-            ))}
-          </DataTable>
-        </ScrollView>
-      </ScrollView>
-    </View>
-    </BackgroundColor>
+              </DataTable.Header>
 
+              {searchedData.map((item) => (
+                <DataTable.Row key={item.id}>
+                  {columns.map((column) => (
+                    <DataTable.Cell
+                      key={column.selector}
+                      style={styles.dataTableCell}
+                      flex={column.flex}
+                    >
+                      {column.cell ? <Text>{column.cell(item)}</Text> : item[column.selector]}
+                    </DataTable.Cell>
+                  ))}
+                </DataTable.Row>
+              ))}
+            </DataTable>
+          </ScrollView>
+        </ScrollView>
+      </View>
+    </BackgroundColor>
   );
 };
 
@@ -123,9 +126,12 @@ const styles = StyleSheet.create({
   scrollView: {
     flex: 1,
   },
+  headerCell: {
+    width: 100, 
+  },
   dataTableCell: {
     paddingLeft: 0,
-    width:100,
+    width: 100,
     alignItems: 'flex-start',
     justifyContent: 'flex-start',
   },
