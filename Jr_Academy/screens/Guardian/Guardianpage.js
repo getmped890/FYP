@@ -11,15 +11,15 @@ import {createMaterialBottomTabNavigator} from '@react-navigation/material-botto
 
 
 //import from the respective file path
-import HomePageScreen from './Homepage/HomePage';
-import ProfileScreen from './Profile/Profile';
-import UpdatePasswordScreen from './Profile/UpdatePassword';
-import UpdateProfileScreen from './Profile/UpdateProfile';
+import HomePageScreen from './Homepage/GHomePage';
+import ProfileScreen from './Profile/GProfile';
+import UpdatePasswordScreen from './Profile/GUpdatePassword';
+import UpdateProfileScreen from './Profile/GUpdateProfile';
 import LoginScreen from '../Genericscreens/Login/Login';
-import DismissalScreen from './Dismissal/DismissalPage';
-import SettingScreen from './Setting/Setting';
-import TimeTable from './Timetable/TimeTable';
-import Notification from './Notification/Notification';
+import DismissalScreen from './Dismissal/GDismissalPage';
+import SettingScreen from './Setting/GSetting';
+import TimeTable from './Timetable/GTimeTable';
+import Notification from './Notification/GNotification';
 
 const Tab = createMaterialBottomTabNavigator();
 const Stack = createStackNavigator();
