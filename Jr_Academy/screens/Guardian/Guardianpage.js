@@ -53,7 +53,7 @@ function TabNavigator(){
           }}/>
           
           
-          <Tab.Screen name="Settings" component={StackNavigatorSettingPage} options={{
+          <Tab.Screen name="Settings" component={SettingScreen} options={{
             tabBarIcon: () => (
               <Ionicons name="settings-outline" size={24} color="black" />
             ),
@@ -83,18 +83,6 @@ function StackNavigatorHomePage(){
 }
 
 
-function StackNavigatorSettingPage(){
-    return(
-      <Stack.Navigator
-        screenOptions={{
-          headerShown: false,
-        }}
-      >
-        <Stack.Screen name="Setting" component={SettingScreen} />
-        <Stack.Screen name="Login" component={LoginScreen} />
-      </Stack.Navigator>
-    )
-  }
 
   export default function Guardianpage(){
   
