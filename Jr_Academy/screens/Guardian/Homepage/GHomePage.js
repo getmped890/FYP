@@ -27,16 +27,7 @@ const HomePage = () => {
               <Text style={styles.classText}>Date: 26th Jun 2023</Text>
               <Text style={styles.classText}>Dismissal Time: 3:30pm - 6:30pm</Text>
             </View>
-            <View style={[styles.card, styles.cardElevated]}>
-              <Text style={styles.classText}>Class: CSIT203</Text>
-              <Text style={styles.classText}>Date: 26th Jun 2023</Text>
-              <Text style={styles.classText}>Dismissal Time: 3:30pm - 6:30pm</Text>
-            </View>
-            <View style={[styles.card, styles.cardElevated]}>
-              <Text style={styles.classText}>Class: CSIT203</Text>
-              <Text style={styles.classText}>Date: 26th Jun 2023</Text>
-              <Text style={styles.classText}>Dismissal Time: 3:30pm - 6:30pm</Text> 
-            </View>
+            
           </ScrollView>
         </View>
         <View style={styles.absentContainer}>
