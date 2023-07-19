@@ -57,7 +57,8 @@ const SARegisterProfile = () => {
           color="black"
           style={styles.submitbutton}
         />
-      </View>          
+      </View>  
+              
 
       </View>
     </View>
