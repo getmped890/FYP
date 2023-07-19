@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { View, TouchableOpacity, TextInput, StyleSheet, Text, Button } from 'react-native';
 import { Ionicons } from '@expo/vector-icons';
 import { useNavigation } from '@react-navigation/native';
-
+import BackgroundColor from '../../Genericscreens/BackgroundSetting/BackgroundColor';
 
 const ChildProfile = () => {
 
@@ -24,6 +24,7 @@ const ChildProfile = () => {
  
   
   return (
+    <BackgroundColor>
     <View style={styles.container}>
       <View style={styles.buttonContainer}>
         <TouchableOpacity style={styles.button} onPress={handlePreviousButtonClick}>
@@ -85,6 +86,7 @@ const ChildProfile = () => {
         style={styles.updateButton}
       />
     </View>
+    </BackgroundColor>
   );
 };
 

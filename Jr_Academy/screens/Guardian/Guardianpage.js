@@ -1,9 +1,8 @@
-import { StatusBar } from 'expo-status-bar';
-import { SafeAreaView, StyleSheet, View, Text, Button} from 'react-native';
-import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
+
+import { StyleSheet} from 'react-native';
 import { Ionicons } from '@expo/vector-icons';
 import { FontAwesome } from '@expo/vector-icons';
-import { Octicons } from '@expo/vector-icons';
+
 
 
 import { NavigationContainer } from '@react-navigation/native';
@@ -98,14 +97,19 @@ function StackNavigatorSettingPage(){
     )
   }
 
-export default function Guardianpage(){
-  return(
-    <NavigationContainer>
-        <TabNavigator />
-    </NavigationContainer>
-  )
-}
-
+  export default function Guardianpage(){
+  
+    return(
+      <NavigationContainer>
+  
+        <Stack.Navigator>
+          <Stack.Screen name="Login" component={LoginScreen} options={tabBarStyle= {  headerShown: false}}/>
+  
+          <Stack.Screen name="Tab" component={TabNavigator} options={{ headerShown: false }} />
+        </Stack.Navigator>
+      </NavigationContainer>
+    )
+  }
 
 
 const styles = StyleSheet.create({

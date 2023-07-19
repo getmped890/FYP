@@ -12,7 +12,7 @@ import ChildProfile from './Setting/ChildProfile';
 import ChildUpdatePassword from './Setting/ChildUpdatePW';
 import ChildHomePage from './Homepage/ChildHomepage';
 import ChildDismissalPage from './Dismissal/ChildDismissalPage';
-
+import LoginScreen from '../Genericscreens/Login/Login';
 
 const Tab = createMaterialBottomTabNavigator();
 const Stack = createStackNavigator();
@@ -70,9 +70,15 @@ const styles = StyleSheet.create({
 
 
 export default function Childpage(){
+  
   return(
     <NavigationContainer>
-        <TabNavigator />
+
+      <Stack.Navigator>
+        <Stack.Screen name="Login" component={LoginScreen} options={tabBarStyle= {  headerShown: false}}/>
+
+        <Stack.Screen name="Tab" component={TabNavigator} options={{ headerShown: false }} />
+      </Stack.Navigator>
     </NavigationContainer>
   )
-};
+}
