@@ -1,5 +1,5 @@
-import React, { Component, useState,useCallback } from 'react';
-import { Alert, Button, TextInput, View, StyleSheet ,Text} from 'react-native';
+import React, {useState,useCallback } from 'react';
+import { Button, TextInput, View, StyleSheet} from 'react-native';
 import DropDownPicker from "react-native-dropdown-picker";
 import {useForm, Controller} from 'react-hook-form';
 import { Link } from "expo-router";
@@ -17,6 +17,7 @@ const Login = () => {
         { label: "Guardians", value: "guardians" },
         { label: "Child", value: "child" },
         { label: "School Admin", value: "schooladmin" },
+        { label: "CCA Coach", value: "ccacoach" },       
     ]);
     const navigation = useNavigation();
 
