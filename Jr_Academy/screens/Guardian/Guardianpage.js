@@ -19,7 +19,8 @@ import LoginScreen from '../Genericscreens/Login/Login';
 import DismissalScreen from './Dismissal/GDismissalPage';
 import SettingScreen from './Setting/GSetting';
 import TimeTable from './Timetable/GTimeTable';
-import Notification from './Notification/GNotification';
+import NotificationScreen from './Notification/GNotification';
+import LocationScreen from './Notification/GLocation';
 
 const Tab = createMaterialBottomTabNavigator();
 const Stack = createStackNavigator();
@@ -46,7 +47,7 @@ function TabNavigator(){
                         ),
           }}/>          
             
-            <Tab.Screen name="Notification" component={Notification} options={{
+            <Tab.Screen name="Notification" component={StackNotificationNavigator} options={{
             tabBarIcon: () => (
               <FontAwesome name="bell-o" size={24} color="black" />
             ),
@@ -77,11 +78,27 @@ function StackNavigatorHomePage(){
       <Stack.Screen name="UpdatePassword" component={UpdatePasswordScreen} />
       <Stack.Screen name="UpdateProfile" component={UpdateProfileScreen} />
       <Stack.Screen name="Timetable" component={TimeTable} />
-      <Stack.Screen name="Notification" component={Notification} />
+      <Stack.Screen name="GNotification" component={StackNotificationNavigator} />
     </Stack.Navigator>
   )
 }
 
+
+//Re-directing the Alert pages navigation
+function StackNotificationNavigator(){
+  return(
+    <Stack.Navigator
+      screenOptions={{
+        headerShown: false,
+      }}
+    >
+      <Stack.Screen name="GNotification" component={NotificationScreen} />
+      <Stack.Screen name="GLocation" component={LocationScreen} />
+
+
+    </Stack.Navigator>
+  )
+}
 
 
   export default function Guardianpage(){
