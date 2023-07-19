@@ -1,8 +1,8 @@
-import React from 'react';
+import React, { useState, useLayoutEffect } from 'react';
 import {Alert, View, Text , TextInput, Button, StyleSheet} from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 import BackgroundColor from '../../Genericscreens/BackgroundSetting/BackgroundColor';
-
+import { Picker } from '@react-native-picker/picker';
 
 const SARegisterProfile = () => {
 
@@ -13,6 +13,17 @@ const SARegisterProfile = () => {
 
   const SACancelButton = () => {
     navigation.navigate('Home');
+  };
+
+  const [role, setRole] = useState('teacher');
+  const [status, setStatus] = useState('active');
+
+  const handleRoleChange = (value) => {
+    setRole(value);
+  };
+
+  const handleStatusChange = (value) => {
+    setStatus(value);
   };
  
   return (
@@ -41,6 +52,23 @@ const SARegisterProfile = () => {
           style={styles.textInput}
           
         />
+
+      <View style={styles.inputContainer}>
+          <Text style={styles.label}>Role:</Text>
+          <View style={styles.pickerstyle}>
+          <Picker
+            selectedValue={role}
+            onValueChange={(value) => handleRoleChange(value)}
+            style={styles.picker}
+          >
+            <Picker.Item label="Teacher" value="teacher" />
+            <Picker.Item label="Student" value="student" />
+            <Picker.Item label="CCA Coach" value="cca coach" />
+            <Picker.Item label="Guardian" value="guardian" />
+          </Picker>
+          </View>
+        </View>
+
       <View style={styles.buttonContainer}>
         <Button
           title="Submit"
@@ -92,6 +120,14 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     marginBottom: 20,
   },
+  pickerstyle:{
+    borderColor: 'black',
+    borderWidth: 1,
+    borderRadius: 5,
+    marginBottom: 5,
+    
+
+  }
 });
 
 export default SARegisterProfile;

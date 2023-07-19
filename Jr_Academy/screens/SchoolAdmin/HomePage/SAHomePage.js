@@ -8,7 +8,7 @@ const SAHomePage = () => {
   const navigation = useNavigation();
   const handleUserIconClick = () => {
     //navigate to setting page
-    navigation.navigate('Profile');
+    navigation.navigate('SAProfile');
   };
  
   return (
