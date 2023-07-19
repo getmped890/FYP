@@ -16,6 +16,8 @@ const HomePage = () => {
     //navigate to GPS Page
     navigation.navigate('GLocation');
   };
+
+
   return (
     <View style={styles.container}>
       <View style={styles.background}>
