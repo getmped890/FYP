@@ -1,8 +1,7 @@
 import React from 'react';
-import { View, Text, FlatList, SafeAreaView, ScrollView, StyleSheet, TouchableOpacity, StatusBar } from 'react-native';
-import { Ionicons } from '@expo/vector-icons';
+import { View, Text,ScrollView, StyleSheet } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
-import {Calendar, LocaleConfig} from 'react-native-calendars';
+import {Calendar,} from 'react-native-calendars';
 import BackgroundColor from '../../Genericscreens/BackgroundSetting/BackgroundColor';
 
 

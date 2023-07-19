@@ -102,10 +102,10 @@ function StackNavigatorHomePage(){
         headerShown: false,
       }}
     >
-      <Stack.Screen name="HomePage" component={SAHomePage} />
-      <Stack.Screen name="Profile" component={SAProfile} />
-      <Stack.Screen name="UpdatePassword" component={SAUpdatePassword} />
-      <Stack.Screen name="UpdateProfile" component={SAUpdateProfile} />
+      <Stack.Screen name="SAHomePage" component={SAHomePage} />
+      <Stack.Screen name="SAProfile" component={SAProfile} />
+      <Stack.Screen name="SAUpdatePassword" component={SAUpdatePassword} />
+      <Stack.Screen name="SAUpdateProfile" component={SAUpdateProfile} />
 
     </Stack.Navigator>
   )

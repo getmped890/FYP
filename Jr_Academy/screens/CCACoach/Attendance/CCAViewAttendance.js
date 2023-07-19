@@ -1,5 +1,5 @@
-import React, { useState } from 'react';
-import { View, Text, Button, FlatList, TextInput, StyleSheet , TouchableOpacity} from 'react-native';
+import React from 'react';
+import { View, Text, FlatList, StyleSheet , TouchableOpacity} from 'react-native';
 import { Ionicons } from '@expo/vector-icons';
 import { useNavigation } from '@react-navigation/native';
 import BackgroundColor from '../../Genericscreens/BackgroundSetting/BackgroundColor';

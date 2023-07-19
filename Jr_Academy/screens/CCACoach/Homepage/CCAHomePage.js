@@ -28,6 +28,7 @@ const CCAHomePage = () => {
     
   };
   return (
+    <BackgroundColor>
     <View style={styles.container}>
       <View style={styles.background}>
         <View style={styles.topLeft}>
@@ -91,6 +92,7 @@ const CCAHomePage = () => {
         <Text style={styles.endClassText}>End Class</Text>
       </View>
     </View>
+    </BackgroundColor>
   );
 };
 const { width, height } = Dimensions.get('window');

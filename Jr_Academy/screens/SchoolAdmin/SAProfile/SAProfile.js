@@ -9,7 +9,7 @@ const SAProfile = () => {
   const navigation = useNavigation();
 
   const handlePreviousButtonClick = () => {
-    navigation.navigate('HomePage');
+    navigation.navigate('SAHomePage');
   };
 
   const handleLogoutButtonClick = () => {
@@ -17,11 +17,11 @@ const SAProfile = () => {
   };
 
   const handleUpdatePasswordClick = () => {
-    navigation.navigate('UpdatePassword'); // Navigate to the UpdatePassword screen
+    navigation.navigate('SAUpdatePassword'); // Navigate to the UpdatePassword screen
   };
 
   const handleUpdateProfileClick = () => {
-    navigation.navigate('UpdateProfile'); // Navigate to the UpdatePassword screen
+    navigation.navigate('SAUpdateProfile'); // Navigate to the UpdatePassword screen
   };
 
   

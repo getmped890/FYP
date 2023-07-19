@@ -7,11 +7,11 @@ const SAUpdateProfile = () => {
   const navigation = useNavigation();
 
   const handleCancelButtonClick = () => {
-    navigation.navigate('Profile');
+    navigation.navigate('SAProfile');
   };
 
   const handleSubmitButtonClick = () => {
-    navigation.navigate('Profile');
+    navigation.navigate('SAProfile');
   };
 
   // Use useLayoutEffect to set the options for hiding the header

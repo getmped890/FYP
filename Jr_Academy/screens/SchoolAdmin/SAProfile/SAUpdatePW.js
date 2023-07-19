@@ -1,7 +1,7 @@
 import React, { useState, useLayoutEffect } from 'react';
 import { View, TouchableOpacity, TextInput, StyleSheet, Text, Button } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
-import SAProfile from './SAProfile';
+import BackgroundColor from '../../Genericscreens/BackgroundSetting/BackgroundColor';
 
 const SAUpdatePassword = () => {
   
@@ -23,6 +23,7 @@ const SAUpdatePassword = () => {
   }, [navigation]);
 
   return (
+    <BackgroundColor>
     <View style={styles.container}>
       <View style={styles.inputContainer}>
         <Text style={styles.label}>Current Password:</Text>
@@ -63,6 +64,7 @@ const SAUpdatePassword = () => {
         />
       </View>
     </View>
+    </BackgroundColor>
   );
 };
 
