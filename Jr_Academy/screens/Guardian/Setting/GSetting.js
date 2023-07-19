@@ -5,14 +5,19 @@ import { useNavigation } from '@react-navigation/native';
 
 
 const Setting = () => {
-
     const navigation = useNavigation();
+
     const handleLogoutButtonClick = () => {
         navigation.navigate('Login');
     };
 
-    const [isEnabled, setIsEnabled] = useState(false);
-    const toggleSwitch = () => setIsEnabled(previousState => !previousState);
+    const [emergencyEnabled, setEmergencyEnabled] = useState(false);
+    const [dismissalTimingEnabled, setDismissalTimingEnabled] = useState(false);
+    const [attendanceStatusEnabled, setAttendanceStatusEnabled] = useState(false);
+
+    const emergencySwitch = () => setEmergencyEnabled(previousState => !previousState);
+    const dismissalSwitch = () => setDismissalTimingEnabled(previousState => !previousState);
+    const attendanceSwitch = () => setAttendanceStatusEnabled(previousState => !previousState);
 
     return (
         <View style={styles.background}> 
@@ -27,10 +32,10 @@ const Setting = () => {
                     <Switch
                         style={styles.notificationswitch}
                         trackColor={{ false: '#767577', true: '#81b0ff' }}
-                        thumbColor={isEnabled ? '#81b0ff' : '#81b0ff'}
+                        thumbColor={emergencyEnabled ? '#81b0ff' : '#81b0ff'}
                         ios_backgroundColor="#3e3e3e"
-                        onValueChange={toggleSwitch}
-                        value={isEnabled}
+                        onValueChange={emergencySwitch}
+                        value={emergencyEnabled}
                     />
                 </View>
                 <View style={styles.rowContainer}>
@@ -38,10 +43,10 @@ const Setting = () => {
                     <Switch
                         style={styles.notificationswitch}
                         trackColor={{ false: '#767577', true: '#81b0ff' }}
-                        thumbColor={isEnabled ? '#81b0ff' : '#81b0ff'}
+                        thumbColor={dismissalTimingEnabled ? '#81b0ff' : '#81b0ff'}
                         ios_backgroundColor="#3e3e3e"
-                        onValueChange={toggleSwitch}
-                        value={isEnabled}
+                        onValueChange={dismissalSwitch}
+                        value={dismissalTimingEnabled}
                     />
                 </View>
                 <View style={styles.rowContainer}>
@@ -49,16 +54,13 @@ const Setting = () => {
                     <Switch
                         style={styles.notificationswitch}
                         trackColor={{ false: '#767577', true: '#81b0ff' }}
-                        thumbColor={isEnabled ? '#81b0ff' : '#81b0ff'}
+                        thumbColor={attendanceStatusEnabled ? '#81b0ff' : '#81b0ff'}
                         ios_backgroundColor="#3e3e3e"
-                        onValueChange={toggleSwitch}
-                        value={isEnabled}
+                        onValueChange={attendanceSwitch}
+                        value={attendanceStatusEnabled}
                     />
                 </View>
-
-
             </View>
-            
         </View>
     );
 };
@@ -110,7 +112,7 @@ const styles = StyleSheet.create({
     background: {
         flex: 1,
         backgroundColor: '#B3EAE5',
-      },
+    },
 });
 
 export default Setting;
