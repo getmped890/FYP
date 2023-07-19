@@ -9,7 +9,7 @@ export default function App() {
   
   return (
     <View style={styles.container}>
-      <Teacherpage/>
+      <Guardianpage/>
       <StatusBar style="auto" />
     </View>
   );
