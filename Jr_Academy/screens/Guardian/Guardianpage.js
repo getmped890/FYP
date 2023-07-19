@@ -75,7 +75,6 @@ function StackNavigatorHomePage(){
       <Stack.Screen name="HomePage" component={HomePageScreen} />
       <Stack.Screen name="Profile" component={ProfileScreen} />
       <Stack.Screen name="UpdatePassword" component={UpdatePasswordScreen} />
-      <Stack.Screen name="Login" component={LoginScreen} />
       <Stack.Screen name="UpdateProfile" component={UpdateProfileScreen} />
       <Stack.Screen name="Timetable" component={TimeTable} />
       <Stack.Screen name="Notification" component={Notification} />
