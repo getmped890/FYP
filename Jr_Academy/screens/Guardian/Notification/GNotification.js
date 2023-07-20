@@ -10,6 +10,14 @@ const HomePage = () => {
     navigation.navigate('Profile');
   };
  
+ 
+
+  const checkGPS = () => {
+    //navigate to GPS Page
+    navigation.navigate('GLocation');
+  };
+
+
   return (
     <View style={styles.container}>
       <View style={styles.background}>
@@ -25,14 +33,25 @@ const HomePage = () => {
               <Text style={styles.classText}>Child Name: James</Text>
               <Text style={styles.classText}>Attendance: Present</Text>
             </View>
-            <View style={[styles.card, styles.cardElevated]}>
-              <Text style={styles.classText}>Dismissal Reminder:</Text>
-              <Text style={styles.classText}></Text>
-              <Text style={styles.classText}>Child Name: James</Text>
-              <Text style={styles.classText}>Your child will be dismissed in an hour</Text>
-            </View>
           </ScrollView>
         </View>
+
+
+        <View style={styles.locationContainer}>
+        <TouchableOpacity onPress={checkGPS}>
+        <ScrollView horizontal={false} contentContainerStyle={styles.scrollContent}>
+        <View style={[styles.card, styles.cardElevated]}>
+            <Text style={styles.classText}>Your Child Location:</Text>
+
+            <Text style={styles.classText}>Click to view location</Text>
+
+          </View>
+ 
+        </ScrollView>
+        </TouchableOpacity>
+      </View>
+
+
       </View>
     </View>
   );
@@ -79,8 +98,8 @@ const styles = StyleSheet.create({
   scrollContainer: {
     paddingTop: height * 0.2,
   },
-  absentContainer: {
-    paddingTop: height * 0.07,
+  locationContainer: {
+    paddingTop: height * 0.05,
   },
   welcomeText: {
     fontSize: height * 0.03,
@@ -91,7 +110,7 @@ const styles = StyleSheet.create({
   headerText: {
     fontSize: height * 0.03,
     fontWeight: 'bold',
-    marginBottom: height * 0.01,
+    marginBottom: height * 0.04,
     paddingHorizontal: width * 0.05,
     color: '#FFFFFF',
   },
@@ -102,24 +121,6 @@ const styles = StyleSheet.create({
   scrollContent: {
     alignItems: 'center',
   },
-  endClassButton: {
-    position: 'absolute',
-    bottom: height * 0.05,
-    right: width * 0.03,
-    width: width * 0.2,
-    height: width * 0.14,
-    borderRadius: width * 0.1,
-    backgroundColor: '#FFFFFF',
-    justifyContent: 'center',
-    alignItems: 'center',
-  },
-  endClassText: {
-    position: 'absolute',
-    bottom: height * 0.01,
-    right: width * 0.03,
-    fontWeight: 'bold',
-    fontSize: height * 0.024,
-    color: '#FFFFFF',
-  },
+ 
 });
 export default HomePage;

@@ -11,15 +11,16 @@ import {createMaterialBottomTabNavigator} from '@react-navigation/material-botto
 
 
 //import from the respective file path
-import HomePageScreen from './Homepage/HomePage';
-import ProfileScreen from './Profile/Profile';
-import UpdatePasswordScreen from './Profile/UpdatePassword';
-import UpdateProfileScreen from './Profile/UpdateProfile';
+import HomePageScreen from './Homepage/GHomePage';
+import ProfileScreen from './Profile/GProfile';
+import UpdatePasswordScreen from './Profile/GUpdatePassword';
+import UpdateProfileScreen from './Profile/GUpdateProfile';
 import LoginScreen from '../Genericscreens/Login/Login';
-import DismissalScreen from './Dismissal/DismissalPage';
-import SettingScreen from './Setting/Setting';
-import TimeTable from './Timetable/TimeTable';
-import Notification from './Notification/Notification';
+import DismissalScreen from './Dismissal/GDismissalPage';
+import SettingScreen from './Setting/GSetting';
+import TimeTable from './Timetable/GTimeTable';
+import NotificationScreen from './Notification/GNotification';
+import LocationScreen from './Notification/GLocation';
 
 const Tab = createMaterialBottomTabNavigator();
 const Stack = createStackNavigator();
@@ -46,14 +47,14 @@ function TabNavigator(){
                         ),
           }}/>          
             
-            <Tab.Screen name="Notification" component={Notification} options={{
+            <Tab.Screen name="Notification" component={StackNotificationNavigator} options={{
             tabBarIcon: () => (
               <FontAwesome name="bell-o" size={24} color="black" />
             ),
           }}/>
           
           
-          <Tab.Screen name="Settings" component={StackNavigatorSettingPage} options={{
+          <Tab.Screen name="Settings" component={SettingScreen} options={{
             tabBarIcon: () => (
               <Ionicons name="settings-outline" size={24} color="black" />
             ),
@@ -75,27 +76,30 @@ function StackNavigatorHomePage(){
       <Stack.Screen name="HomePage" component={HomePageScreen} />
       <Stack.Screen name="Profile" component={ProfileScreen} />
       <Stack.Screen name="UpdatePassword" component={UpdatePasswordScreen} />
-      <Stack.Screen name="Login" component={LoginScreen} />
       <Stack.Screen name="UpdateProfile" component={UpdateProfileScreen} />
       <Stack.Screen name="Timetable" component={TimeTable} />
-      <Stack.Screen name="Notification" component={Notification} />
+      <Stack.Screen name="GNotification" component={StackNotificationNavigator} />
     </Stack.Navigator>
   )
 }
 
 
-function StackNavigatorSettingPage(){
-    return(
-      <Stack.Navigator
-        screenOptions={{
-          headerShown: false,
-        }}
-      >
-        <Stack.Screen name="Setting" component={SettingScreen} />
-        <Stack.Screen name="Login" component={LoginScreen} />
-      </Stack.Navigator>
-    )
-  }
+//Re-directing the Alert pages navigation
+function StackNotificationNavigator(){
+  return(
+    <Stack.Navigator
+      screenOptions={{
+        headerShown: false,
+      }}
+    >
+      <Stack.Screen name="GNotification" component={NotificationScreen} />
+      <Stack.Screen name="GLocation" component={LocationScreen} />
+
+
+    </Stack.Navigator>
+  )
+}
+
 
   export default function Guardianpage(){
   
