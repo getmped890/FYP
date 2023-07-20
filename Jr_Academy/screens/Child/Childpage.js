@@ -8,11 +8,14 @@ import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 import {createMaterialBottomTabNavigator} from '@react-navigation/material-bottom-tabs';
 
-import ChildProfile from './Setting/ChildProfile';
-import ChildUpdatePassword from './Setting/ChildUpdatePW';
+
+import ChildProfileScreen from './Setting/ChildProfile';
+import ChildUpdatePasswordScreen from './Setting/ChildUpdatePW';
 import ChildHomePage from './Homepage/ChildHomepage';
 import ChildDismissalPage from './Dismissal/ChildDismissalPage';
+import ChildTimeTableScreen from './TimeTable/ChildTimeTable';
 import LoginScreen from '../Genericscreens/Login/Login';
+
 
 const Tab = createMaterialBottomTabNavigator();
 const Stack = createStackNavigator();
@@ -26,6 +29,12 @@ function TabNavigator(){
               <Octicons name="checklist" size={24} color="black" />
             ),
           }}/>
+          <Tab.Screen name="TimeTable" component={ChildTimeTableScreen} options={{
+            tabBarIcon: () => (
+              <Ionicons name="calendar-outline" size={24} color="black" />
+            ),
+          }}/>
+
           <Tab.Screen name="Home" component={ChildHomePage} options={{
             tabBarIcon: () => (
               <Ionicons name="home" size={24} />
@@ -50,8 +59,8 @@ function StackChildNavigator(){
       }}
     >
 
-      <Stack.Screen name="ChildProfile" component={ChildProfile} />
-      <Stack.Screen name="ChildUpdatePW" component={ChildUpdatePassword} />
+      <Stack.Screen name="ChildProfile" component={ChildProfileScreen} />
+      <Stack.Screen name="ChildUpdatePW" component={ChildUpdatePasswordScreen} />
 
     </Stack.Navigator>
   )

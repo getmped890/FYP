@@ -3,6 +3,7 @@ import { View, Text, ScrollView, StyleSheet, TouchableOpacity, Dimensions, Alert
 import { Ionicons } from '@expo/vector-icons';
 import { useNavigation } from '@react-navigation/native';
 
+
 const ChildHomePage = () => {
   //use for navigating/redirect to other page
   const navigation = useNavigation();
@@ -26,29 +27,70 @@ const ChildHomePage = () => {
           <Text style={styles.headerText}>Upcoming Classes Today:</Text>
           <ScrollView horizontal={true} contentContainerStyle={styles.scrollContent}>
             <View style={[styles.card, styles.cardElevated]}>
-              <Text style={styles.classText}>CSIT203</Text>
-              <Text style={styles.classText}>26th Jun 2023</Text>
-              <Text style={styles.classText}>3:30pm - 6:30pm</Text>
+              <Text style={styles.classText}>Period 1</Text>
+              <Text style={styles.classText}>Math</Text>
+              <Text style={styles.classText}>8:00am to 8.30am</Text>
             </View>
             <View style={[styles.card, styles.cardElevated]}>
-              <Text style={styles.classText}>CSIT503</Text>
-              <Text style={styles.classText}>20th Jun 2023</Text>
-              <Text style={styles.classText}>2:30pm - 4:30pm</Text>
+            <Text style={styles.classText}>Period 2</Text>
+              <Text style={styles.classText}>Math</Text>
+              <Text style={styles.classText}>8:30am to 9.00am</Text>
             </View>
             <View style={[styles.card, styles.cardElevated]}>
-              <Text style={styles.classText}>CSIT123</Text>
-              <Text style={styles.classText}>29th Jun 2023</Text>
-              <Text style={styles.classText}>3:30pm - 6:30pm</Text>
+            <Text style={styles.classText}>Period 3</Text>
+              <Text style={styles.classText}>English</Text>
+              <Text style={styles.classText}>9:00am to 9.30am</Text>
             </View>
+            <View style={[styles.card, styles.cardElevated]}>
+            <Text style={styles.classText}>Period 4</Text>
+              <Text style={styles.classText}>English</Text>
+              <Text style={styles.classText}>9:30am to 10.00am</Text>
+            </View>
+            <View style={[styles.card, styles.cardElevated]}>
+            <Text style={styles.classText}>Period 5</Text>
+              <Text style={styles.classText}>Recess</Text>
+              <Text style={styles.classText}>10:00am to 10.30am</Text>
+            </View>
+            <View style={[styles.card, styles.cardElevated]}>
+            <Text style={styles.classText}>Period 6</Text>
+              <Text style={styles.classText}>Math</Text>
+              <Text style={styles.classText}>10:30am to 11.00am</Text>
+            </View>
+            <View style={[styles.card, styles.cardElevated]}>
+            <Text style={styles.classText}>Period 7</Text>
+              <Text style={styles.classText}>Math</Text>
+              <Text style={styles.classText}>11:00am to 11.30am</Text>
+            </View>             
+            <View style={[styles.card, styles.cardElevated]}>
+            <Text style={styles.classText}>Period 8</Text>
+              <Text style={styles.classText}>Mother Tongue</Text>
+              <Text style={styles.classText}>11:00am to 11.30am</Text>
+              <Text style={styles.classText}>Mother Tongue Classroom 1</Text>
+              </View>        
+              <View style={[styles.card, styles.cardElevated]}>
+            <Text style={styles.classText}>Period 9</Text>
+              <Text style={styles.classText}>Mother Tongue</Text>
+              <Text style={styles.classText}>11:30am to 12.00am</Text>
+              <Text style={styles.classText}>Mother Tongue Classroom 1</Text>           
+            </View>
+            <View style={[styles.card, styles.cardElevated]}>
+            <Text style={styles.classText}>Period 10</Text>
+              <Text style={styles.classText}>Art</Text>
+              <Text style={styles.classText}>12:00pm to 12.30pm</Text>           
+            </View>
+            <View style={[styles.card, styles.cardElevated]}>
+            <Text style={styles.classText}>Period 11</Text>
+              <Text style={styles.classText}>Art</Text>
+              <Text style={styles.classText}>12:30pm to 1.00pm</Text>           
+            </View>                                            
           </ScrollView>
         </View>
         <View style={styles.absentContainer}>
-          <Text style={styles.headerText}>Classes that you were absent:</Text>
+          <Text style={styles.headerText}>Attendance Record:</Text>
           <ScrollView horizontal={true} contentContainerStyle={styles.scrollContent}>
             <View style={[styles.card, styles.cardElevated]}>
-            <Text style={styles.classText}>CSIT503</Text>
-              <Text style={styles.classText}>20th Jun 2023</Text>
-              <Text style={styles.classText}>2:30pm - 4:30pm</Text>
+              <Text style={styles.classText}>Date: 20th Jun 2023</Text>
+              <Text style={styles.classText}>Absent</Text>             
             </View>
 
 

@@ -10,7 +10,7 @@ const ChildProfile = () => {
   const navigation = useNavigation();
 
   const handlePreviousButtonClick = () => {
-    navigation.navigate('ChildHomepage');
+    navigation.navigate('Home');
   };
 
   const handleLogoutButtonClick = () => {

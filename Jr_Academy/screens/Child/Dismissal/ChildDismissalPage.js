@@ -2,7 +2,6 @@ import React from 'react';
 import { View, Text, ScrollView, StyleSheet, } from 'react-native';
 
 import { useNavigation } from '@react-navigation/native';
-import {Calendar} from 'react-native-calendars';
 import BackgroundColor from '../../Genericscreens/BackgroundSetting/BackgroundColor';
 
 const ChildDismissalPage = () => {
@@ -17,15 +16,21 @@ const ChildDismissalPage = () => {
     <Text style={styles.headingText}>Class Dismissal Timing</Text>
     <ScrollView horizontal={true} style={styles.container}>
         <View style={[styles.card, styles.cardElevated]}>
-            <Text style={styles.sizeText}>CSIT203</Text>
-            <Text style={styles.sizeText}>6.30pm</Text>
+            <Text style={styles.sizeText}>Class: 1A</Text>
+            <Text style={styles.sizeText}>1pm</Text>
         </View>
     </ScrollView>
     </ScrollView>
 
-    <View style={styles.calendar}>
-        <Calendar  style={styles.calendartest}/>
-    </View> 
+    <ScrollView style={styles.container}>
+    <Text style={styles.headingText}>CCA Notification</Text>
+    <ScrollView horizontal={true} style={styles.container}>
+        <View style={[styles.card, styles.cardElevated]}>
+            <Text style={styles.sizeText}>BasketBall</Text>
+            <Text style={styles.sizeText}>3.30pm to 6.30pm</Text>
+        </View>
+    </ScrollView>
+    </ScrollView>
   
 </View>
 </BackgroundColor>
@@ -63,14 +68,6 @@ const styles = StyleSheet.create({
             width: 1,
             height: 1
         },
-    },
-  
-    calendar:{
-      //paddingLeft:20,
-      //flex: 1,
-      alignItems:'center',
-      //width: "10%",
-      //height:"10%",
     },
   
     container: {
