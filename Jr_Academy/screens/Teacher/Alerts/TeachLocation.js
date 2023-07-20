@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, Text, ScrollView, StyleSheet, TouchableOpacity } from 'react-native';
+import { View, Text, StyleSheet, TouchableOpacity } from 'react-native';
 import { Ionicons } from '@expo/vector-icons';
 import { useNavigation } from '@react-navigation/native';
 import BackgroundColor from '../../Genericscreens/BackgroundSetting/BackgroundColor';
@@ -16,57 +16,49 @@ const TeachLocation = () => {
 
   return (
     <BackgroundColor>
-      
-
-      {/* map view for child location tracking  */}
       <MapView
         style={styles.map}
         initialRegion={{
-            latitude: 3.1537,
-            longitude: 101.7143,
-            latitudeDelta: 0.0922,
-            longitudeDelta: 0.0421,
-
+          latitude: 3.1537,
+          longitude: 101.7143,
+          latitudeDelta: 0.0922,
+          longitudeDelta: 0.0421,
         }}
       >
+        <Marker
+          coordinate={{ latitude: 3.1537, longitude: 101.7143 }}
+        />
+      </MapView>
 
-        
-        <View>
-        <Text style={styles.backText}>Back</Text>
+      <View style={styles.backButtonContainer}>
         <TouchableOpacity style={styles.backButton} onPress={BackAlert}>
           <Ionicons name="chevron-back-outline" size={30} />
         </TouchableOpacity>
-      
-
-
-        <Marker
-          coordinate={{ latitude: 3.1537,
-            longitude: 101.7143,}}  />
-
-</View>
-      </MapView>
+        <Text style={styles.backText}>Back</Text>
+      </View>
     </BackgroundColor>
   );
 };
 
 const styles = StyleSheet.create({
-  backButton: {
+  map: {
+    flex: 1,
+  },
+  backButtonContainer: {
     position: 'absolute',
-    top: 80,
+    top: 50,
     left: 30,
-    zIndex: 1,
+    flexDirection: 'row',
+    alignItems: 'center',
+  },
+  backButton: {
     justifyContent: 'center',
     alignItems: 'center',
   },
   backText: {
-    position: 'relative',
-    top: 50,
-    left: 30,
     fontSize: 15,
     fontWeight: 'bold',
-  },
-  map: {
-    flex: 1,
+    marginLeft: 10,
   },
 });
 
