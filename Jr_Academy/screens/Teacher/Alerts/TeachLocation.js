@@ -5,7 +5,7 @@ import { useNavigation } from '@react-navigation/native';
 import BackgroundColor from '../../Genericscreens/BackgroundSetting/BackgroundColor';
 import MapView, { Marker } from 'react-native-maps';
 
-const GLocation = () => {
+const TeachLocation = () => {
   //use for navigating/redirect to other page
   const navigation = useNavigation();
 
@@ -70,4 +70,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default GLocation;
+export default TeachLocation;
