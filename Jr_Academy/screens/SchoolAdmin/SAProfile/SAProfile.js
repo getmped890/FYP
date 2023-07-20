@@ -21,7 +21,7 @@ const SAProfile = () => {
   };
 
   const handleUpdateProfileClick = () => {
-    navigation.navigate('SAUpdateProfile'); // Navigate to the UpdatePassword screen
+    navigation.navigate('SAUpdateOwnProfile'); // Navigate to the UpdatePassword screen
   };
 
   

@@ -16,7 +16,7 @@ import SAManageClass from './ManageClass/SAManageClass';
 import SAHomePage from './HomePage/SAHomePage';
 import SAProfile from './SAProfile/SAProfile';
 import SAUpdatePassword from './SAProfile/SAUpdatePW';
-import SAUpdateProfile from './SAProfile/SAUpdateProfile';
+import SAUpdateProfile from './SAProfile/SAUpdateOwnProfile';
 import LoginScreen from '../Genericscreens/Login/Login';
 import SAUpdateClassScreen from './ManageClass/SAUpdateClass';
 import SAUpdateProfileScreen from './ManageProfile/SAUpdateProfile';
@@ -105,7 +105,7 @@ function StackNavigatorHomePage(){
       <Stack.Screen name="SAHomePage" component={SAHomePage} />
       <Stack.Screen name="SAProfile" component={SAProfile} />
       <Stack.Screen name="SAUpdatePassword" component={SAUpdatePassword} />
-      <Stack.Screen name="SAUpdateProfile" component={SAUpdateProfile} />
+      <Stack.Screen name="SAUpdateOwnProfile" component={SAUpdateProfile} />
 
     </Stack.Navigator>
   )
