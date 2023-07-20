@@ -17,18 +17,7 @@ const SAManageClass = () => {
     navigation.navigate('SAUpdateClass');
   };
 
-  const handleDelete = () =>{
-    Alert.alert('Delete Class', 'Are you sure want to delete this class?', [
-      
-      {
-        text: 'Yes',
-        onPress: () => Alert.alert('Class removed!'),
-      },
-      {
-        text: 'No',
-      }
-    ]);
-  }
+ 
 
   const classlist = [
     { id: 100, className: 'CSIT801', venue: 'Room 901', teacher: 'Mr Japit' },
@@ -62,17 +51,12 @@ const SAManageClass = () => {
       cell: (row) => (
         <View style={{ flexDirection: 'row'}}>
           <TouchableOpacity
-            style={{ backgroundColor: 'grey'}}
+            style={styles.editButton}
             onPress={() => handleEdit(row.id)}
           >
             <Text style={{ color: 'white' }}>Edit</Text>
           </TouchableOpacity>
-          <TouchableOpacity
-            style={{ backgroundColor: 'red'}}
-            onPress={() => handleDelete(row.id)}
-          >
-            <Text style={{ color: 'white' }}>Delete</Text>
-          </TouchableOpacity>
+       
         </View>
       ),
     },
@@ -135,6 +119,13 @@ const styles = StyleSheet.create({
     paddingHorizontal: 1,
     paddingTop: 100,
     maxHeight:'94%',
+  },
+
+  editButton: {
+    backgroundColor: 'black',
+    paddingHorizontal: 20,
+    paddingVertical: 10,
+    borderRadius: 5,
   },
   
 });
