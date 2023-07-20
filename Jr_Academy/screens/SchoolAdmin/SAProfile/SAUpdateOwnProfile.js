@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { View, TouchableOpacity, TextInput, StyleSheet, Text, Button } from 'react-native';
+import { View, TouchableOpacity, TextInput, StyleSheet, Text, Button, Alert } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 import BackgroundColor from '../../Genericscreens/BackgroundSetting/BackgroundColor';
 
@@ -11,10 +11,23 @@ const SAUpdateOwnProfile = () => {
   };
 
   const handleSubmitButtonClick = () => {
+    // Perform the update action here (e.g., update profile on the server)
+    // Once the update is successful, show the alert and reset the fields to empty
+    Alert.alert('Profile Update', 'Profile updated successfully!', [{ text: 'OK', onPress: () => handleAlertOK() }]);
+  };
+
+
+
+  const handleAlertOK = () => {
+    setName('James Milner');
+    setAddress('45 yishun kim');
+    setEmail('jdf@gmail.com');
+    setContact('91234567');
+
+    // Navigate back to the SAProfile page
     navigation.navigate('SAProfile');
   };
 
-  // Use useState to manage the input values
   const [name, setName] = useState('James Milner');
   const [address, setAddress] = useState('45 yishun kim');
   const [email, setEmail] = useState('jdf@gmail.com');
