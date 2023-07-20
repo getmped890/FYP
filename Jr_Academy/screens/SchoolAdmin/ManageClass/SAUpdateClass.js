@@ -41,7 +41,7 @@ const SAUpdateClass = () => {
         <TextInput
           style={styles.textInput}
           value="CSIT801"
-          editable={true}
+          editable={false}
         />
       </View>
 
@@ -51,12 +51,12 @@ const SAUpdateClass = () => {
         <TextInput
           style={styles.textInput}
           value="Room 901"
-          editable={true}
+          editable={false}
         />
       </View>
 
       <View style={styles.inputContainer}>
-        <Text style={styles.label}>Teacher:</Text>
+        <Text style={styles.label}>Form Teacher:</Text>
         <TextInput
           style={styles.textInput}
           value="Mr Japit"
