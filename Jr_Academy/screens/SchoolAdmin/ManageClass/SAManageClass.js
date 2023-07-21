@@ -17,62 +17,46 @@ const SAManageClass = () => {
     navigation.navigate('SAUpdateClass');
   };
 
-  const handleDelete = () =>{
-    Alert.alert('Delete Class', 'Are you sure want to delete this class?', [
-      
-      {
-        text: 'Yes',
-        onPress: () => Alert.alert('Class removed!'),
-      },
-      {
-        text: 'No',
-      }
-    ]);
-  }
+ 
 
   const classlist = [
-    { id: 100, className: 'CSIT801', venue: 'Room 901', teacher: 'Mr Japit' },
-    { id: 101, className: 'CSIT212', venue: 'Lab 201', teacher: 'Mr Kyrie' },
-    { id: 102, className: 'CSIT219', venue: 'Room 105', teacher: 'Mr Rooney' },
-    { id: 103, className: 'CSIT801', venue: 'Room 101', teacher: 'Mr Lim' },
-    { id: 104, className: 'CSIT212', venue: 'Lab 201', teacher: 'Mr Kyrie' },
-    { id: 105, className: 'CSIT219', venue: 'Room 105', teacher: 'Mr Rooney' },
-    { id: 106, className: 'CSIT801', venue: 'Room 101', teacher: 'Mr Lim' },
-    { id: 107, className: 'CSIT212', venue: 'Lab 201', teacher: 'Mr Kyrie' },
-    { id: 108, className: 'CSIT219', venue: 'Room 105', teacher: 'Mr Rooney' },
-    { id: 109, className: 'CSIT801', venue: 'Room 101', teacher: 'Mr Lim' },
-    { id: 110, className: 'CSIT212', venue: 'Lab 201', teacher: 'Mr Kyrie' },
-    { id: 111, className: 'CSIT219', venue: 'Room 105', teacher: 'Mr Rooney' },
-    { id: 112, className: 'CSIT801', venue: 'Room 101', teacher: 'Mr Lim' },
-    { id: 113, className: 'CSIT212', venue: 'Lab 201', teacher: 'Mr Kyrie' },
-    { id: 114, className: 'CSIT219', venue: 'Room 105', teacher: 'Mr Rooney' },
-    { id: 115, className: 'CSIT801', venue: 'Room 101', teacher: 'Mr Lim' },
-    { id: 116, className: 'CSIT212', venue: 'Lab 201', teacher: 'Mr Kyrie' },
-    { id: 117, className: 'CSIT219', venue: 'Room 105', teacher: 'Mr Rooney' },
+    { id: 100, className: 'Math', venue: 'Room 1', teacher: 'Mr Japit' },
+    { id: 101, className: 'Science', venue: 'Room 2', teacher: 'Mr Kyrie' },
+    { id: 102, className: 'Geography', venue: 'Room 3', teacher: 'Mr Rooney' },
+    { id: 103, className: 'Math', venue: 'Room 4', teacher: 'Mr Lim' },
+    { id: 104, className: 'Science', venue: 'Room 2', teacher: 'Mr Kyrie' },
+    { id: 105, className: 'Geography', venue: 'Room 3', teacher: 'Mr Rooney' },
+    { id: 106, className: 'Math', venue: 'Room 4', teacher: 'Mr Lim' },
+    { id: 107, className: 'Science', venue: 'Room 2', teacher: 'Mr Kyrie' },
+    { id: 108, className: 'Geography', venue: 'Room 3', teacher: 'Mr Rooney' },
+    { id: 109, className: 'Math', venue: 'Room 4', teacher: 'Mr Lim' },
+    { id: 110, className: 'Science', venue: 'Room 2', teacher: 'Mr Kyrie' },
+    { id: 111, className: 'Geography', venue: 'Room 3', teacher: 'Mr Rooney' },
+    { id: 112, className: 'Math', venue: 'Room 4', teacher: 'Mr Lim' },
+    { id: 113, className: 'Science', venue: 'Room 2', teacher: 'Mr Kyrie' },
+    { id: 114, className: 'Geography', venue: 'Room 3', teacher: 'Mr Rooney' },
+    { id: 115, className: 'Math', venue: 'Room 4', teacher: 'Mr Lim' },
+    { id: 116, className: 'Science', venue: 'Room 2', teacher: 'Mr Kyrie' },
+    { id: 117, className: 'Geography', venue: 'Room 3', teacher: 'Mr Rooney' },
   ];
   
   const columns = [
     { name: 'Class ID', selector: 'id', sortable: true },
     { name: 'Class Name', selector: 'className', sortable: true },
     { name: 'Venue', selector: 'venue', sortable: true },
-    { name: 'Teacher', selector: 'teacher', sortable: true },
+    { name: 'Form Teacher', selector: 'teacher', sortable: true },
     {
       name: 'Actions',
       selector: 'actions',
       cell: (row) => (
         <View style={{ flexDirection: 'row'}}>
           <TouchableOpacity
-            style={{ backgroundColor: 'grey'}}
+            style={styles.editButton}
             onPress={() => handleEdit(row.id)}
           >
             <Text style={{ color: 'white' }}>Edit</Text>
           </TouchableOpacity>
-          <TouchableOpacity
-            style={{ backgroundColor: 'red'}}
-            onPress={() => handleDelete(row.id)}
-          >
-            <Text style={{ color: 'white' }}>Delete</Text>
-          </TouchableOpacity>
+       
         </View>
       ),
     },
@@ -135,6 +119,13 @@ const styles = StyleSheet.create({
     paddingHorizontal: 1,
     paddingTop: 100,
     maxHeight:'94%',
+  },
+
+  editButton: {
+    backgroundColor: 'black',
+    paddingHorizontal: 20,
+    paddingVertical: 10,
+    borderRadius: 5,
   },
   
 });

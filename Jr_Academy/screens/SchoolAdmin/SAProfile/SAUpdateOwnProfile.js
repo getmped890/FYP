@@ -11,9 +11,7 @@ const SAUpdateOwnProfile = () => {
   };
 
   const handleSubmitButtonClick = () => {
-    // Perform the update action here (e.g., update profile on the server)
-    // Once the update is successful, show the alert and reset the fields to empty
-    Alert.alert('Profile Update', 'Profile updated successfully!', [{ text: 'OK', onPress: () => handleAlertOK() }]);
+   Alert.alert('Profile Update', 'Profile updated successfully!', [{ text: 'OK', onPress: () => handleAlertOK() }]);
   };
 
 
@@ -82,7 +80,7 @@ const SAUpdateOwnProfile = () => {
             onPress={handleSubmitButtonClick}
             color="black"
             style={styles.submitbutton}
-            disabled={!isFormValid()} // Disable the button if all fields are not filled in
+            disabled={!isFormValid()} 
           />
           <Button
             title="Cancel"
