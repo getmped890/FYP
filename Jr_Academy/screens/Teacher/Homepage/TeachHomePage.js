@@ -40,34 +40,38 @@ const TeachHomePage = () => {
         <View style={styles.scrollContainer}>
           <Text style={styles.headerText}>Upcoming Classes:</Text>
           <ScrollView horizontal={true} contentContainerStyle={styles.scrollContent}>
-            <View style={[styles.card, styles.cardElevated]}>
-              <Text style={styles.classText}>CSIT203</Text>
-              <Text style={styles.classText}>26th Jun 2023</Text>
-              <Text style={styles.classText}>3:30pm - 6:30pm</Text>
+          <View style={[styles.card, styles.cardElevated]}>
+              <Text style={styles.classText}>Period 1</Text>
+              <Text style={styles.classText}>Math</Text>
+              <Text style={styles.classText}>8:00am to 8.30am</Text>
             </View>
             <View style={[styles.card, styles.cardElevated]}>
-              <Text style={styles.classText}>CSIT503</Text>
-              <Text style={styles.classText}>20th Jun 2023</Text>
-              <Text style={styles.classText}>2:30pm - 4:30pm</Text>
+            <Text style={styles.classText}>Period 2</Text>
+              <Text style={styles.classText}>Math</Text>
+              <Text style={styles.classText}>8:30am to 9.00am</Text>
             </View>
             <View style={[styles.card, styles.cardElevated]}>
-              <Text style={styles.classText}>CSIT123</Text>
-              <Text style={styles.classText}>29th Jun 2023</Text>
-              <Text style={styles.classText}>3:30pm - 6:30pm</Text>
+            <Text style={styles.classText}>Period 6</Text>
+              <Text style={styles.classText}>Math</Text>
+              <Text style={styles.classText}>10.00am to 10.30am</Text>
+            </View>
+            <View style={[styles.card, styles.cardElevated]}>
+            <Text style={styles.classText}>Period 7</Text>
+              <Text style={styles.classText}>Math</Text>
+              <Text style={styles.classText}>10.30am to 11.00am</Text>
+            </View>
+            <View style={[styles.card, styles.cardElevated]}>
+            <Text style={styles.classText}>Period 10</Text>
+              <Text style={styles.classText}>Art</Text>
+              <Text style={styles.classText}>12:00pm to 12.30pm</Text>           
+            </View>
+            <View style={[styles.card, styles.cardElevated]}>
+            <Text style={styles.classText}>Period 11</Text>
+              <Text style={styles.classText}>Art</Text>
+              <Text style={styles.classText}>12:30pm to 1.00pm</Text>           
             </View>
           </ScrollView>
         </View>
-
-        <View style={styles.dismissalTimeContainer}>
-            <Text style={styles.headerText}>Class Dismissal Timing</Text>
-
-                <View style={[styles.card, styles.cardElevated]}>
-                    <Text style={styles.classText}>CSIT203</Text>
-                    <Text style={styles.classText}>6.30pm</Text>
-                </View>
-
-        </View>
-
 
         <View style={styles.absentContainer}>
           <Text style={styles.headerText}>Absentees Yesterday:</Text>
@@ -84,7 +88,15 @@ const TeachHomePage = () => {
           </ScrollView>
         </View>
 
+        <View style={styles.dismissalTimeContainer}>
+            <Text style={styles.headerText}>Class Dismissal Timing</Text>
 
+                <View style={[styles.card, styles.cardElevated]}>
+                    <Text style={styles.classText}>Form Class: 1-A</Text>
+                    <Text style={styles.classText}>1.00pm</Text>
+                </View>
+
+        </View>
         <TouchableOpacity style={styles.endClassButton} onPress={handleEndClass}>
           <Ionicons name="checkmark" size={32} color="#1DC1B1" />
         </TouchableOpacity>

@@ -1,5 +1,5 @@
 import React, { useState, useLayoutEffect } from 'react';
-import { View, TouchableOpacity, Switch, StyleSheet, Text, Button } from 'react-native';
+import { Alert, View, TouchableOpacity, Switch, StyleSheet, Text, Button } from 'react-native';
 import { Ionicons } from '@expo/vector-icons';
 import { useNavigation } from '@react-navigation/native';
 import BackgroundColor from '../../Genericscreens/BackgroundSetting/BackgroundColor';
@@ -19,6 +19,18 @@ const TeachSetting = () => {
       
       navigation.navigate('Login');
     };
+
+    const RequestUrgentleave = () => {
+      Alert.alert('Urgent Leave', 'Send a urgent leave request to the school admin?', [
+  
+        {
+          text: 'Yes',
+          onPress: () => Alert.alert('Request informed, a subsitutite teacher will be send to cover your classes today.'),
+        },      
+        {
+          text: 'Cancel',
+        },
+      ]);}
     
     return (
       <BackgroundColor>
@@ -44,6 +56,11 @@ const TeachSetting = () => {
 
         <View style={styles.saveButton}>
           <Button   color="black" title="Manage Profile" onPress={handleManageProfileClick}/>
+
+        </View>
+
+        <View style={styles.leaveButton}>
+          <Button   color="black" title="Request Urgent Leave" onPress={RequestUrgentleave}/>
 
         </View>
   </View>
@@ -112,7 +129,12 @@ const styles = StyleSheet.create({
         paddingLeft: '13%',
         maxWidth:'85%',
       },
-  
+
+      leaveButton:{
+        marginTop: 50,
+        paddingLeft: '13%',
+        maxWidth:'85%',
+      }, 
   });
   
 export default TeachSetting;
