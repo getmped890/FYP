@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from 'react';
-import { View, Text, ScrollView, StyleSheet } from 'react-native';
+import { View, Text, ScrollView, StyleSheet, TouchableOpacity } from 'react-native';
 import { Calendar } from 'react-native-calendars';
 import BackgroundColor from '../../Genericscreens/BackgroundSetting/BackgroundColor';
 
-const ChildTimeTable = () => {
+const ChildTimeTable = ({ navigation }) => {
   const [markedDates, setMarkedDates] = useState({});
 
   useEffect(() => {
@@ -11,11 +11,16 @@ const ChildTimeTable = () => {
   }, []);
 
   const markHolidayDateInCalendar = () => {
+    // Put all the public holiday dates here 
     const publicHolidays = {
       '2023-08-21': { selected: true, selectedColor: 'red' },
       '2023-07-28': { selected: true, selectedColor: 'red' },
     };
     setMarkedDates(publicHolidays);
+  };
+
+  const scheduleDay = (day) => {
+    navigation.navigate('ChildSchedule', { selectedDay: day });
   };
 
   return (
@@ -24,21 +29,31 @@ const ChildTimeTable = () => {
         <ScrollView style={styles.container}>
           <Text style={styles.headingText}>Weekly Timetable</Text>
           <ScrollView horizontal={true} style={styles.container}>
-            <View style={[styles.card, styles.cardElevated]}>
-              <Text style={styles.classText}>Monday</Text>
-            </View>
-            <View style={[styles.card, styles.cardElevated]}>
-              <Text style={styles.classText}>Tuesday</Text>
-            </View>
-            <View style={[styles.card, styles.cardElevated]}>
-              <Text style={styles.classText}>Wednesday</Text>
-            </View>
-            <View style={[styles.card, styles.cardElevated]}>
-              <Text style={styles.classText}>Thursday</Text>
-            </View>
-            <View style={[styles.card, styles.cardElevated]}>
-              <Text style={styles.classText}>Friday</Text>
-            </View>
+            <TouchableOpacity onPress={() => scheduleDay('Monday')}>
+              <View style={[styles.card, styles.cardElevated]}>
+                <Text style={styles.classText}>Monday</Text>
+              </View>
+            </TouchableOpacity>
+            <TouchableOpacity onPress={() => scheduleDay('Tuesday')}>
+              <View style={[styles.card, styles.cardElevated]}>
+                <Text style={styles.classText}>Tuesday</Text>
+              </View>
+            </TouchableOpacity>
+            <TouchableOpacity onPress={() => scheduleDay('Wednesday')}>
+              <View style={[styles.card, styles.cardElevated]}>
+                <Text style={styles.classText}>Wednesday</Text>
+              </View>
+            </TouchableOpacity>
+            <TouchableOpacity onPress={() => scheduleDay('Thursday')}>
+              <View style={[styles.card, styles.cardElevated]}>
+                <Text style={styles.classText}>Thursday</Text>
+              </View>
+            </TouchableOpacity>
+            <TouchableOpacity onPress={() => scheduleDay('Friday')}>
+              <View style={[styles.card, styles.cardElevated]}>
+                <Text style={styles.classText}>Friday</Text>
+              </View>
+            </TouchableOpacity>
           </ScrollView>
         </ScrollView>
 

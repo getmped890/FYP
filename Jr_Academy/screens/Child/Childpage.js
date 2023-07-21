@@ -15,6 +15,7 @@ import ChildHomePage from './Homepage/ChildHomepage';
 import ChildDismissalPage from './Dismissal/ChildDismissalPage';
 import ChildTimeTableScreen from './TimeTable/ChildTimeTable';
 import LoginScreen from '../Genericscreens/Login/Login';
+import ScheduleScreen from './TimeTable/ChildSchedule';
 
 
 const Tab = createMaterialBottomTabNavigator();
@@ -35,7 +36,7 @@ function TabNavigator(){
             ),
           }}/>
 
-          <Tab.Screen name="Home" component={ChildHomePage} options={{
+          <Tab.Screen name="Home" component={StackChildHomePageNavigator} options={{
             tabBarIcon: () => (
               <Ionicons name="home" size={24} />
             ),
@@ -65,6 +66,24 @@ function StackChildNavigator(){
     </Stack.Navigator>
   )
 }
+
+function StackChildHomePageNavigator(){
+  return(
+    <Stack.Navigator
+      screenOptions={{
+        headerShown: false,
+      }}
+    >
+
+      <Stack.Screen name="HomePage" component={ChildHomePage} />
+      <Stack.Screen name="ChildSchedule" component={ScheduleScreen} />
+
+    </Stack.Navigator>
+  )
+}
+
+
+
 
 
 const styles = StyleSheet.create({
