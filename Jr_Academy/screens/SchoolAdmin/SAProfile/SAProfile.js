@@ -33,7 +33,7 @@ const SAProfile = () => {
           <Ionicons name="chevron-back-outline" size={30} style={styles.icon} />
         </TouchableOpacity>
         <TouchableOpacity style={styles.userButton}>
-          <Ionicons name="person-outline" size={30} style={styles.icon} />
+          <Ionicons name="person-outline" size={30} color="black" />
         </TouchableOpacity>
         <TouchableOpacity style={styles.button} onPress={handleLogoutButtonClick}>
           <Ionicons name="log-out-outline" size={30} style={styles.icon} />
@@ -119,7 +119,6 @@ const styles = StyleSheet.create({
   },
   userButton: {
     padding: 10,
-    backgroundColor: 'lightgray',
     borderRadius: 15,
   },
   icon: {

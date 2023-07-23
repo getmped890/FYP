@@ -10,7 +10,7 @@ export default function App() {
   
   return (
     <View style={styles.container}>
-      <Guardianpage/>
+      <Childpage/>
       <StatusBar style="auto" />
     </View>
   );
