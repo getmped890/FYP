@@ -30,13 +30,13 @@ function TabNavigator(){
               <Octicons name="checklist" size={24} color="black" />
             ),
           }}/>
-          <Tab.Screen name="TimeTable" component={ChildTimeTableScreen} options={{
+          <Tab.Screen name="TimeTable" component={StackChildTimeTablePageNavigator} options={{
             tabBarIcon: () => (
               <Ionicons name="calendar-outline" size={24} color="black" />
             ),
           }}/>
 
-          <Tab.Screen name="Home" component={StackChildHomePageNavigator} options={{
+          <Tab.Screen name="Home" component={ChildHomePage} options={{
             tabBarIcon: () => (
               <Ionicons name="home" size={24} />
             ),
@@ -67,7 +67,7 @@ function StackChildNavigator(){
   )
 }
 
-function StackChildHomePageNavigator(){
+function StackChildTimeTablePageNavigator(){
   return(
     <Stack.Navigator
       screenOptions={{
@@ -75,7 +75,7 @@ function StackChildHomePageNavigator(){
       }}
     >
 
-      <Stack.Screen name="HomePage" component={ChildHomePage} />
+      <Stack.Screen name="TTScreen" component={ChildTimeTableScreen} />
       <Stack.Screen name="ChildSchedule" component={ScheduleScreen} />
 
     </Stack.Navigator>

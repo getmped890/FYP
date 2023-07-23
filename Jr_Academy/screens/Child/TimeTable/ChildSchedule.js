@@ -8,7 +8,7 @@ import { useNavigation } from '@react-navigation/native';
 const ChildSchedule = ({ route }) => {
   
   const handleBackButtonClick = () => {
-    navigation.navigate('TimeTable');
+    navigation.navigate('TTScreen');
   };
 
 
