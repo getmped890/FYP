@@ -1,5 +1,5 @@
 import React, { useState} from 'react';
-import { View, TouchableOpacity, Switch, StyleSheet, Text } from 'react-native';
+import { View, TouchableOpacity, Switch, StyleSheet, Text, Button } from 'react-native';
 import { Ionicons } from '@expo/vector-icons';
 import { useNavigation } from '@react-navigation/native';
 
@@ -9,6 +9,9 @@ const Setting = () => {
 
     const handleLogoutButtonClick = () => {
         navigation.navigate('Login');
+    };
+    const handleManageProfileClick = () => {
+        navigation.navigate('Profile');
     };
 
     const [emergencyEnabled, setEmergencyEnabled] = useState(false);
@@ -60,6 +63,10 @@ const Setting = () => {
                         value={attendanceStatusEnabled}
                     />
                 </View>
+                <View style={styles.saveButton}>
+          <Button   color="black" title="Manage Profile" onPress={handleManageProfileClick}/>
+
+            </View>
             </View>
         </View>
     );
@@ -113,6 +120,11 @@ const styles = StyleSheet.create({
         flex: 1,
         backgroundColor: '#B3EAE5',
     },
+    saveButton:{
+        marginTop: 90,
+        paddingLeft: '13%',
+        maxWidth:'85%',
+      },
 });
 
 export default Setting;
