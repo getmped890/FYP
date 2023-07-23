@@ -1,6 +1,5 @@
 import React from 'react';
-import { TouchableOpacity } from 'react-native';
-import { View, Text, StyleSheet, ScrollView } from 'react-native';
+import { View, Text, StyleSheet, ScrollView, TouchableOpacity } from 'react-native';
 import { Ionicons } from '@expo/vector-icons';
 import BackgroundColor from '../../Genericscreens/BackgroundSetting/BackgroundColor';
 import { useNavigation } from '@react-navigation/native';
@@ -8,6 +7,10 @@ import { useNavigation } from '@react-navigation/native';
 
 const ChildSchedule = ({ route }) => {
   
+  const handleBackButtonClick = () => {
+    navigation.navigate('TimeTable');
+  };
+
 
   const periods = [
     {
@@ -158,7 +161,7 @@ const ChildSchedule = ({ route }) => {
     <BackgroundColor>
       <View style={styles.container}>
         <View style={styles.backButtonContainer}>
-          <TouchableOpacity style={styles.backButton} onPress={BackAlert}>
+          <TouchableOpacity style={styles.backButton} onPress={handleBackButtonClick}>
             <Ionicons name="chevron-back-outline" size={30} />
           </TouchableOpacity>
         </View>
@@ -212,6 +215,7 @@ const styles = StyleSheet.create({
     color: 'white',
   },
   backButtonContainer: {
+    zIndex: 1,
     position: 'absolute',
     top: 20,
     left: 20,

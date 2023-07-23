@@ -9,7 +9,7 @@ const ChildHomePage = () => {
   const navigation = useNavigation();
   const handleUserIconClick = () => {
     //navigate to setting page
-    navigation.navigate('ChildProfile');
+    navigation.navigate('Setting');
   };
   const EmergencyButton = () => {
     Alert.alert('Notification sent? Do we include a timer for 5 second to count?');
