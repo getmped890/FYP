@@ -13,21 +13,31 @@ import {createMaterialBottomTabNavigator} from '@react-navigation/material-botto
 
 
 //import from the respective file path
+import LoginScreen from '../Genericscreens/Login/Login';
 import TeachHomePageScreen from './Homepage/TeachHomePage';
 import TeachSettingsScreen from './Setting/TeachSetting';
+
+//Importing Attendance file path
 import AttendanceHomeScreen from './Attendance/AttendanceHomepage';
 import MarkAttendanceScreen from './Attendance/MarkAttendance';
 import ViewAttendanceScreen from './Attendance/ViewAttendance';
 import UpdateAttendanceScreen from './Attendance/UpdateAttendance';
 import GenerateAlistScreen from './Attendance/GenerateAlist';
+import AttendanceRecordScreen from './Attendance/AttendanceRecord';
+
+//Importing Timetable file path
 import TeachTimeTableScreen from './TimeTable/TeachTimeTable';
+import TeachScheduleScreen from './TimeTable/TeachSchedule';
+
+//Importing Profile file path
 import TeachProfileScreen from './Profile/TeachProfile';
 import TeachUpdatePasswordScreen from './Profile/TeachUpdatePassword';
 import TeachUpdateProfileScreen from './Profile/TeachUpdateProfile';
-import LoginScreen from '../Genericscreens/Login/Login';
+
+
+//Importing Alert Pages
 import TeachAlertsScreen from './Alerts/TeachAlerts';
 import TeachLocationScreen from './Alerts/TeachLocation';
-import AttendanceRecordScreen from './Attendance/AttendanceRecord';
 
 
 //Creating the bottom navigation tab, and stack pages for navigator
@@ -44,11 +54,12 @@ function TabNavigator(){
               <Octicons name="checklist" size={24} color="black" />
             ),
           }}/>
-          <Tab.Screen name="TimeTable" component={TeachTimeTableScreen} options={{
+          <Tab.Screen name="TimeTable" component={StackTeachTimeTablePageNavigator} options={{
             tabBarIcon: () => (
               <Ionicons name="calendar-outline" size={24} color="black" />
             ),
           }}/>
+
           <Tab.Screen name="Home" component={StackNavigatorHomePage} options={{
                         tabBarIcon: () => (
                           <Ionicons name="home" size={24}/>
@@ -142,6 +153,21 @@ function StackNavigatorHomePage(){
       <Stack.Screen name="TeachProfile" component={TeachProfileScreen} />
       <Stack.Screen name="TeachUpdatePassword" component={TeachUpdatePasswordScreen} />
       <Stack.Screen name="TeachUpdateProfile" component={TeachUpdateProfileScreen} />
+    </Stack.Navigator>
+  )
+}
+
+function StackTeachTimeTablePageNavigator(){
+  return(
+    <Stack.Navigator
+      screenOptions={{
+        headerShown: false,
+      }}
+    >
+
+      <Stack.Screen name="TeachTTScreen" component={TeachTimeTableScreen} />
+      <Stack.Screen name="TeachSchedule" component={TeachScheduleScreen} />
+
     </Stack.Navigator>
   )
 }
