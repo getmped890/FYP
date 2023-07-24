@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { View, Text, ScrollView, StyleSheet, TouchableOpacity } from 'react-native';
 import { Calendar } from 'react-native-calendars';
 import BackgroundColor from '../../Genericscreens/BackgroundSetting/BackgroundColor';
-import TeachSchedule from './TeachSchedule';
+
 const TeachTimeTable = ({ navigation }) => {
   const [markedDates, setMarkedDates] = useState({});
 
@@ -39,7 +39,7 @@ const TeachTimeTable = ({ navigation }) => {
     <BackgroundColor>
       <View>
         <ScrollView style={styles.container}>
-          <Text style={styles.headingText}>Weekly Timetable</Text>
+          <Text style={styles.headingText}>Teacher's Schedule/TimeTable</Text>
           <ScrollView horizontal={true} style={styles.container}>
             <TouchableOpacity onPress={() => scheduleDay('Monday')}>
               <View style={[styles.card, styles.cardElevated]}>
