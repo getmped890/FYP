@@ -12,9 +12,21 @@ const ChildTimeTable = ({ navigation }) => {
 
   const markHolidayDateInCalendar = () => {
     // Put all the public holiday dates here 
-    const publicHolidays = {
-      '2023-08-21': { selected: true, selectedColor: 'red' },
-      '2023-07-28': { selected: true, selectedColor: 'red' },
+    const publicHolidays = {      
+      '2023-01-01': { selected: true, selectedColor: 'red' },
+      '2023-01-02': { selected: true, selectedColor: 'red' },
+      '2023-01-22': { selected: true, selectedColor: 'red' },  
+      '2023-01-23': { selected: true, selectedColor: 'red' }, 
+      '2023-01-24': { selected: true, selectedColor: 'red' },
+      '2023-04-07': { selected: true, selectedColor: 'red' },
+      '2023-05-01': { selected: true, selectedColor: 'red' },                        
+      '2023-06-02': { selected: true, selectedColor: 'red' },
+      '2023-06-29': { selected: true, selectedColor: 'red' },                       
+      '2023-08-09': { selected: true, selectedColor: 'red' },
+      '2023-08-25': { selected: true, selectedColor: 'blue' },
+      '2023-11-12': { selected: true, selectedColor: 'red' },
+      '2023-11-13': { selected: true, selectedColor: 'red' },
+      '2023-12-25': { selected: true, selectedColor: 'red' },            
     };
     setMarkedDates(publicHolidays);
   };
@@ -64,6 +76,10 @@ const ChildTimeTable = ({ navigation }) => {
         <View style={styles.publicHolidayContainer}>
           <View style={styles.publicHolidayCircle} />
           <Text style={styles.textHoliday}>Public Holiday</Text>
+        </View>
+        <View style={styles.publicHolidayContainer}>
+          <View style={styles.SchoolEventCircle} />
+          <Text style={styles.textHoliday}>School Event  </Text>
         </View>
       </View>
     </BackgroundColor>
@@ -122,6 +138,13 @@ const styles = StyleSheet.create({
     height: 10,
     borderRadius: 5,
     backgroundColor: 'red',
+    marginRight: 5,
+  },
+  SchoolEventCircle: {
+    width: 10,
+    height: 10,
+    borderRadius: 5,
+    backgroundColor: 'blue',
     marginRight: 5,
   },
   textHoliday: {
