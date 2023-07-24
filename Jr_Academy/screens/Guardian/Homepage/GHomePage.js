@@ -14,7 +14,7 @@ const HomePage = () => {
     <View style={styles.container}>
       <View style={styles.background}>
         <View style={styles.topLeft}>
-          <Text style={styles.welcomeText}>Jason</Text>
+          <Text style={styles.welcomeText}>Guardian</Text>
         </View>
         <TouchableOpacity style={styles.topRight} onPress={handleUserIconClick}>
           <Ionicons name="person-outline" size={35} color="#FFFFFF" />

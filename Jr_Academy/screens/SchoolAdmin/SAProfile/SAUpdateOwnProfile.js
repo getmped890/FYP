@@ -43,7 +43,7 @@ const SAUpdateOwnProfile = () => {
           <TextInput
             style={styles.textInput}
             value={name}
-            onChangeText={(text) => setName(text)}
+            editable={false}
           />
         </View>
 
@@ -52,7 +52,7 @@ const SAUpdateOwnProfile = () => {
           <TextInput
             style={styles.textInput}
             value={address}
-            onChangeText={(text) => setAddress(text)}
+            editable={false}
           />
         </View>
 

@@ -68,6 +68,7 @@ const Login = () => {
            <Link style={styles.navigate} href="./screens/ForgotUsernamePassword">Forgot Username/Password</Link>
           <Button
             title={'Login'}
+            color="black"
             onPress={handleLoginClick}
           />
         </View>
