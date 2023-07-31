@@ -18,9 +18,10 @@ import UpdateProfileScreen from './Profile/GUpdateProfile';
 import LoginScreen from '../Genericscreens/Login/Login';
 import DismissalScreen from './Dismissal/GDismissalPage';
 import SettingScreen from './Setting/GSetting';
-import TimeTable from './Timetable/GTimeTable';
+import GTimeTableScreen from './Timetable/GTimeTable';
 import NotificationScreen from './Notification/GNotification';
 import LocationScreen from './Notification/GLocation';
+import GScheduleScreen from './Timetable/GSchedule';
 
 const Tab = createMaterialBottomTabNavigator();
 const Stack = createStackNavigator();
@@ -30,12 +31,11 @@ function TabNavigator(){
     return(
       <Tab.Navigator screenOptions={{headerShown:false}}>
           
-          <Tab.Screen name="TimeTable" component={TimeTable} options={{
+          <Tab.Screen name="TimeTable" component={StackGTimeTablePageNavigator} options={{
             tabBarIcon: () => (
               <Ionicons name="calendar-outline" size={24} color="black" />
             ),
           }}/>
-
         <Tab.Screen name="Dismissal" component={DismissalScreen} options={{
                     tabBarIcon: () => (
                     <Ionicons name="ios-time" size={24} color="black" />
@@ -64,6 +64,20 @@ function TabNavigator(){
     )
 }
 
+function StackGTimeTablePageNavigator(){
+  return(
+    <Stack.Navigator
+      screenOptions={{
+        headerShown: false,
+      }}
+    >
+
+      <Stack.Screen name="TTScreen" component={GTimeTableScreen} />
+      <Stack.Screen name="GSchedule" component={GScheduleScreen} />
+
+    </Stack.Navigator>
+  )
+}
 
 
 function StackNavigatorHomePage(){
@@ -77,7 +91,7 @@ function StackNavigatorHomePage(){
       <Stack.Screen name="Profile" component={ProfileScreen} />
       <Stack.Screen name="UpdatePassword" component={UpdatePasswordScreen} />
       <Stack.Screen name="UpdateProfile" component={UpdateProfileScreen} />
-      <Stack.Screen name="Timetable" component={TimeTable} />
+      <Stack.Screen name="GTimetable" component={StackGTimeTablePageNavigator} />
       <Stack.Screen name="GNotification" component={StackNotificationNavigator} />
     </Stack.Navigator>
   )

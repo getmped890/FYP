@@ -1,139 +1,155 @@
-import React from 'react';
-import { View, Text, ScrollView, StyleSheet, TouchableOpacity, Dimensions } from 'react-native';
-import { Ionicons } from '@expo/vector-icons';
-import { useNavigation } from '@react-navigation/native';
-import {Calendar} from 'react-native-calendars';
-const HomePage = () => {
-  //use for navigating/redirect to other page
-  const navigation = useNavigation();
-  const handleUserIconClick = () => {
-    //navigate to setting page
-    navigation.navigate('Profile');
+import React, { useState, useEffect } from 'react';
+import { View, Text, ScrollView, StyleSheet, TouchableOpacity } from 'react-native';
+import { Calendar } from 'react-native-calendars';
+import BackgroundColor from '../../Genericscreens/BackgroundSetting/BackgroundColor';
+
+const GTimeTable = ({ navigation }) => {
+  const [markedDates, setMarkedDates] = useState({});
+
+  useEffect(() => {
+    markHolidayDateInCalendar();
+  }, []);
+
+  const markHolidayDateInCalendar = () => {
+    // Put all the public holiday dates here 
+    const publicHolidays = {      
+      '2023-01-01': { selected: true, selectedColor: 'red' },
+      '2023-01-02': { selected: true, selectedColor: 'red' },
+      '2023-01-22': { selected: true, selectedColor: 'red' },  
+      '2023-01-23': { selected: true, selectedColor: 'red' }, 
+      '2023-01-24': { selected: true, selectedColor: 'red' },
+      '2023-04-07': { selected: true, selectedColor: 'red' },
+      '2023-05-01': { selected: true, selectedColor: 'red' },                        
+      '2023-06-02': { selected: true, selectedColor: 'red' },
+      '2023-06-29': { selected: true, selectedColor: 'red' },                       
+      '2023-08-09': { selected: true, selectedColor: 'red' },
+      '2023-08-25': { selected: true, selectedColor: 'blue' },
+      '2023-11-12': { selected: true, selectedColor: 'red' },
+      '2023-11-13': { selected: true, selectedColor: 'red' },
+      '2023-12-25': { selected: true, selectedColor: 'red' },            
+    };
+    setMarkedDates(publicHolidays);
   };
- 
+
+  const scheduleDay = (day) => {
+    navigation.navigate('GSchedule', { selectedDay: day });
+  };
+
   return (
-    <View style={styles.container}>
-      <View style={styles.background}>
-        <TouchableOpacity style={styles.topRight} onPress={handleUserIconClick}>
-          <Ionicons name="person-outline" size={35} color="#FFFFFF" />
-        </TouchableOpacity>
-        <View style={styles.scrollContainer}>
-          <Text style={styles.headerText}>Timetable:</Text>
-          <ScrollView horizontal={true} contentContainerStyle={styles.scrollContent}>
-            <View style={[styles.card, styles.cardElevated]}>
-              <Text style={styles.classText}>Class: CSIT203</Text>
-              <Text style={styles.classText}>Date: 26th Jun 2023</Text>
-              <Text style={styles.classText}>3:30pm - 6:30pm</Text>
-            </View>
-            <View style={[styles.card, styles.cardElevated]}>
-              <Text style={styles.classText}>Class: CSIT203</Text>
-              <Text style={styles.classText}>Date: 26th Jun 2023</Text>
-              <Text style={styles.classText}>3:30pm - 6:30pm</Text>
-            </View>
-            <View style={[styles.card, styles.cardElevated]}>
-              <Text style={styles.classText}>Class: CSIT203</Text>
-              <Text style={styles.classText}>Date: 26th Jun 2023</Text>
-              <Text style={styles.classText}>3:30pm - 6:30pm</Text> 
-            </View>
+    <BackgroundColor>
+      <View>
+        <ScrollView style={styles.container}>
+          <Text style={styles.headingText}>Weekly Timetable</Text>
+          <ScrollView horizontal={true} style={styles.container}>
+            <TouchableOpacity onPress={() => scheduleDay('Monday')}>
+              <View style={[styles.card, styles.cardElevated]}>
+                <Text style={styles.classText}>Monday</Text>
+              </View>
+            </TouchableOpacity>
+            <TouchableOpacity onPress={() => scheduleDay('Tuesday')}>
+              <View style={[styles.card, styles.cardElevated]}>
+                <Text style={styles.classText}>Tuesday</Text>
+              </View>
+            </TouchableOpacity>
+            <TouchableOpacity onPress={() => scheduleDay('Wednesday')}>
+              <View style={[styles.card, styles.cardElevated]}>
+                <Text style={styles.classText}>Wednesday</Text>
+              </View>
+            </TouchableOpacity>
+            <TouchableOpacity onPress={() => scheduleDay('Thursday')}>
+              <View style={[styles.card, styles.cardElevated]}>
+                <Text style={styles.classText}>Thursday</Text>
+              </View>
+            </TouchableOpacity>
+            <TouchableOpacity onPress={() => scheduleDay('Friday')}>
+              <View style={[styles.card, styles.cardElevated]}>
+                <Text style={styles.classText}>Friday</Text>
+              </View>
+            </TouchableOpacity>
           </ScrollView>
-        </View>
-        <Text style={styles.headerText}>Calendar:</Text>
+        </ScrollView>
+
         <View style={styles.calendar}>
-        <Calendar  style={styles.calendartest}/>
-    </View>
-  
+          <Calendar markedDates={markedDates} />
+        </View>
+
+        <View style={styles.publicHolidayContainer}>
+          <View style={styles.publicHolidayCircle} />
+          <Text style={styles.textHoliday}>Public Holiday</Text>
+        </View>
+        <View style={styles.publicHolidayContainer}>
+          <View style={styles.SchoolEventCircle} />
+          <Text style={styles.textHoliday}>School Event  </Text>
+        </View>
       </View>
-    </View>
+    </BackgroundColor>
   );
 };
-const { width, height } = Dimensions.get('window');
+
 const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-  },
-  background: {
-    flex: 1,
-    backgroundColor: '#B3EAE5',
-  },
-  topLeft: {
-    position: 'absolute',
-    top: height * 0.08,
-    left: width * 0.05,
-  },
-  topRight: {
-    position: 'absolute',
-    top: height * 0.07,
-    right: width * 0.05,
-    zIndex: 1,
+  headingText: {
+    fontSize: 25,
+    fontWeight: 'bold',
+    paddingHorizontal: 8,
+    paddingTop: '20%',
+    color: 'white',
   },
   card: {
     flex: 1,
     alignItems: 'center',
     justifyContent: 'center',
-    width: width * 0.65,
-    height: height * 0.16,
-    width: width * 0.60,
-    height: height * 0.15,
+    width: 200,
+    height: 100,
     borderRadius: 4,
-    margin: width * 0.05,
-    backgroundColor: '#FFFFFF',
+    margin: 25,
   },
   cardElevated: {
+    backgroundColor: 'white',
     elevation: 4,
     shadowOffset: {
       width: 1,
       height: 1,
     },
   },
-  scrollContainer: {
-    paddingTop: height * 0.15,
-  },
-  absentContainer: {
-    paddingTop: height * 0.07,
-  },
-  welcomeText: {
-    fontSize: height * 0.03,
-    fontWeight: 'bold',
-    fontStyle: 'italic',
-    color: '#FFFFFF',
-  },
-  headerText: {
-    fontSize: height * 0.025,
-    fontWeight: 'bold',
-    //marginBottom: height * 0.01,
-    paddingHorizontal: width * 0.05,
-    color: '#FFFFFF',
+  calendar: {
+    alignItems: 'center',
   },
   classText: {
-    fontSize: height * 0.018,
     color: '#1DC1B1',
   },
-  scrollContent: {
-    alignItems: 'center',
+  container: {
+    padding: 8,
   },
-  endClassButton: {
-    position: 'absolute',
-    bottom: height * 0.05,
-    right: width * 0.03,
-    width: width * 0.2,
-    height: width * 0.14,
-    borderRadius: width * 0.1,
-    backgroundColor: '#FFFFFF',
+  scrollView: {
+    backgroundColor: 'white',
+    marginHorizontal: 20,
+  },
+  text: {
+    fontSize: 42,
+  },
+  publicHolidayContainer: {
+    flexDirection: 'row',
+    alignItems: 'center',
     justifyContent: 'center',
-    alignItems: 'center',
+    marginTop: 10,
   },
-  endClassText: {
-    position: 'absolute',
-    bottom: height * 0.01,
-    right: width * 0.03,
-    fontWeight: 'bold',
-    fontSize: height * 0.024,
-    color: '#FFFFFF',
+  publicHolidayCircle: {
+    width: 10,
+    height: 10,
+    borderRadius: 5,
+    backgroundColor: 'red',
+    marginRight: 5,
   },
-
-  calendar:{
-    paddingTop: height * 0.02,
-    alignItems:'center',
+  SchoolEventCircle: {
+    width: 10,
+    height: 10,
+    borderRadius: 5,
+    backgroundColor: 'blue',
+    marginRight: 5,
+  },
+  textHoliday: {
+    color: 'black',
   },
 });
-export default HomePage;
+
+export default GTimeTable;
